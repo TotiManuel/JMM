@@ -70,6 +70,12 @@ Deseas Anotar algo?
 					self.txt.insert("end","\nPrograma de Bomberos abierto\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
+				elif (self.Chat.get()=="Sincronizar"):
+					os.system("cd /home/toti/Escritorio/Mio/JMM/ && ./Subir.sh &")
+					self.txt.config(state=NORMAL)
+					self.txt.insert("end","\nPrograma de Bomberos abierto\n")
+					self.Chat.delete(0,999)
+					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Apagar PC"):
 					os.system("shutdown now")
 				elif (self.Chat.get()=="Reiniciar PC"):
