@@ -71,7 +71,7 @@ Deseas Anotar algo?
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Sincronizar"):
-					os.system("cd /home/toti/Escritorio/Mio/JMM && ./Subir.sh &")
+					os.system("cd /home/toti/Escritorio/Mio/JMM/ && ./Subir.sh &")
 					self.txt.config(state=NORMAL)
 					self.txt.insert("end","\nSincronizado Completo\n")
 					self.Chat.delete(0,999)
