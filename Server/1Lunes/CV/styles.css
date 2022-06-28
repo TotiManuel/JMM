@@ -1,4 +1,4 @@
-@keyframes backgroun{
+/*@keyframes backgroun{
 	0%{
 		background-color:red;
 	}
@@ -15,14 +15,15 @@
 		background-color:green;
 	}
 }
-
+*/
+/*
 body{
 	border-radius:50%;
 	animation-name:backgroun;
 	animation-duration:10s;
 	animation-iteration-count:infinite;
 }
-
+*/
 #title{
 	background-color:black;
 	color:white;

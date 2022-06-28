@@ -25,43 +25,49 @@ Deseas Anotar algo?
 				elif (self.Chat.get()=="Iniciar Servidor"):
 					print(os.system("python3 -m http.server 1998 -d Server &"))
 					self.txt.config(state=NORMAL)
-					self.txt.insert("end","Servidor Iniciado\nIngresa a 10.20.83.113:1998")
+					self.txt.insert("end","\nServidor Iniciado\nIngresa a 10.20.83.113:1998\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Bomberos"):
 					os.system("open /home/toti/Escritorio/Mio/JMM/Server/6Sabado/GestionBomberos &")
 					self.txt.config(state=NORMAL)
-					self.txt.insert("end","Carpeta del Proyecto Bomberos Abierta\n")
+					self.txt.insert("end","\nCarpeta del Proyecto Bomberos Abierta\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Abrir CV"):
 					os.system("open /home/toti/Escritorio/Mio/JMM/Server/1Lunes/CV/Mandaio_Julian.html &")
 					self.txt.config(state=NORMAL)
-					self.txt.insert("end","CV abierto\n")
+					self.txt.insert("end","\nCV abierto\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Arduino"):
 					os.system("cd /home/toti/Programas/arduino-1.8.19 && ./arduino &")
 					self.txt.config(state=NORMAL)
-					self.txt.insert("end","Arduino Abierto\n")
+					self.txt.insert("end","\nArduino Abierto\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Gitkraken"):
 					os.system("cd /home/toti/Programas/gitkraken/ && ./gitkraken &")
 					self.txt.config(state=NORMAL)
-					self.txt.insert("end","Gitkraken Abierto\n")
+					self.txt.insert("end","\nGitkraken Abierto\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Ver Listas"):
 					os.system("open /home/toti/Escritorio/Mio/JMM/Server/2Martes/Listas/ &")
 					self.txt.config(state=NORMAL)
-					self.txt.insert("end","Listas Abiertas\n")
+					self.txt.insert("end","\nListas Abiertas\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Lectura"):
 					os.system("open /home/toti/Escritorio/Mio/JMM/Server/4Jueves/Lectura/Paginas.html &")
 					self.txt.config(state=NORMAL)
-					self.txt.insert("end","Lecturas Abiertas\n")
+					self.txt.insert("end","\nLecturas Abiertas\n")
+					self.Chat.delete(0,999)
+					self.txt.config(state=DISABLED)
+				elif (self.Chat.get()=="Abrir Bomberos"):
+					os.system("cd /home/toti/Escritorio/Mio/JMM/Server/6Sabado/GestionBomberos/ && python self.py &")
+					self.txt.config(state=NORMAL)
+					self.txt.insert("end","\nPrograma de Bomberos abierto\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Apagar PC"):
@@ -138,7 +144,7 @@ Deseas Anotar algo?
 					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Ayuda"):
 					self.txt.config(state=NORMAL)
-					self.txt.insert("end","Los Comandos Disponibles Son:\nIniciar Servidor\nAbrir Servidor\nGoogle\nFacebook\nDetener Servidor\nProgramar\nTry Hack Me\nFree Code Camp\nApagar PC\nTerminal\nMapa\nBomberos\nAbrir CV\nVer Listas\nLectura\nArduino\nGitkraken\nReiniciar PC\nSalir\n")
+					self.txt.insert("end","Los Comandos Disponibles Son:\nIniciar Servidor\nAbrir Servidor\nGoogle\nFacebook\nDetener Servidor\nProgramar\nTry Hack Me\nFree Code Camp\nApagar PC\nTerminal\nMapa\nBomberos\nAbrir CV\nVer Listas\nLectura\nArduino\nGitkraken\nReiniciar PC\nAbrir Bomberos\nSalir\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
 				else:
@@ -152,7 +158,7 @@ Deseas Anotar algo?
 			else:
 				self.Chat.insert(0,"")
 		def Color(event):
-			if (self.Chat.get()=="Salir") or (self.Chat.get()=="Iniciar Servidor") or (self.Chat.get()=="Detener Servidor") or (self.Chat.get()=="Google") or (self.Chat.get()=="Programar") or (self.Chat.get()=="Apagar PC") or (self.Chat.get()=="Facebook") or (self.Chat.get()=="Abrir Servidor") or (self.Chat.get()=="Terminal") or (self.Chat.get()=="Try Hack Me") or (self.Chat.get()=="Free Code Camp") or (self.Chat.get()=="Ayuda") or (self.Chat.get()=="Mapa") or (self.Chat.get()=="Bomberos") or (self.Chat.get()=="Abrir CV") or (self.Chat.get()=="Ver Listas") or (self.Chat.get()=="Lectura") or (self.Chat.get()=="Arduino") or (self.Chat.get()=="Gitkraken") or (self.Chat.get()=="Reiniciar PC"):
+			if (self.Chat.get()=="Salir") or (self.Chat.get()=="Iniciar Servidor") or (self.Chat.get()=="Detener Servidor") or (self.Chat.get()=="Google") or (self.Chat.get()=="Programar") or (self.Chat.get()=="Apagar PC") or (self.Chat.get()=="Facebook") or (self.Chat.get()=="Abrir Servidor") or (self.Chat.get()=="Terminal") or (self.Chat.get()=="Try Hack Me") or (self.Chat.get()=="Free Code Camp") or (self.Chat.get()=="Ayuda") or (self.Chat.get()=="Mapa") or (self.Chat.get()=="Bomberos") or (self.Chat.get()=="Abrir CV") or (self.Chat.get()=="Ver Listas") or (self.Chat.get()=="Lectura") or (self.Chat.get()=="Arduino") or (self.Chat.get()=="Gitkraken") or (self.Chat.get()=="Reiniciar PC") or (self.Chat.get()=="Abrir Bomberos"):
 				self.Chat.config(fg="blue")
 			else:
 				self.Chat.config(fg="black")
