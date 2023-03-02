@@ -1,0 +1,5 @@
+gobuster -u http://fakebank.com -w wordlist.txt dir
+
+//wordlist.txt debe existir
+
+fuerza bruta de contraseñas web
