@@ -1,0 +1,52 @@
+¿Qué usaremos?
+
+Figlet es una aplicación informática que genera banners de texto, en varias tipografías, formadas por letras compuestas por conglomerados de caracteres ASCII más pequeños.
+
+PAQUETES NECESARIOS:
+
+pkg install figlet -y
+
+pkg install nano -y
+
+LISTA DE COLORES:
+
+
+Naranja=\033[38;5;214m
+Rosa=\033[38;5;213m
+Rojo=\033[1;31m
+Verde=\033[1;32m
+Amarillo=\033[33m
+Azul_claro=\033[38;5;39m
+Azul=\033[34m
+Morado=\033[35m
+Blanco=\033[1;37m
+Cyan=\033[1;36m
+
+
+
+PROCEDIMIENTO:
+
+Entramos a la carpeta etc, para editar el archivo bash.bashrc:
+
+cd /data/data/com.termux/files/usr/etc
+
+Aqui eliminaremos el archivo motd:
+
+rm motd
+
+Abrimos el archivo bash.bashrc:
+
+nano bash.bashrc
+
+Aqui buscaremos una variable llamada PS1, una ves ubicada escribiremos abajo lo siguiente:
+
+echo -e "\033[1;32m" //Esto es para darle color en este caso verde
+
+figlet TUNOMBRE
+
+echo -e "\033[0m" //Esto es para que la entrada de comandos vuelva al color normal
+
+
+Una ves hecho esto guardaremos el archivo con CTRL+x luego y
+
+Bien abrimos nueva ventana y listo ya tendremos personalizado nuestro termux

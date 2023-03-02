@@ -1,0 +1,16 @@
+Nombre		Funcion
+ALT+SHIFT+S	Poner nombre a la pestaña de la terminal
+CTRL+R		Buscar entre los comandos ya usados
+
+
+
+COMANDOS
+Nombre			Funcion
+sudo adduser *Nombre*	Crear un nuevo Usuario
+su *Nombre*		Cambiar de usuario
+ifconfig
+netstat
+iwlist scan
+tar -ccf NombreComprimido Archivos
+tar -xf NombreComprimido
+ifconfig | grep "inet"
