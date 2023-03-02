@@ -1,0 +1,29 @@
+W3m_________________________Navegador web
+mc__________________________Entorno Visual
+fish________________________Autocompletado de comandos
+sherlock *nombreUsuario*____Buscar en que paginas tiene una cuenta un usuario
+wiki-termux_________________Wikipedia de Termux
+VenoM_______________________
+IPGeolocation_______________
+Virus-tools_________________
+zphisher____________________
+neofetch_________________
+figlet______________________
+vim
+gh
+htop
+hardinfo
+lscpu
+lshw -short
+tmux
+
+Clave de github
+41323167Toti
+
+
+comandos       funcion
+wget -r *web*  Descargar pagina web
+nikto -host *web*
+nmap -Pn *ip*
+whatweb *url*
+sed -i "s/TEXTOACAMBIAR/TEXTOAPONER/g" "NOMBREARCHIVO"

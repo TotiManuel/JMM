@@ -1,0 +1,2 @@
+sqlmap --shell:Inicia el shell de sqlmap
+sqlmap -u "*URL*":prueba de seguridad de la url

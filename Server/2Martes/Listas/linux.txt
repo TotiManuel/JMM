@@ -1,0 +1,77 @@
+https://github.com/ohmybash/oh-my-bash  #Personalizar bash
+
+https://github.com/Ghost-crypto-exe/Virus-tools  #Herramientas de hack
+
+https://github.com/Ghost-crypto-exe/Chess.ai.js	 #Juego de ajedrez
+
+https://github.com/Altify-Developing/Altify-Developing-Main  #Herramientas de hack
+
+https://github.com/sherlock-project/sherlock	#Encontrar a un usuario en todas las redes
+
+https://github.com/jesseduffield/lazygit	#Usar git mas facil
+
+https://github.com/Rigellute/spotify-tui	#Spotify
+
+https://github.com/orf/gping	#Ping con graficos
+
+https://github.com/ventoy/Ventoy	#Hacer USB booteable
+
+https://github.com/Orama-Interactive/Pixelorama	#Hacer Pixelart
+
+https://github.com/channingbreeze/games	#Juegos para HTML
+
+https://github.com/trimstray/the-book-of-secret-knowledge	#Programas para seguridad
+
+https://github.com/Hack-with-Github/Awesome-Hacking	#Programas para Seguridad
+
+https://github.com/StevenBlack/hosts	#HOST Unificados
+
+https://github.com/playcanvas/engine	#Diseño 3d web
+
+https://github.com/huginn/huginn	#Bot para twitter en mi nombre
+
+https://github.com/zedeus/nitter	#Interfaz alternativa Twitter
+
+https://github.com/maxbbraun/trump2cash	#Comercio por los twit de trump
+
+https://github.com/megadose/holehe	#Recuperar contraseñas
+
+https://github.com/search?q=asistente+virtual	#Elegir Asistente Virtual
+
+https://github.com/topics/operating-system	#Hacer mi Sistema Operativo
+
+https://github.com/tuhdo/os01			#Hacer mi Sistema Operativo
+
+https://github.com/carlosarc87/90manager/tree/master/90manager	#Juego 90manager
+
+https://github.com/ageitgey/face_recognition	#Reconocimiento de rostro
+
+https://github.com/CorentinJ/Real-Time-Voice-Cloning	#Clonar voz
+
+https://github.com/Jorger/reconocimiento-de-Voz-arduino	#Reconocimiento de voz arduino
+
+https://github.com/tuhdo/sample-os		#Sistema Operativo Basico
+
+https://github.com/arielaa86/ReconocimientoVoz	#Reconocimiento de voz
+
+https://github.com/Strange-Code/AsistenteVirtual	#Asistente virtual en python
+
+CONTANDO BITS
+htop
+neofetch
+*nuevo usuario: sudo adduser -nombre-
+*cambiar de usuario: su -nombre-
+
+comandos: 
+id
+whoiam
+alias
+
+configuraciones:
+vim .bashrc //cambiar
+source .bashrc //actualizar
+
+ATAJOS:
+ALT+SHIFT+S
+CTRL+TAB
+CTRL+R

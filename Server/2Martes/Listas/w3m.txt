@@ -1,0 +1,31 @@
+Salir del navegador
+
+q
+
+Página anterior
+
+B
+
+Descargar página actual
+
+a
+
+Ir a inicio
+
+g
+
+Saltar al final
+
+G
+
+Desplazarse hacia arriba una página
+
+-
+
+Desplazarse hacia abajo una página
+
++
+
+Abrir URL
+
+U
