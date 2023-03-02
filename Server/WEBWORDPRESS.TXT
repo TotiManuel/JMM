@@ -1,0 +1,457 @@
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Saltar al contenido</a>
+
+	
+<header id="masthead" class="site-header responsive-max-width has-menu" role="banner">
+	
+
+			<p class="site-title"><a href="https://totimaniel.wordpress.com/" rel="home">Clinica Fusavim Privada S.R.L.</a></p>
+	
+		<nav id="site-navigation" class="main-navigation" aria-label="Navegación principal">
+
+		<input type="checkbox" role="button" aria-haspopup="true" id="toggle" class="hide-visually">
+		<label for="toggle" id="toggle-menu" class="button">
+			Menú			<span class="dropdown-icon open">+</span>
+			<span class="dropdown-icon close">×</span>
+			<span class="hide-visually expanded-text">expandido</span>
+			<span class="hide-visually collapsed-text">cerrado</span>
+		</label>
+
+		<div class="main-menu-container"><ul id="menu-primary-1" class="main-menu" aria-label="submenu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-6 current_page_item menu-item-20"><a href="https://totimaniel.wordpress.com/" aria-current="page">Clinica Fusavim Privada S.R.L.</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a href="https://totimaniel.wordpress.com/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="https://totimaniel.wordpress.com/about/">Acerca de</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="https://totimaniel.wordpress.com/contact/">Contacto</a></li>
+</ul></div>	</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			
+<article id="post-6" class="post-6 page type-page status-publish hentry entry">
+
+	<header class="entry-header responsive-max-width">
+		
+<h1 class="entry-title">Clinica Fusavim Privada&nbsp;S.R.L.</h1>
+	</header>
+
+	
+	<div class="entry-content">
+		
+<div class="wp-block-cover alignfull is-light"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-10 has-background-dim"></span><img data-attachment-id="45" data-permalink="https://totimaniel.wordpress.com/home/photo3-1/" data-orig-file="https://totimaniel.files.wordpress.com/2023/02/photo3-1.jpg" data-orig-size="2048,2048" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="photo3-1" data-image-description="" data-image-caption="" data-medium-file="https://totimaniel.files.wordpress.com/2023/02/photo3-1.jpg?w=300" data-large-file="https://totimaniel.files.wordpress.com/2023/02/photo3-1.jpg?w=750" class="wp-block-cover__image-background wp-image-45" alt="" src="https://totimaniel.files.wordpress.com/2023/02/photo3-1.jpg" data-object-fit="cover" scale="0"><div class="wp-block-cover__inner-container">
+<div class="wp-block-jetpack-slideshow aligncenter" data-effect="slide" data-jetpack-block-initialized="true"><div class="wp-block-jetpack-slideshow_container swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events wp-swiper-initialized" style="cursor: grab;"><ul class="wp-block-jetpack-slideshow_swiper-wrapper swiper-wrapper" style="width: 3003px; transform: translate3d(-429px, 0px, 0px); height: 182px; transition-duration: 0ms;" id="swiper-wrapper-b9fb038f20af6f75" aria-live="polite"><li class="wp-block-jetpack-slideshow_slide swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="4" style="width: 429px;" aria-hidden="true" role="group" aria-label="1 / 7"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-43" data-id="43" src="https://totimaniel.files.wordpress.com/2023/02/portada.png?w=1024" srcset="https://totimaniel.files.wordpress.com/2023/02/portada.png?w=1024 1024w, https://totimaniel.files.wordpress.com/2023/02/portada.png?w=2048 2048w, https://totimaniel.files.wordpress.com/2023/02/portada.png?w=150 150w, https://totimaniel.files.wordpress.com/2023/02/portada.png?w=300 300w, https://totimaniel.files.wordpress.com/2023/02/portada.png?w=768 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 429px;" aria-hidden="false" tabindex="-1" role="group" aria-label="2 / 7"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-39" data-id="39" src="https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=1024" srcset="https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=1024 1024w, https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=2048 2048w, https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=150 150w, https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=300 300w, https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=768 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide swiper-slide-next" data-swiper-slide-index="1" style="width: 429px;" aria-hidden="true" role="group" aria-label="3 / 7"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-40" data-id="40" src="https://totimaniel.files.wordpress.com/2023/02/frentefusa.jpg?w=1024" srcset="https://totimaniel.files.wordpress.com/2023/02/frentefusa.jpg?w=1024 1024w, https://totimaniel.files.wordpress.com/2023/02/frentefusa.jpg 2048w, https://totimaniel.files.wordpress.com/2023/02/frentefusa.jpg?w=150 150w, https://totimaniel.files.wordpress.com/2023/02/frentefusa.jpg?w=300 300w, https://totimaniel.files.wordpress.com/2023/02/frentefusa.jpg?w=768 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide" data-swiper-slide-index="2" style="width: 429px;" aria-hidden="true" role="group" aria-label="4 / 7"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-41" data-id="41" src="https://totimaniel.files.wordpress.com/2023/02/logophoto.png?w=606" srcset="https://totimaniel.files.wordpress.com/2023/02/logophoto.png 606w, https://totimaniel.files.wordpress.com/2023/02/logophoto.png?w=150 150w, https://totimaniel.files.wordpress.com/2023/02/logophoto.png?w=300 300w" sizes="(max-width: 606px) 100vw, 606px"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide" data-swiper-slide-index="3" style="width: 429px;" aria-hidden="true" role="group" aria-label="5 / 7"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-42" data-id="42" src="https://totimaniel.files.wordpress.com/2023/02/photo3.jpg?w=1024" srcset="https://totimaniel.files.wordpress.com/2023/02/photo3.jpg?w=1024 1024w, https://totimaniel.files.wordpress.com/2023/02/photo3.jpg 2048w, https://totimaniel.files.wordpress.com/2023/02/photo3.jpg?w=150 150w, https://totimaniel.files.wordpress.com/2023/02/photo3.jpg?w=300 300w, https://totimaniel.files.wordpress.com/2023/02/photo3.jpg?w=768 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="4" style="width: 429px;" aria-hidden="true" role="group" aria-label="6 / 7"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-43" data-id="43" src="https://totimaniel.files.wordpress.com/2023/02/portada.png?w=1024" srcset="https://totimaniel.files.wordpress.com/2023/02/portada.png?w=1024 1024w, https://totimaniel.files.wordpress.com/2023/02/portada.png?w=2048 2048w, https://totimaniel.files.wordpress.com/2023/02/portada.png?w=150 150w, https://totimaniel.files.wordpress.com/2023/02/portada.png?w=300 300w, https://totimaniel.files.wordpress.com/2023/02/portada.png?w=768 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li><li class="wp-block-jetpack-slideshow_slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 429px;" aria-hidden="true" role="group" aria-label="7 / 7"><figure><img alt="" class="wp-block-jetpack-slideshow_image wp-image-39" data-id="39" src="https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=1024" srcset="https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=1024 1024w, https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=2048 2048w, https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=150 150w, https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=300 300w, https://totimaniel.files.wordpress.com/2023/02/71041529_106365584103018_187230049773027328_n.png?w=768 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure></li></ul><a class="wp-block-jetpack-slideshow_button-prev swiper-button-prev swiper-button-white" role="button" style="top: 91px;" tabindex="0" aria-label="Previous slide" aria-controls="swiper-wrapper-b9fb038f20af6f75"></a><a class="wp-block-jetpack-slideshow_button-next swiper-button-next swiper-button-white" role="button" style="top: 91px;" tabindex="0" aria-label="Next slide" aria-controls="swiper-wrapper-b9fb038f20af6f75"></a><a aria-label="Pause Slideshow" class="wp-block-jetpack-slideshow_button-pause" role="button"></a><div class="wp-block-jetpack-slideshow_pagination swiper-pagination swiper-pagination-white swiper-pagination-custom"><button class="swiper-pagination-bullet swiper-pagination-bullet-active" tab-index="0" role="button" aria-label="Go to slide 1"></button><button class="swiper-pagination-bullet" tab-index="0" role="button" aria-label="Go to slide 2"></button><button class="swiper-pagination-bullet" tab-index="0" role="button" aria-label="Go to slide 3"></button><button class="swiper-pagination-bullet" tab-index="0" role="button" aria-label="Go to slide 4"></button><button class="swiper-pagination-bullet" tab-index="0" role="button" aria-label="Go to slide 5"></button></div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div></div>
+
+
+
+<div class="wp-block-jetpack-layout-grid alignfull column1-desktop-grid__span-8 column1-desktop-grid__start-3 column1-desktop-grid__row-1 column1-tablet-grid__span-8 column1-tablet-grid__row-1 column1-mobile-grid__span-4 column1-mobile-grid__row-1">
+<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-none">
+<h1 class="wp-block-heading has-text-align-center">Clinica Fusavim </h1>
+
+
+
+<h1 class="wp-block-heading has-text-align-center">Te da la bienvenida.</h1>
+
+
+
+<p class="has-text-align-center">Te damos la bienvenida al sitio web oficial de la Clinica Privada Fusavim S.R.L. Para editar esta página, haz clic en el enlace Editar. Para obtener más información sobre cómo personalizar tu sitio, consulta &nbsp;<a href="https://href.li/?http://learn.wordpress.com/">http://learn.wordpress.com/</a></p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-1">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="http://learn.wordpress.com" title="learn.wordpress.com">Más información</a></div>
+</div>
+</div>
+</div>
+</div></div>
+
+
+
+<div class="wp-block-group alignfull has-background-background-color has-background is-layout-flow"><div class="wp-block-group__inner-container">
+<div class="wp-block-jetpack-layout-grid alignfull column1-desktop-grid__span-12 column1-desktop-grid__row-1 column1-tablet-grid__span-8 column1-tablet-grid__row-1 column1-mobile-grid__span-4 column1-mobile-grid__row-1">
+<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-none">
+<h4 class="wp-block-heading">Entradas recientes</h4>
+
+
+				<div class="wp-block-newspack-blocks-homepage-articles  wpnbha is-grid columns-3 colgap-3 show-image image-aligntop ts-3 is-3 is-uncropped  has-text-align-left" style="">
+			<div data-posts="" data-current-post-id="6">
+								
+	<article data-post-id="10" class="category-sin-categoria type-post">
+				
+		<div class="entry-wrapper">
+			<h2 class="entry-title"><a href="https://totimaniel.wordpress.com/2021/10/12/example-post-3/" rel="bookmark">Preséntate (entrada de&nbsp;muestra)</a></h2>						<p>Esto es una entrada de muestra, originalmente publicada como parte de Blogging University. Regístrate en uno de nuestros diez programas y empieza tu blog con buen pie. Hoy vas a publicar una entrada. No te preocupes por el aspecto de tu blog. Tampoco te preocupes si todavía no le has puesto un nombre o si…</p>
+			<div id="atatags-26942-63f7239921852" data-adtags-width="402" style="display:block;height:272px;margin:0 auto;overflow:hidden;padding:0;width:300px;"><div style="font:10px 'Open Sans', Arial, sans-serif;height:12px;margin:0;padding:0;text-align:left;">Anuncios</div><div style="height:250px;width:300px;" class="ata-slot-container-wrapper">
+                <div style="height:100%;width:100%;" class="ata-slot-container">
+                    <div style="height:100%;margin:0;overflow:hidden;padding:0;position:relative;width:100%;" class="ata-frame-wrapper">
+            <div class="user-feedback" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;background:#f1f1f1;white-space:nowrap;font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:12px;box-shadow:0px 1px 2px 0px inset #999;margin:0;display:none;table-layout:fixed;letter-spacing:0.2px;z-index:5000;padding:0;">
+                <div style="color:#808080;font-size:10px;line-height:10px;text-align:center;margin:0;padding:0;position:absolute;top:4px;width:100%;">Powered by wordads.co</div>
+                <div style="box-sizing:border-box;padding:5px;text-align:center;display:table-cell;vertical-align:middle;margin:0;width:100%;">
+                    <div style="color:#404040;margin:8px 0 0 0;white-space:normal;display:none;text-align:center;padding:0;line-height:12px;" class="user-feedback__thank-message">
+                        <div style="font-weight:bold;text-align:center;line-height:12px;">We've received your report.</div>
+                        <br>
+                        Thanks for your feedback!
+                    </div>
+                    <a class="user-feedback__reason" data-reason-id="1" style="border-radius:2px;position:relative;overflow:hidden;display:block;padding:1px 5px;width:110px;height:40px;border:none;background-color:#FFFFFF;cursor:pointer;box-sizing:border-box;margin:8px auto 0;color:#404040;font-weight:normal;text-decoration:none;;">
+                <div style="width:100%;height:100%;display:table;text-align:center;margin:0;padding:0;">
+                    <span style="vertical-align:middle;display:table-cell;text-align:center;line-height:14px;white-space:normal;margin:0;padding:0;">Seen too often</span>
+                </div>
+            </a><a class="user-feedback__reason" data-reason-id="2" style="border-radius:2px;position:relative;overflow:hidden;display:block;padding:1px 5px;width:110px;height:40px;border:none;background-color:#FFFFFF;cursor:pointer;box-sizing:border-box;margin:8px auto 0;color:#404040;font-weight:normal;text-decoration:none;;">
+                <div style="width:100%;height:100%;display:table;text-align:center;margin:0;padding:0;">
+                    <span style="vertical-align:middle;display:table-cell;text-align:center;line-height:14px;white-space:normal;margin:0;padding:0;">Not relevant</span>
+                </div>
+            </a><a class="user-feedback__reason" data-reason-id="3" style="border-radius:2px;position:relative;overflow:hidden;display:block;padding:1px 5px;width:110px;height:40px;border:none;background-color:#FFFFFF;cursor:pointer;box-sizing:border-box;margin:8px auto 0;color:#404040;font-weight:normal;text-decoration:none;;">
+                <div style="width:100%;height:100%;display:table;text-align:center;margin:0;padding:0;">
+                    <span style="vertical-align:middle;display:table-cell;text-align:center;line-height:14px;white-space:normal;margin:0;padding:0;">Offensive</span>
+                </div>
+            </a><a class="user-feedback__reason" data-reason-id="4" style="border-radius:2px;position:relative;overflow:hidden;display:block;padding:1px 5px;width:110px;height:40px;border:none;background-color:#FFFFFF;cursor:pointer;box-sizing:border-box;margin:8px auto 0;color:#404040;font-weight:normal;text-decoration:none;;">
+                <div style="width:100%;height:100%;display:table;text-align:center;margin:0;padding:0;">
+                    <span style="vertical-align:middle;display:table-cell;text-align:center;line-height:14px;white-space:normal;margin:0;padding:0;">Broken</span>
+                </div>
+            </a>
+                </div>
+                
+            </div>
+        
+                        <iframe id="atatags-26942-63f7239921852_iframe" frameborder="0" scrolling="no" src="about:blank" style="border:none;height:250px;margin:0;overflow:hidden;width:300px;" class="ata-frame"></iframe>
+                    </div>
+                </div>
+            </div><div id="atatags-26942-63f7239921852__controls" class="ata-controls" style="height:10px;line-height:10px;margin:0;padding:0;text-align:right;width:300px;"><span id="atatags-26942-63f7239921852__complain-btn" class="ata-controls__complain-btn" style="color:#c8c7cc;cursor:pointer;font-family:Verdana, sans-serif;font-size:6px;letter-spacing:0.3px;text-transform:uppercase;vertical-align:middle;float:right;">Informa sobre este anuncio</span></div></div>
+			
+			<script>
+				__ATA.cmd.push(function() {
+					__ATA.initDynamicSlot({
+						id: 'atatags-26942-63f7239921852',
+						location: 120,
+						formFactor: '001',
+						label: {
+							text: 'Anuncios',
+						},
+						creative: {
+							reportAd: {
+								text: 'Informa sobre este anuncio',
+							},
+							privacySettings: {
+								text: 'Privacidad',
+								
+							}
+						}
+					});
+				});
+			</script>				<div class="entry-meta">
+					<time class="entry-date published" datetime="2021-10-12T06:05:01-03:00">12 de octubre, 2021</time><time class="updated" datetime="2021-10-12T06:10:05-03:00">12 de octubre, 2021</time>				</div><!-- .entry-meta -->
+					</div><!-- .entry-wrapper -->
+	</article>
+
+		
+	<article data-post-id="11" class="category-sin-categoria type-post">
+				
+		<div class="entry-wrapper">
+			<h2 class="entry-title"><a href="https://totimaniel.wordpress.com/2021/10/12/example-post-2/" rel="bookmark">Preséntate (entrada de&nbsp;muestra)</a></h2>						<p>Esto es una entrada de muestra, originalmente publicada como parte de Blogging University. Regístrate en uno de nuestros diez programas y empieza tu blog con buen pie. Hoy vas a publicar una entrada. No te preocupes por el aspecto de tu blog. Tampoco te preocupes si todavía no le has puesto un nombre o si…</p>
+				<div class="entry-meta">
+					<time class="entry-date published" datetime="2021-10-12T06:05:00-03:00">12 de octubre, 2021</time><time class="updated" datetime="2021-10-12T06:10:05-03:00">12 de octubre, 2021</time>				</div><!-- .entry-meta -->
+					</div><!-- .entry-wrapper -->
+	</article>
+
+		
+	<article data-post-id="12" class="category-sin-categoria type-post">
+				
+		<div class="entry-wrapper">
+			<h2 class="entry-title"><a href="https://totimaniel.wordpress.com/2021/10/12/example-post/" rel="bookmark">Preséntate (entrada de&nbsp;muestra)</a></h2>						<p>Esto es una entrada de muestra, originalmente publicada como parte de Blogging University. Regístrate en uno de nuestros diez programas y empieza tu blog con buen pie. Hoy vas a publicar una entrada. No te preocupes por el aspecto de tu blog. Tampoco te preocupes si todavía no le has puesto un nombre o si…</p>
+				<div class="entry-meta">
+					<time class="entry-date published" datetime="2021-10-12T06:04:59-03:00">12 de octubre, 2021</time><time class="updated" datetime="2021-10-12T06:10:05-03:00">12 de octubre, 2021</time>				</div><!-- .entry-meta -->
+					</div><!-- .entry-wrapper -->
+	</article>
+
+					</div>
+			
+		</div>
+				</div>
+</div>
+</div></div>
+
+
+
+<div class="wp-block-group alignfull has-foreground-dark-background-color has-background is-layout-flow"><div class="wp-block-group__inner-container">
+<div class="wp-block-jetpack-layout-grid alignfull column1-desktop-grid__span-3 column1-desktop-grid__start-3 column1-desktop-grid__row-1 column2-desktop-grid__span-5 column2-desktop-grid__start-6 column2-desktop-grid__row-1 column1-tablet-grid__span-4 column1-tablet-grid__row-1 column2-tablet-grid__span-4 column2-tablet-grid__start-5 column2-tablet-grid__row-1 column1-mobile-grid__span-4 column1-mobile-grid__row-1 column2-mobile-grid__span-4 column2-mobile-grid__row-2">
+<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-none">
+<p class="has-text-align-left has-huge-font-size">Recibe nuevo contenido directamente en tu bandeja de entrada.</p>
+</div>
+
+
+
+<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-none">	<div class="wp-block-jetpack-subscriptions__supports-newline wp-block-jetpack-subscriptions__use-newline wp-block-jetpack-subscriptions">
+		<div class="wp-block-jetpack-subscriptions__container">
+			<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" data-blog="198649171" data-post_access_level="everybody" id="subscribe-blog">
+								<p id="subscribe-email">
+					<label id="subscribe-field-label" for="subscribe-field" class="screen-reader-text">
+						Dirección de correo electrónico					</label>
+
+					<input type="email" name="email" class="no-border-radius  has-primary-border-color" style="font-size: 16px;padding: 15px 23px 15px 23px;border-color: primary;border-radius: 0px;border-width: 1px;" placeholder="Dirección de correo electrónico" value="" id="subscribe-field">				</p>
+
+				<p id="subscribe-submit">
+					<input type="hidden" name="action" value="subscribe">
+					<input type="hidden" name="blog_id" value="198649171">
+					<input type="hidden" name="source" value="https://totimaniel.wordpress.com/">
+					<input type="hidden" name="sub-type" value="subscribe-block">
+					<input type="hidden" name="redirect_fragment" value="subscribe-blog">
+					<input type="hidden" id="_wpnonce" name="_wpnonce" value="faa544d8ba">					<button type="submit" class="wp-block-button__link no-border-radius has-primary-border-color has-text-color has-background-color has-background has-primary-background-color" style="font-size: 16px;padding: 15px 23px 15px 23px;margin-top: 10px;border-color: primary;border-radius: 0px;border-width: 1px;">
+						Suscribirse					</button>
+				</p>
+			</form>
+					</div>
+	</div>
+	</div>
+</div>
+</div></div>
+	</div><!-- .entry-content -->
+
+	</article><!-- #post-6 -->
+
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+	
+	<footer id="colophon" class="site-footer responsive-max-width">
+			
+	
+		<div class="site-info">
+		<a class="site-name" href="https://totimaniel.wordpress.com/" rel="home">Clinica Fusavim Privada S.R.L.</a><span class="comma">,</span>
+<a href="https://wordpress.com/es/?ref=footer_website" rel="nofollow">Crea un blog o un sitio web gratuitos con WordPress.com.</a>	</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+
+</div>
+
+
+
+CSS #########################################################################
+element.style {
+}
+div#page {
+}
+html, body, div, header, nav, article, figure, hr, main, section, footer {
+    max-width: none;
+}
+html, body, div, header, nav, article, figure, hr, main, section, footer {
+    max-width: none;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+body {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--wp--preset--color--foreground);
+    text-align: left;
+    background-color: var(--wp--preset--color--background);
+}
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, form, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--wp--preset--color--foreground);
+    text-align: left;
+    background-color: var(--wp--preset--color--background);
+}
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, form, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+    --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+    --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+    --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+    --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+    --wp--preset--color--black: #000000;
+    --wp--preset--color--cyan-bluish-gray: #abb8c3;
+    --wp--preset--color--white: #ffffff;
+    --wp--preset--color--pale-pink: #f78da7;
+    --wp--preset--color--vivid-red: #cf2e2e;
+    --wp--preset--color--luminous-vivid-orange: #ff6900;
+    --wp--preset--color--luminous-vivid-amber: #fcb900;
+    --wp--preset--color--light-green-cyan: #7bdcb5;
+    --wp--preset--color--vivid-green-cyan: #00d084;
+    --wp--preset--color--pale-cyan-blue: #8ed1fc;
+    --wp--preset--color--vivid-cyan-blue: #0693e3;
+    --wp--preset--color--vivid-purple: #9b51e0;
+    --wp--preset--color--primary: #1279BE;
+    --wp--preset--color--secondary: #FFB302;
+    --wp--preset--color--foreground: #303030;
+    --wp--preset--color--background: #FFFFFF;
+    --wp--preset--color--tertiary: #C5C5C5;
+    --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);
+    --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
+    --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);
+    --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);
+    --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
+    --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
+    --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
+    --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
+    --wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
+    --wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
+    --wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
+    --wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
+    --wp--preset--duotone--dark-grayscale: url(#wp-duotone-dark-grayscale);
+    --wp--preset--duotone--grayscale: url(#wp-duotone-grayscale);
+    --wp--preset--duotone--purple-yellow: url(#wp-duotone-purple-yellow);
+    --wp--preset--duotone--blue-red: url(#wp-duotone-blue-red);
+    --wp--preset--duotone--midnight: url(#wp-duotone-midnight);
+    --wp--preset--duotone--magenta-yellow: url(#wp-duotone-magenta-yellow);
+    --wp--preset--duotone--purple-green: url(#wp-duotone-purple-green);
+    --wp--preset--duotone--blue-orange: url(#wp-duotone-blue-orange);
+    --wp--preset--font-size--small: 17.3914px;
+    --wp--preset--font-size--medium: 20px;
+    --wp--preset--font-size--large: 26.45px;
+    --wp--preset--font-size--x-large: 42px;
+    --wp--preset--font-size--normal: 23px;
+    --wp--preset--font-size--huge: 30.4174px;
+    --wp--preset--font-family--albert-sans: 'Albert Sans';
+    --wp--preset--font-family--alegreya: Alegreya;
+Show All Properties (53 more)
+}
+:root {
+    --jp-carousel-primary-color: #fff;
+    --jp-carousel-primary-subtle-color: #999;
+    --jp-carousel-bg-color: #000;
+    --jp-carousel-bg-faded-color: #222;
+    --jp-carousel-border-color: #3a3a3a;
+}
+:root {
+    --swiper-navigation-size: 44px;
+}
+:root {
+    --swiper-theme-color: #007aff;
+}
+:root {
+    --wpnbha-col-gap: 1em;
+}
+:root {
+    --font-headings: unset;
+    --font-base: unset;
+    --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+:root {
+    --wp--preset--color--primary: #1279be;
+    --wp--preset--color--primary-hover: #303030;
+    --wp--preset--color--secondary: #ffb302;
+    --wp--preset--color--secondary-hover: #303030;
+    --wp--preset--color--foreground: #303030;
+    --wp--preset--color--foreground-low-contrast: #757575;
+    --wp--preset--color--foreground-high-contrast: #101010;
+    --wp--preset--color--background: white;
+    --wp--preset--color--background-low-contrast: #c5c5c5;
+    --wp--preset--color--background-high-contrast: #f8f8f8;
+    --wp--preset--color--tertiary: #c5c5c5;
+    --wp--preset--color--border: #c5c5c5;
+    --wp--preset--color--border-low-contrast: #a5a5a5;
+    --wp--preset--color--border-high-contrast: #f8f8f8;
+    --wp--preset--color--text-selection: #a9d9f9;
+    --wp--preset--color--alert-success: #33b756;
+    --wp--preset--color--alert-info: #1279be;
+    --wp--preset--color--alert-warning: #ecc700;
+    --wp--preset--color--alert-error: #de3e33;
+    --wp--preset--color--black: black;
+    --wp--preset--color--white: white;
+}
+:root {
+    --wp--preset--color--primary: #1279be;
+    --wp--preset--color--primary-hover: #303030;
+    --wp--preset--color--secondary: #ffb302;
+    --wp--preset--color--secondary-hover: #303030;
+    --wp--preset--color--foreground: #303030;
+    --wp--preset--color--foreground-low-contrast: #757575;
+    --wp--preset--color--foreground-high-contrast: #101010;
+    --wp--preset--color--background: #fff;
+    --wp--preset--color--background-low-contrast: #c5c5c5;
+    --wp--preset--color--background-high-contrast: #f8f8f8;
+    --wp--preset--color--tertiary: #c5c5c5;
+    --wp--preset--color--border: #c5c5c5;
+    --wp--preset--color--border-low-contrast: #a5a5a5;
+    --wp--preset--color--border-high-contrast: #f8f8f8;
+    --wp--preset--color--text-selection: #a9d9f9;
+    --wp--preset--color--alert-success: #33b756;
+    --wp--preset--color--alert-info: #1279be;
+    --wp--preset--color--alert-warning: #ecc700;
+    --wp--preset--color--alert-error: #de3e33;
+    --wp--preset--color--black: #000;
+    --wp--preset--color--white: #fff;
+}
+:root {
+    --coblocks-spacing--0: 0;
+    --coblocks-spacing--1: .5em;
+    --coblocks-spacing--2: 1em;
+    --coblocks-spacing--3: 1.5em;
+    --coblocks-spacing--4: 2em;
+    --coblocks-spacing--5: 2.5em;
+    --coblocks-spacing--6: 3em;
+    --coblocks-spacing--7: 3.5em;
+    --coblocks-spacing--8: 4em;
+    --coblocks-spacing--9: 4.5em;
+    --coblocks-spacing--10: 7em;
+}
+:root {
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+}
+:root {
+    --wp--preset--font-size--normal: 16px;
+    --wp--preset--font-size--huge: 42px;
+}
+html {
+    font-size: 17.3913px;
+    font-family: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-base, "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+    line-height: 1.6;
+}
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+html {
+    font-size: 17.3913px;
+    font-family: "PT Sans",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-family: var(--font-base,"PT Sans",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif);
+    line-height: 1.6;
+}
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+::selection {
+    background-color: var(--wp--preset--color--text-selection);
+}
+::selection {
+    background-color: var(--wp--preset--color--text-selection);
+}
