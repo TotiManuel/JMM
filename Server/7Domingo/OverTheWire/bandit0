@@ -1,0 +1,8 @@
+//Para conectar al servidor debo ingresar el codigo:
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+
+//Contraseña
+bandit0
+
+//cat readme para ver la contraseña en el archivo
+NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL

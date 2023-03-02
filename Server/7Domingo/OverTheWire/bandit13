@@ -1,0 +1,7 @@
+hay un archivo sshkey.private
+
+ssh bandit14@localhost -i sshkey.private
+
+cat /etc/bandit_pass/bandit14
+
+clave: fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
