@@ -40,6 +40,12 @@ Deseas Anotar algo?
 					self.txt.insert("end","CV abierto\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
+				elif (self.Chat.get()=="Arduino"):
+					os.system("cd /home/toti/Programas/arduino-1.8.19 && ./arduino &")
+					self.txt.config(state=NORMAL)
+					self.txt.insert("end","Arduino Abierto\n")
+					self.Chat.delete(0,999)
+					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Ver Listas"):
 					os.system("open /home/toti/Escritorio/Mio/JMM/Server/2Martes/Listas/ &")
 					self.txt.config(state=NORMAL)
