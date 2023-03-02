@@ -28,10 +28,28 @@ Deseas Anotar algo?
 					self.txt.insert("end","Servidor Iniciado\nIngresa a 10.20.83.113:1998")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
-				elif (self.Chat.get()=="Programa Bomberos"):
+				elif (self.Chat.get()=="Bomberos"):
 					os.system("open /home/toti/Escritorio/Mio/JMM/Server/6Sabado/GestionBomberos &")
 					self.txt.config(state=NORMAL)
 					self.txt.insert("end","Carpeta del Proyecto Bomberos Abierta\n")
+					self.Chat.delete(0,999)
+					self.txt.config(state=DISABLED)
+				elif (self.Chat.get()=="Abrir CV"):
+					os.system("open /home/toti/Escritorio/Mio/JMM/Server/1Lunes/CV/Mandaio_Julian.html &")
+					self.txt.config(state=NORMAL)
+					self.txt.insert("end","CV abierto\n")
+					self.Chat.delete(0,999)
+					self.txt.config(state=DISABLED)
+				elif (self.Chat.get()=="Ver Listas"):
+					os.system("open /home/toti/Escritorio/Mio/JMM/Server/2Martes/Listas/ &")
+					self.txt.config(state=NORMAL)
+					self.txt.insert("end","Listas Abiertas\n")
+					self.Chat.delete(0,999)
+					self.txt.config(state=DISABLED)
+				elif (self.Chat.get()=="Lectura"):
+					os.system("open /home/toti/Escritorio/Mio/JMM/Server/4Jueves/Lectura/Paginas.html &")
+					self.txt.config(state=NORMAL)
+					self.txt.insert("end","Listas Abiertas\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
 				elif (self.Chat.get()=="Apagar PC"):
@@ -86,7 +104,7 @@ Deseas Anotar algo?
 					self.txt.insert("end","Servidor Abierto\n")
 					self.Chat.delete(0,999)
 					self.txt.config(state=DISABLED)
-				elif (self.Chat.get()=="Abrir Terminal"):
+				elif (self.Chat.get()=="Terminal"):
 					os.system("exo-open --launch TerminalEmulator &")
 					self.txt.config(state=NORMAL)
 					self.txt.insert("end","Terminal Abierta\n")
@@ -120,7 +138,7 @@ Deseas Anotar algo?
 			else:
 				self.Chat.insert(0,"")
 		def Color(event):
-			if (self.Chat.get()=="Salir") or (self.Chat.get()=="Iniciar Servidor") or (self.Chat.get()=="Detener Servidor") or (self.Chat.get()=="Google") or (self.Chat.get()=="Programar") or (self.Chat.get()=="Apagar PC") or (self.Chat.get()=="Facebook") or (self.Chat.get()=="Abrir Servidor") or (self.Chat.get()=="Abrir Terminal") or (self.Chat.get()=="Try Hack Me") or (self.Chat.get()=="Free Code Camp") or (self.Chat.get()=="Ayuda") or (self.Chat.get()=="Mapa") or (self.Chat.get()=="Programa Bomberos"):
+			if (self.Chat.get()=="Salir") or (self.Chat.get()=="Iniciar Servidor") or (self.Chat.get()=="Detener Servidor") or (self.Chat.get()=="Google") or (self.Chat.get()=="Programar") or (self.Chat.get()=="Apagar PC") or (self.Chat.get()=="Facebook") or (self.Chat.get()=="Abrir Servidor") or (self.Chat.get()=="Terminal") or (self.Chat.get()=="Try Hack Me") or (self.Chat.get()=="Free Code Camp") or (self.Chat.get()=="Ayuda") or (self.Chat.get()=="Mapa") or (self.Chat.get()=="Bomberos") or (self.Chat.get()=="Abrir CV") or (self.Chat.get()=="Ver Listas") or (self.Chat.get()=="Lectura"):
 				self.Chat.config(fg="blue")
 			else:
 				self.Chat.config(fg="black")
