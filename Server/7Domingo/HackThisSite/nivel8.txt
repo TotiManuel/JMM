@@ -1,0 +1,6 @@
+agregar 
+
+<!--#exec cmd="ls ../"-->
+
+donde va el nombre y veo los resultados de las paginas 
+porque esta pagina una un script .shtml
