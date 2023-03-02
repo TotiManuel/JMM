@@ -1,0 +1,50 @@
+Aviso efectuado por: njknjk
+Telefono :78678678
+DNI :67868678
+Recepcionado por: 353-4138833
+Lugar de Siniestro: jkhkjhjk
+Entre Calles: yjghjgh
+En la Ciudad de: Cordoba
+Tipo de Siniestro: 
+INCENDIO
+ACCIDENTES
+RESCATE
+OTROS SERVICIOS
+FALSA ALARMA
+Vivienda
+Comercio
+Industria
+Vehiculo
+Campos
+Rollos
+Otros
+Urbano
+Rural
+Automovil
+Colectivo
+Moto
+Tren
+Animal
+Otros Accidentes
+Persona
+Animal
+Vivo
+Muerto
+Libre
+Atrapado
+Ahogado
+Prevencion
+Traslado
+Arbol Caido
+Cable Colgado
+Derrumbe
+Escape de Gas
+Mat-Pel
+Abejas/Avispas
+Derrame de Combustible
+Otros de Otros Servicios
+Magnitud: 1
+Hubo toque de alarma: Si
+General: Si
+Resumen del Siniestro: 
+juygyjgyjugh
