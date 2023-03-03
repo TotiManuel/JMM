@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=JMM
+Comment=
+Exec=python JMM.py
+Icon=gcr-gnupg
+Path=/home/toti/Escritorio/Mio/JMM
+Terminal=false
+StartupNotify=false
