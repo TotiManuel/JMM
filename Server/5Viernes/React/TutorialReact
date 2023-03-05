@@ -2,3 +2,9 @@ Proyectos de REACT
 
 comando: npx create-react-app *NombreApp*
 
+
+<div className=''></div>
+<p className=''></p>
+<img className=''
+src={require('')}
+alt='' />
