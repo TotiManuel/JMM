@@ -1,0 +1,16 @@
+<nav>
+    <a href="/">Home</a>
+    <a href="/pruebas">Pruebas</a>
+    
+{% if session.get('user') %}
+<a href="/tutoriales">Tutoriales</a>
+<a href="/organizacion">Organizacion</a>
+<a href="/recordatorios">Recordatorios</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/logout">Logout</a>
+{% else %}
+<a href="/login">Login</a>
+{% endif %}
+
+</nav>
+<hr>

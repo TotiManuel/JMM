@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>
+    {% if session.get('user') %}
+        Bienvenido {{ session.get('user') }}, 👋
+	<p class="subtitle">                                           Ya podes comenzar a trabajar!! 🚀
+	</p>
+    {% else %}
+        Bienvenido a {{ title }}
+	<p class="subtitle">                                           Si no sos el dueño de la pagina se te permite navegar, pero no intentes nada raro, Gracias!! 🚀
+    </p>
+    {% endif %}
+    </h1>
+
+    {% if session.get('user') %}
+        <a href="/dashboard" class="btn">Ir al Dashboard</a>
+    {% else %}
+        <a href="/login" class="btn">Iniciar sesión</a>
+    {% endif %}
+</section>
+
+<section class="features">
+    <div class="feature">
+        <h2>⚡ Personal</h2>
+        <p>Esta web es un proyecto personal hecho con flask.</p>
+    </div>
+
+    <div class="feature">
+        <h2>🧩 Replicable</h2>
+        <p>Si queres tener una web personal solo tenes que contar con un dominio y hosting propio.</p>
+    </div>
+
+    <div class="feature">
+        <h2>🔐 Auth</h2>
+        <p>Sistema de login.</p>
+    </div>
+</section>
+<section class="features">
+    <div class="feature">
+    <h2>📄 Múltiples páginas</h2>
+    <p>
+        Tu sitio puede crecer sin límites, agregando tantas páginas como necesites
+        y navegando fácilmente entre ellas.
+    </p>
+    </div>
+</section>
+
+<section class="next-steps">
+    <h2>Próximos pasos</h2>
+    <ul>
+	<li>Mejorar todas las paginas</li>
+        <li>Agregar base de datos</li>
+        <li>Crear usuarios reales</li>
+        <li>Proteger rutas con roles</li>
+    </ul>
+</section>
+
+{% endblock %}
