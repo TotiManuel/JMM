@@ -62,18 +62,35 @@ body {
 <div class="container">
 
 <div class="card" onclick="toggleCard(this)">
-    <h2>Cómo organizar tu día</h2>
-    <p>Aprendé a planificar tus tareas y mejorar tu productividad.</p>
+    <h2>Fase 0 (2-3 dias)</h2>
+    <p>Definir solo lo necesario.</p>
 
     <div class="tutorial-content">
+        <h3>Decidir:</h3>
+        <p>Nombre del sistema.</p>
+        <p>Nicho inicial (Ej: peluqueria).</p>
+        <p>Primeros Modulos (ventas, clientes, Whatsapp).</p>
+        <p>Modelo de precios.</p>
+        <p>Diferencia(modular, simple).</p>
+    </div>
+</div>
+
+<div class="card" onclick="toggleCard(this)">
+    <h2>Fase 1 (Semana 1)</h2>
+    <p>Base del sistema (core).</p>
+
+    <div class="tutorial-content">
+        <h3>Que programar:</h3>
+        <p>Sistema central que permitira crecer.</p>
+
         <h3>Paso 1</h3>
-        <p>Definí tus objetivos diarios.</p>
+        <p>Autentificacion multiempresa (Cada Negocio tiene su cuenta).</p>
+        <h4>Modelos:</h4>
+        <p>Empresa</p>
+        <p>Usuario</p>
 
         <h3>Paso 2</h3>
-        <p>Usá listas de tareas y prioridades.</p>
-
-        <h3>Paso 3</h3>
-        <p>Revisá tu progreso cada noche.</p>
+        <p>Roles Basicos.</p>
     </div>
 </div>
 
@@ -102,3 +119,249 @@ function toggleCard(card) {
 </script>
 
 {% endblock %}
+<!--
+
+
+⚙️ Fase 1 (Semana 1) → Base del sistema (core)
+
+Esto es lo más importante.
+
+🎯 Qué programar:
+
+Sistema central que permitirá crecer.
+
+1️⃣ Autenticación multiempresa
+
+Tu sistema debe soportar muchas empresas.
+
+Ejemplo:
+
+Cada negocio tiene su cuenta.
+
+Modelos:
+
+Empresa
+Usuario
+
+2️⃣ Roles básicos
+
+Admin.
+
+Empleado.
+
+3️⃣ Dashboard base
+
+No visual, solo funcional:
+
+Navegación.
+
+Sidebar.
+
+4️⃣ Estructura modular desde el inicio
+
+Esto evita reescribir todo después.
+
+app/
+ ├── core/
+ ├── modules/
+ ├── auth/
+ └── config/
+
+🔥 Resultado de esta fase:
+
+👉 Ya podés crear empresas y usuarios.
+
+🧩 Fase 2 (Semana 2) → Sistema de módulos
+
+Este es el corazón del SaaS.
+
+🎯 Objetivo:
+
+Activar o desactivar funciones.
+
+✔️ Programar:
+
+Activar módulos.
+
+Permisos.
+
+Middleware.
+
+Ejemplo:
+
+EmpresaModulo
+
+✔️ Panel:
+
+El negocio elige:
+
+Qué módulos usar.
+
+🔥 Resultado:
+
+Tu sistema ya es diferente al 90% del mercado.
+
+💰 Fase 3 (Semana 3) → Módulo ventas (primer dinero)
+
+Este es el primero porque:
+
+Todos lo necesitan.
+
+✔️ Funciones:
+
+Productos.
+
+Ventas.
+
+Historial.
+
+Deudas.
+
+No más.
+
+🔥 Importante:
+
+Diseño simple.
+
+🎯 Resultado:
+
+Ya podés vender.
+
+📊 Fase 4 (Semana 4) → WhatsApp y reportes
+
+Esto vende mucho.
+
+✔️ Programar:
+
+Recordatorios.
+
+Mensajes automáticos.
+
+Reportes básicos.
+
+🔥 Resultado:
+
+WOW factor.
+
+🚀 Fase 5 (Semana 5) → Referidos y descuentos
+
+Esto acelera el crecimiento.
+
+✔️ Sistema:
+
+Código de referido.
+
+Descuento automático.
+
+Panel para ver referidos.
+
+🎯 Resultado:
+
+Empieza el crecimiento viral.
+
+🌐 Fase 6 (Semana 6) → SaaS real
+
+Ahora:
+
+Multiempresa.
+
+Base de datos organizada.
+
+Subdominios.
+
+Ejemplo:
+
+negocio.tusistema.com
+
+📦 Fase 7 (Semana 7–8) → Nube
+
+Hosting.
+
+Ejemplos:
+
+Render.
+
+Railway.
+
+📈 Fase 8 (Mes 3) → Escala
+
+Ahora agregás:
+
+Turnero.
+
+Ecommerce.
+
+🧠 Organización del trabajo (clave)
+📌 Regla 1:
+
+No más de 2 módulos activos.
+
+📌 Regla 2:
+
+Cada semana:
+
+Programar.
+
+Mostrar a clientes.
+
+Recibir feedback.
+
+📌 Regla 3:
+
+Nunca trabajar sin validar.
+
+⚡ Cómo organizar tu tiempo semanal
+
+Ejemplo:
+
+👉 Lunes a jueves:
+
+Programación.
+
+👉 Viernes:
+
+Ventas.
+
+👉 Sábado:
+
+Feedback.
+
+👉 Domingo:
+
+Planificación.
+
+🔥 Prioridades reales
+
+Orden:
+
+Core.
+
+Módulos.
+
+Ventas.
+
+WhatsApp.
+
+Referidos.
+
+💡 Herramientas recomendadas
+Backend
+
+Flask.
+
+SQLite → luego PostgreSQL.
+
+Frontend
+
+Bootstrap.
+
+Infraestructura
+
+Docker (más adelante).
+
+🎯 Objetivo final (3–6 meses)
+
+👉 70–100 clientes.
+
+
+-->
