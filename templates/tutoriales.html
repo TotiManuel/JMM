@@ -1,6 +1,106 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Tutoriales</h1>
-<p>Página tutoriales funcionando.</p>
+
+<style>
+body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+/* TARJETAS */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card h2 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #666;
+}
+
+/* CONTENIDO OCULTO */
+.tutorial-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.card.active .tutorial-content {
+    max-height: 400px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .container {
+        margin: 40px 10px;
+    }
+}
+</style>
+
+<div class="container">
+
+```
+<div class="card" onclick="toggleCard(this)">
+    <h2>Cómo organizar tu día</h2>
+    <p>Aprendé a planificar tus tareas y mejorar tu productividad.</p>
+
+    <div class="tutorial-content">
+        <h3>Paso 1</h3>
+        <p>Definí tus objetivos diarios.</p>
+
+        <h3>Paso 2</h3>
+        <p>Usá listas de tareas y prioridades.</p>
+
+        <h3>Paso 3</h3>
+        <p>Revisá tu progreso cada noche.</p>
+    </div>
+</div>
+
+<div class="card" onclick="toggleCard(this)">
+    <h2>Cómo estudiar mejor</h2>
+    <p>Técnicas para aprender más rápido y recordar mejor.</p>
+
+    <div class="tutorial-content">
+        <h3>Tip 1</h3>
+        <p>Usá repetición espaciada.</p>
+
+        <h3>Tip 2</h3>
+        <p>Hacé resúmenes visuales.</p>
+
+        <h3>Tip 3</h3>
+        <p>Explicá lo que aprendés.</p>
+    </div>
+</div>
+```
+
+</div>
+
+<script>
+function toggleCard(card) {
+    card.classList.toggle("active");
+}
+</script>
+
 {% endblock %}
