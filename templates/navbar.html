@@ -1,15 +1,78 @@
+<style>
+nav {
+    width: 100%;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Contenedor de links */
+.nav-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+/* Links */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+/* Animación moderna */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive celular */
+@media (max-width: 600px) {
+    nav {
+        justify-content: center;
+        padding: 12px 10px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px;
+    }
+}
+</style>
+
 <nav>
-    <a href="/">Home</a>
-    
-{% if session.get('user') %}
-<a href="/tutoriales">Tutoriales</a>
-<a href="/organizacion">Organizacion</a>
-<a href="/recordatorios">Recordatorios</a>
-<a href="/dashboard">Dashboard</a>
-<a href="/logout">Logout</a>
-{% else %}
-<a href="/login">Login</a>
-{% endif %}
+    <div class="nav-links">
+        <a href="/">Home</a>
+
+```
+    {% if session.get('user') %}
+    <a href="/tutoriales">Tutoriales</a>
+    <a href="/organizacion">Organización</a>
+    <a href="/recordatorios">Recordatorios</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+    {% else %}
+    <a href="/login">Login</a>
+    {% endif %}
+</div>
+```
 
 </nav>
-<hr>

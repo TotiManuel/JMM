@@ -2,24 +2,97 @@
 
 {% block content %}
 
+<style>
+body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.hero {
+    max-width: 600px;
+    margin: 90px auto;
+    background: white;
+    padding: 40px 30px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    animation: fadeIn 0.8s ease;
+}
+
+.hero h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #2575fc;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #1b5edb;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        margin: 40px 15px;
+        padding: 30px 20px;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+    }
+}
+</style>
+
 <section class="hero">
     <h1>
     {% if session.get('user') %}
         Bienvenido {{ session.get('user') }}, 👋
-	<p class="subtitle">                                           Ya podes comenzar a trabajar!! 🚀
-	</p>
+        <p class="subtitle">
+            Ya podés comenzar a trabajar!! 🚀
+        </p>
     {% else %}
         Bienvenido al {{ title }}
-	<p class="subtitle">                                           Sé el mejor, Gracias!! 🚀
-    </p>
+        <p class="subtitle">
+            Sé el mejor, ¡gracias por estar acá! 🚀
+        </p>
     {% endif %}
     </h1>
 
-    {% if session.get('user') %}
-        <a href="/dashboard" class="btn">Ir al Dashboard</a>
-    {% else %}
-        <a href="/login" class="btn">Iniciar sesión</a>
-    {% endif %}
+```
+{% if session.get('user') %}
+    <a href="/dashboard" class="btn">Ir al Dashboard</a>
+{% else %}
+    <a href="/login" class="btn">Iniciar sesión</a>
+{% endif %}
+```
+
 </section>
 
 {% endblock %}
