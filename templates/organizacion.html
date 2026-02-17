@@ -86,17 +86,37 @@ body {
         <h3>Paso 1</h3>
         <p>Autentificacion multiempresa (Cada Negocio tiene su cuenta).</p>
         <h4>Modelos:</h4>
-        <li>Empresa</li>
+        <ul>Empresa</ul>
         <ul>Usuario</ul>
 
         <h3>Paso 2</h3>
         <p>Roles Basicos.</p>
+        <ul>Admin.</ul>
+        <ul>Empleado.</ul>
+
+        <h3>Paso 3</h3>
+        <p>No visual, solo funcional.</p>
+        <ul>Navegacion.</ul>
+        <ul>Sidebar.</ul>
+
+        <h3>Paso 4</h3>
+        <p>Estructura Modular desde el Inicio.</p>
+        <ul>app/
+            ├── core/
+            ├── modules/
+            ├── auth/
+            └── config/.</ul>
+        <h4>Resultado de esta fase:</h4>
+        <p>Ya podés crear empresas y usuarios.</p>
+
     </div>
 </div>
 
 <div class="card" onclick="toggleCard(this)">
-    <h2>Cómo estudiar mejor</h2>
-    <p>Técnicas para aprender más rápido y recordar mejor.</p>
+    <h2>Fase 2 (Semana 2)</h2>
+    <p>Sistema de modulos.</p>
+    <h4>Objetivo:</h4>
+    <p>Activar o desactivar funciones</p>
 
     <div class="tutorial-content">
         <h3>Tip 1</h3>
@@ -109,75 +129,6 @@ body {
         <p>Explicá lo que aprendés.</p>
     </div>
 </div>
-
-</div>
-
-<script>
-function toggleCard(card) {
-    card.classList.toggle("active");
-}
-</script>
-
-{% endblock %}
-<!--
-
-
-⚙️ Fase 1 (Semana 1) → Base del sistema (core)
-
-Esto es lo más importante.
-
-🎯 Qué programar:
-
-Sistema central que permitirá crecer.
-
-1️⃣ Autenticación multiempresa
-
-Tu sistema debe soportar muchas empresas.
-
-Ejemplo:
-
-Cada negocio tiene su cuenta.
-
-Modelos:
-
-Empresa
-Usuario
-
-2️⃣ Roles básicos
-
-Admin.
-
-Empleado.
-
-3️⃣ Dashboard base
-
-No visual, solo funcional:
-
-Navegación.
-
-Sidebar.
-
-4️⃣ Estructura modular desde el inicio
-
-Esto evita reescribir todo después.
-
-app/
- ├── core/
- ├── modules/
- ├── auth/
- └── config/
-
-🔥 Resultado de esta fase:
-
-👉 Ya podés crear empresas y usuarios.
-
-🧩 Fase 2 (Semana 2) → Sistema de módulos
-
-Este es el corazón del SaaS.
-
-🎯 Objetivo:
-
-Activar o desactivar funciones.
 
 ✔️ Programar:
 
@@ -200,6 +151,19 @@ Qué módulos usar.
 🔥 Resultado:
 
 Tu sistema ya es diferente al 90% del mercado.
+
+
+</div>
+
+<script>
+function toggleCard(card) {
+    card.classList.toggle("active");
+}
+</script>
+
+{% endblock %}
+<!--
+
 
 💰 Fase 3 (Semana 3) → Módulo ventas (primer dinero)
 
