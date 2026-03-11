@@ -184,15 +184,16 @@ name="contenido"
 id="contenidoBloque"
 rows="3"
 placeholder="Escribí el texto o pegá la URL"></textarea>
+
+</div>
+
 <div class="form-group">
 
 <label>Subir imagen</label>
 
-<input type="file" name="imagen">
+<input type="file" name="imagen" accept="image/*">
 
 </div>
-</div>
-
 <div class="preview" id="preview"></div>
 
 <button type="submit">Agregar bloque</button>
@@ -332,7 +333,22 @@ preview.innerHTML = `
 }
 
 })
+const tipoBloque = document.getElementById("tipoBloque")
+const inputImagen = document.querySelector('input[name="imagen"]')
 
+function actualizarInputImagen(){
+
+if(tipoBloque.value === "imagen"){
+inputImagen.parentElement.style.display = "block"
+}else{
+inputImagen.parentElement.style.display = "none"
+}
+
+}
+
+tipoBloque.addEventListener("change", actualizarInputImagen)
+
+actualizarInputImagen()
 </script>
 
 {% endblock %}
