@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ clase.titulo }}</h1>
+
+<p>{{ clase.descripcion }}</p>
+
+<hr>
+
+{% for b in bloques %}
+
+{% if b.tipo == "titulo" %}
+<h2>{{ b.contenido }}</h2>
+{% endif %}
+
+{% if b.tipo == "subtitulo" %}
+<h3>{{ b.contenido }}</h3>
+{% endif %}
+
+{% if b.tipo == "texto" %}
+<p>{{ b.contenido }}</p>
+{% endif %}
+
+{% if b.tipo == "imagen" %}
+<img src="{{ b.contenido }}" width="400">
+{% endif %}
+
+{% if b.tipo == "video" %}
+<iframe width="560" height="315"
+src="{{ b.contenido }}">
+</iframe>
+{% endif %}
+
+{% if b.tipo == "url" %}
+<a href="{{ b.contenido }}" target="_blank">
+{{ b.contenido }}
+</a>
+{% endif %}
+
+{% endfor %}
+
+{% endblock %}

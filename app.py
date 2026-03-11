@@ -37,10 +37,80 @@ def dashboard():
 def home():
     return render_template('home.html', title="Home")
 
-@app.route('/tutoriales')
+#region Enfermeria
+@app.route('/clases')
 @login_required
-def tutoriales():
-    return render_template('tutoriales.html', title="Tutoriales")
+def clases():
+
+    clases = Clase.query.order_by(Clase.fecha.desc()).all()
+
+    return render_template(
+        'clases.html',
+        clases=clases
+    )
+@app.route('/clases/nueva', methods=['GET','POST'])
+@login_required
+def nueva_clase():
+
+    if request.method == 'POST':
+
+        titulo = request.form['titulo']
+        descripcion = request.form['descripcion']
+
+        clase = Clase(
+            titulo=titulo,
+            descripcion=descripcion
+        )
+
+        db.session.add(clase)
+        db.session.commit()
+
+        return redirect(url_for('editar_clase', id=clase.id))
+
+    return render_template('nueva_clase.html')
+@app.route('/clases/<int:id>/editar', methods=['GET','POST'])
+@login_required
+def editar_clase(id):
+
+    clase = Clase.query.get_or_404(id)
+
+    if request.method == 'POST':
+
+        clase.titulo = request.form['titulo']
+        clase.descripcion = request.form['descripcion']
+
+        db.session.commit()
+
+    return render_template(
+        'editar_clase.html',
+        clase=clase
+    )
+@app.route('/clases/<int:id>')
+@login_required
+def ver_clase(id):
+
+    clase = Clase.query.get_or_404(id)
+
+    bloques = BloqueClase.query.filter_by(
+        clase_id=id
+    ).order_by(BloqueClase.orden).all()
+
+    return render_template(
+        'ver_clase.html',
+        clase=clase,
+        bloques=bloques
+    )
+@app.route('/clases/<int:id>/eliminar')
+@login_required
+def eliminar_clase(id):
+
+    clase = Clase.query.get_or_404(id)
+
+    db.session.delete(clase)
+    db.session.commit()
+
+    return redirect(url_for('clases'))
+#endregion
 
 @app.route('/organizacion')
 @login_required
