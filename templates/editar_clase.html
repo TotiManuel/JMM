@@ -151,8 +151,6 @@ rows="3"
 placeholder="Descripción breve de la clase...">{{ clase.descripcion }}</textarea>
 </div>
 
-<button type="submit">Guardar cambios</button>
-
 </form>
 
 
@@ -230,6 +228,12 @@ placeholder="Escribí el texto o pegá la URL"></textarea>
 <p>No hay bloques todavía.</p>
 
 {% endfor %}
+
+<hr>
+
+<button type="submit" form="formEditarClase">
+Guardar cambios
+</button>
 
 </div>
 
