@@ -1,15 +1,24 @@
+import uuid
+
 from flask import Flask, render_template, session, request, redirect, url_for
 from functools import wraps
 from extensions import db
 from models.models import BloqueClase, Clase
+import os
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'clave_secreta'
+UPLOAD_FOLDER = "static/uploads"
 
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+ALLOWED_EXTENSIONS = {"png","jpg","jpeg","gif","webp"}
 
+def archivo_permitido(filename):
+    return "." in filename and filename.rsplit(".",1)[1].lower() in ALLOWED_EXTENSIONS
 db.init_app(app)
 
 with app.app_context():
@@ -87,9 +96,24 @@ def nueva_clase():
 def agregar_bloque(id):
 
     tipo = request.form["tipo"]
-    contenido = request.form["contenido"]
+    contenido = request.form.get("contenido")
 
-    ultimo = BloqueClase.query.filter_by(clase_id=id).order_by(BloqueClase.orden.desc()).first()
+    archivo = request.files.get("imagen")
+
+    # si se sube imagen desde la PC
+    if archivo and archivo.filename != "":
+
+        nombre = str(uuid.uuid4()) + "_" + secure_filename(archivo.filename)
+
+        ruta = os.path.join(app.config["UPLOAD_FOLDER"], nombre)
+
+        archivo.save(ruta)
+
+        contenido = "/" + ruta
+
+
+    ultimo = BloqueClase.query.filter_by(clase_id=id)\
+        .order_by(BloqueClase.orden.desc()).first()
 
     orden = 1
     if ultimo:
@@ -106,6 +130,7 @@ def agregar_bloque(id):
     db.session.commit()
 
     return redirect(url_for("editar_clase", id=id))
+
 @app.route('/clases/<int:id>')
 @login_required
 def ver_clase(id):

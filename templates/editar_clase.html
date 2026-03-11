@@ -159,7 +159,7 @@ placeholder="Descripción breve de la clase...">{{ clase.descripcion }}</textare
 
 <h2>Agregar Bloque</h2>
 
-<form method="POST" action="/clases/{{ clase.id }}/bloque" id="formBloque">
+<form method="POST" action="/clases/{{ clase.id }}/bloque" enctype="multipart/form-data" id="formBloque">
 
 <div class="form-group">
 
@@ -184,7 +184,13 @@ name="contenido"
 id="contenidoBloque"
 rows="3"
 placeholder="Escribí el texto o pegá la URL"></textarea>
+<div class="form-group">
 
+<label>Subir imagen</label>
+
+<input type="file" name="imagen">
+
+</div>
 </div>
 
 <div class="preview" id="preview"></div>
