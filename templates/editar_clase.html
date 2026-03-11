@@ -1,143 +1,59 @@
 {% extends "base.html" %}
 
 {% block content %}
-<style>
-#editor{
-margin-top:30px;
-}
 
-.bloque{
-padding:15px;
-margin-bottom:15px;
-background:white;
-border-radius:8px;
-box-shadow:0 2px 6px rgba(0,0,0,0.08);
-}
+<h1>Editar Clase</h1>
 
-.bloque img{
-max-width:500px;
-margin-top:10px;
-}
+<form method="POST">
 
-.bloques-botones button{
-margin-right:10px;
-padding:8px 14px;
-border:none;
-border-radius:6px;
-background:#2563eb;
-color:white;
-cursor:pointer;
-}
+<label>Título</label><br>
+<input type="text" name="titulo" value="{{ clase.titulo }}" required>
 
-textarea{
-width:100%;
-padding:10px;
-border-radius:6px;
-border:1px solid #ddd;
-}
-</style>
-<h1>{{ clase.titulo }}</h1>
+<br><br>
 
-<p>{{ clase.descripcion }}</p>
+<label>Descripción</label><br>
+<textarea name="descripcion">{{ clase.descripcion }}</textarea>
+
+<br><br>
+
+<button type="submit">Guardar</button>
+
+</form>
 
 <hr>
 
-<div id="editor">
+<h2>Bloques</h2>
 
-{% for b in clase.bloques %}
+<form method="POST" action="/clases/{{ clase.id }}/bloque">
 
-<div class="bloque">
+<select name="tipo">
+<option value="texto">Texto</option>
+<option value="imagen">Imagen</option>
+<option value="video">Video</option>
+</select>
 
-{% if b.tipo == "titulo" %}
-<h2>{{ b.contenido }}</h2>
-{% endif %}
+<br><br>
 
-{% if b.tipo == "subtitulo" %}
-<h3>{{ b.contenido }}</h3>
-{% endif %}
+<textarea name="contenido"></textarea>
 
-{% if b.tipo == "texto" %}
-<p>{{ b.contenido }}</p>
-{% endif %}
+<br><br>
 
-{% if b.tipo == "imagen" %}
-<img src="{{ b.contenido }}">
-{% endif %}
+<button type="submit">Agregar bloque</button>
 
-{% if b.tipo == "video" %}
-<iframe src="{{ b.contenido }}"></iframe>
-{% endif %}
+</form>
 
-{% if b.tipo == "url" %}
-<a href="{{ b.contenido }}" target="_blank">{{ b.contenido }}</a>
-{% endif %}
+<hr>
+
+{% for bloque in bloques %}
+
+<div style="border:1px solid #ccc; padding:10px; margin-bottom:10px">
+
+<strong>{{ bloque.tipo }}</strong>
+
+<p>{{ bloque.contenido }}</p>
 
 </div>
 
 {% endfor %}
-
-</div>
-
-<hr>
-
-<h2>Agregar bloque</h2>
-
-<div class="bloques-botones">
-
-<button onclick="nuevoBloque('texto')">Texto</button>
-<button onclick="nuevoBloque('subtitulo')">Subtítulo</button>
-<button onclick="nuevoBloque('imagen')">Imagen</button>
-<button onclick="nuevoBloque('video')">Video</button>
-<button onclick="nuevoBloque('url')">Link</button>
-
-</div>
-
-<div id="nuevoBloque" style="display:none">
-
-<textarea id="contenido"></textarea>
-
-<br><br>
-
-<button onclick="guardarBloque()">Guardar bloque</button>
-
-</div>
-
-<script>
-
-let tipoBloque = ""
-
-function nuevoBloque(tipo){
-
-tipoBloque = tipo
-
-document.getElementById("nuevoBloque").style.display = "block"
-
-}
-
-function guardarBloque(){
-
-let contenido = document.getElementById("contenido").value
-
-fetch("/api/agregar_bloque/{{clase.id}}", {
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/x-www-form-urlencoded"
-},
-
-body:`tipo=${tipoBloque}&contenido=${contenido}`
-
-})
-.then(r=>r.json())
-.then(data=>{
-
-location.reload()
-
-})
-
-}
-
-</script>
 
 {% endblock %}

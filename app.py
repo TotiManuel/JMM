@@ -157,6 +157,28 @@ def api_agregar_bloque(clase_id):
     db.session.commit()
 
     return {"status": "ok"}
+@app.route('/clases/<int:id>/editar', methods=['GET','POST'])
+@login_required
+def editar_clase(id):
+
+    clase = Clase.query.get_or_404(id)
+
+    bloques = BloqueClase.query.filter_by(
+        clase_id=id
+    ).order_by(BloqueClase.orden).all()
+
+    if request.method == 'POST':
+
+        clase.titulo = request.form['titulo']
+        clase.descripcion = request.form['descripcion']
+
+        db.session.commit()
+
+    return render_template(
+        "editar_clase.html",
+        clase=clase,
+        bloques=bloques
+    )
 #endregion
 
 @app.route('/organizacion')
