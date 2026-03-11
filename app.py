@@ -1,8 +1,15 @@
 from flask import Flask, render_template, session, request, redirect, url_for
 from functools import wraps
+from extensions import db, login_manager, migrate
+from models.models import BloqueClase, Clase
 
 app = Flask(__name__)
-app.secret_key = "super-secret-key"
+app.config['SECRET_KEY'] = 'clave_secreta'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+
+db.init_app(app)
+login_manager.init_app(app)
+migrate.init_app(app, db)
 
 # ---------------- Auth helpers ----------------
 def login_required(f):
