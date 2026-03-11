@@ -2,58 +2,235 @@
 
 {% block content %}
 
+<style>
+
+.container-clase{
+max-width:900px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+h1{
+margin-bottom:20px;
+}
+
+.form-group{
+margin-bottom:18px;
+}
+
+label{
+font-weight:bold;
+display:block;
+margin-bottom:6px;
+}
+
+input, textarea, select{
+width:100%;
+padding:10px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:15px;
+}
+
+textarea{
+resize:vertical;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+}
+
+button:hover{
+background:#1e4fd1;
+}
+
+hr{
+margin:30px 0;
+}
+
+.bloque{
+border:1px solid #eee;
+border-radius:8px;
+padding:15px;
+margin-bottom:15px;
+background:#fafafa;
+}
+
+.bloque-tipo{
+font-size:13px;
+font-weight:bold;
+color:#2563eb;
+margin-bottom:6px;
+}
+
+.bloque img{
+max-width:100%;
+border-radius:6px;
+}
+
+.bloque iframe{
+width:100%;
+height:300px;
+border:none;
+border-radius:6px;
+}
+
+.preview{
+margin-top:10px;
+}
+
+</style>
+
+
+<div class="container-clase">
+
 <h1>Editar Clase</h1>
 
 <form method="POST">
 
-<label>Título</label><br>
+<div class="form-group">
+<label>Título</label>
 <input type="text" name="titulo" value="{{ clase.titulo }}" required>
+</div>
 
-<br><br>
+<div class="form-group">
+<label>Descripción</label>
+<textarea name="descripcion" rows="3">{{ clase.descripcion }}</textarea>
+</div>
 
-<label>Descripción</label><br>
-<textarea name="descripcion">{{ clase.descripcion }}</textarea>
-
-<br><br>
-
-<button type="submit">Guardar</button>
+<button type="submit">Guardar cambios</button>
 
 </form>
 
+
 <hr>
 
-<h2>Bloques</h2>
+<h2>Agregar Bloque</h2>
 
 <form method="POST" action="/clases/{{ clase.id }}/bloque">
 
-<select name="tipo">
+<div class="form-group">
+
+<label>Tipo de bloque</label>
+
+<select name="tipo" id="tipoBloque">
+
 <option value="texto">Texto</option>
-<option value="imagen">Imagen</option>
-<option value="video">Video</option>
+<option value="imagen">Imagen (URL)</option>
+<option value="video">Video YouTube</option>
+
 </select>
 
-<br><br>
+</div>
 
-<textarea name="contenido"></textarea>
+<div class="form-group">
 
-<br><br>
+<label>Contenido</label>
+
+<textarea name="contenido" id="contenidoBloque" rows="3"></textarea>
+
+</div>
+
+<div class="preview" id="preview"></div>
 
 <button type="submit">Agregar bloque</button>
 
 </form>
 
+
 <hr>
+
+<h2>Contenido de la Clase</h2>
 
 {% for bloque in bloques %}
 
-<div style="border:1px solid #ccc; padding:10px; margin-bottom:10px">
+<div class="bloque">
 
-<strong>{{ bloque.tipo }}</strong>
+<div class="bloque-tipo">
+{{ bloque.tipo }}
+</div>
+
+{% if bloque.tipo == "texto" %}
 
 <p>{{ bloque.contenido }}</p>
+
+{% elif bloque.tipo == "imagen" %}
+
+<img src="{{ bloque.contenido }}">
+
+{% elif bloque.tipo == "video" %}
+
+<iframe src="https://www.youtube.com/embed/{{ bloque.contenido }}"></iframe>
+
+{% endif %}
 
 </div>
 
 {% endfor %}
+
+</div>
+
+
+<script>
+
+const tipo = document.getElementById("tipoBloque")
+const contenido = document.getElementById("contenidoBloque")
+const preview = document.getElementById("preview")
+
+contenido.addEventListener("input", actualizarPreview)
+tipo.addEventListener("change", actualizarPreview)
+
+function actualizarPreview(){
+
+let t = tipo.value
+let c = contenido.value
+
+preview.innerHTML = ""
+
+if(t === "imagen" && c){
+
+preview.innerHTML = `
+<h4>Preview</h4>
+<img src="${c}" style="max-width:100%; border-radius:6px;">
+`
+
+}
+
+if(t === "video" && c){
+
+preview.innerHTML = `
+<h4>Preview</h4>
+<iframe
+width="100%"
+height="300"
+src="https://www.youtube.com/embed/${c}"
+frameborder="0"
+allowfullscreen>
+</iframe>
+`
+
+}
+
+if(t === "texto" && c){
+
+preview.innerHTML = `
+<h4>Preview</h4>
+<p>${c}</p>
+`
+
+}
+
+}
+
+</script>
 
 {% endblock %}
