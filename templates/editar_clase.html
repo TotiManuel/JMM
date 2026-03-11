@@ -203,23 +203,20 @@ placeholder="Escribí el texto o pegá la URL"></textarea>
 
 <div class="bloque">
 
+<div style="display:flex; justify-content:space-between; align-items:center;">
+
 <div class="bloque-tipo">
 {{ bloque.tipo }}
 </div>
 
-{% if bloque.tipo == "texto" %}
+<form method="POST" action="/bloque/{{ bloque.id }}/eliminar"
+onsubmit="return confirm('¿Eliminar este bloque?')">
 
-<p>{{ bloque.contenido }}</p>
+<button style="background:#ef4444; padding:6px 12px; font-size:12px;">
+🗑
+</button>
 
-{% elif bloque.tipo == "imagen" %}
-
-<img src="{{ bloque.contenido }}" loading="lazy">
-
-{% elif bloque.tipo == "video" %}
-
-<iframe src="https://www.youtube.com/embed/{{ bloque.contenido }}"></iframe>
-
-{% endif %}
+</form>
 
 </div>
 
