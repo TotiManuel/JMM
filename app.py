@@ -1,6 +1,6 @@
 from flask import Flask, render_template, session, request, redirect, url_for
 from functools import wraps
-from extensions import db, login_manager, migrate
+from extensions import db
 from models.models import BloqueClase, Clase
 
 app = Flask(__name__)
@@ -11,8 +11,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
-login_manager.init_app(app)
-migrate.init_app(app, db)
 
 with app.app_context():
     db.create_all()
@@ -21,9 +19,12 @@ with app.app_context():
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if not session.get("user"):
+
+        if "user" not in session:
             return redirect(url_for("login"))
+
         return f(*args, **kwargs)
+
     return decorated_function
 
 # ---------------- Auth routes ----------------
