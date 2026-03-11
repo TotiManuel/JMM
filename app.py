@@ -11,6 +11,9 @@ db.init_app(app)
 login_manager.init_app(app)
 migrate.init_app(app, db)
 
+with app.app_context():
+    db.create_all()
+
 # ---------------- Auth helpers ----------------
 def login_required(f):
     @wraps(f)
@@ -24,7 +27,7 @@ def login_required(f):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        if request.form['username'] == 'Julian' and request.form['password'] == 'admin':
+        if request.form.get('username') == 'Julian' and request.form.get('password') == 'admin':
             session['user'] = 'Julian'
             return redirect(url_for('dashboard'))
     return render_template('login.html', title="Login")
