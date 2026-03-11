@@ -145,34 +145,31 @@ onclick="abrirClase({{ clase.id }})">
 <script>
 
 function abrirClase(id){
-
-window.open("/clases/" + id, "_blank")
-
+    window.open("/clases/" + id, "_blank")
 }
-
 
 const buscador = document.getElementById("buscarClase")
 const tarjetas = document.querySelectorAll(".card-clase")
 
 buscador.addEventListener("input", function(){
 
-let texto = buscador.value.toLowerCase()
+    let texto = buscador.value.toLowerCase().trim()
 
-tarjetas.forEach(card => {
+    let palabras = texto.split(" ").filter(p => p.length > 0)
 
-let titulo = card.dataset.titulo
+    tarjetas.forEach(card => {
 
-if(titulo.includes(texto)){
+        let titulo = card.dataset.titulo.toLowerCase()
 
-card.style.display = "block"
+        let coincide = palabras.every(p => titulo.includes(p))
 
-}else{
+        if(coincide){
+            card.style.display = "block"
+        }else{
+            card.style.display = "none"
+        }
 
-card.style.display = "none"
-
-}
-
-})
+    })
 
 })
 
