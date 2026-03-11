@@ -2,13 +2,160 @@
 
 {% block content %}
 
+<style>
+
+.clase-container{
+max-width:900px;
+margin:40px auto;
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.header-clase{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:20px;
+}
+
+.btn{
+padding:10px 16px;
+border-radius:6px;
+text-decoration:none;
+font-size:14px;
+cursor:pointer;
+}
+
+.btn-editar{
+background:#2563eb;
+color:white;
+}
+
+.btn-editar:hover{
+background:#1e4fd1;
+}
+
+.btn-volver{
+background:#eee;
+color:#333;
+}
+
+.btn-volver:hover{
+background:#ddd;
+}
+
+.descripcion{
+color:#555;
+margin-bottom:25px;
+}
+
+.bloque{
+background:#fafafa;
+border-radius:10px;
+padding:18px;
+margin-bottom:18px;
+border:1px solid #eee;
+animation:fadeIn 0.3s ease;
+}
+
+.bloque h2{
+color:#2563eb;
+margin-bottom:10px;
+}
+
+.bloque h3{
+color:#444;
+margin-bottom:8px;
+}
+
+.bloque p{
+line-height:1.6;
+color:#333;
+}
+
+.bloque img{
+max-width:100%;
+border-radius:8px;
+margin-top:10px;
+}
+
+.video-container{
+position:relative;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+border-radius:8px;
+}
+
+.video-container iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+
+.link-bloque{
+color:#2563eb;
+text-decoration:none;
+font-weight:bold;
+}
+
+.link-bloque:hover{
+text-decoration:underline;
+}
+
+.sin-bloques{
+text-align:center;
+color:#777;
+margin-top:30px;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(5px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
+
+<div class="clase-container">
+
+<div class="header-clase">
+
 <h1>{{ clase.titulo }}</h1>
 
-<p>{{ clase.descripcion }}</p>
+<div>
+
+<a href="{{ url_for('clases') }}" class="btn btn-volver">
+⬅ Volver
+</a>
+
+<a href="{{ url_for('editar_clase', id=clase.id) }}" class="btn btn-editar">
+✏ Editar Clase
+</a>
+
+</div>
+
+</div>
+
+<p class="descripcion">{{ clase.descripcion }}</p>
 
 <hr>
 
 {% for b in bloques %}
+
+<div class="bloque">
 
 {% if b.tipo == "titulo" %}
 <h2>{{ b.contenido }}</h2>
@@ -23,21 +170,71 @@
 {% endif %}
 
 {% if b.tipo == "imagen" %}
-<img src="{{ b.contenido }}" width="400">
+<img src="{{ b.contenido }}">
 {% endif %}
 
 {% if b.tipo == "video" %}
-<iframe width="560" height="315"
-src="{{ b.contenido }}">
-</iframe>
+<div class="video-container">
+<iframe src="{{ b.contenido }}" frameborder="0" allowfullscreen></iframe>
+</div>
 {% endif %}
 
 {% if b.tipo == "url" %}
-<a href="{{ b.contenido }}" target="_blank">
-{{ b.contenido }}
+<a href="{{ b.contenido }}" target="_blank" class="link-bloque">
+🔗 {{ b.contenido }}
 </a>
 {% endif %}
 
+</div>
+
 {% endfor %}
+
+{% if bloques|length == 0 %}
+
+<div class="sin-bloques">
+<p>No hay contenido en esta clase todavía.</p>
+</div>
+
+{% endif %}
+
+</div>
+
+
+<script>
+
+document.querySelectorAll("img").forEach(img => {
+
+img.addEventListener("click", () => {
+
+let modal = document.createElement("div")
+
+modal.style.position = "fixed"
+modal.style.top = 0
+modal.style.left = 0
+modal.style.width = "100%"
+modal.style.height = "100%"
+modal.style.background = "rgba(0,0,0,0.8)"
+modal.style.display = "flex"
+modal.style.alignItems = "center"
+modal.style.justifyContent = "center"
+modal.style.cursor = "zoom-out"
+
+let imgGrande = document.createElement("img")
+imgGrande.src = img.src
+imgGrande.style.maxWidth = "90%"
+imgGrande.style.maxHeight = "90%"
+imgGrande.style.borderRadius = "10px"
+
+modal.appendChild(imgGrande)
+
+modal.onclick = () => modal.remove()
+
+document.body.appendChild(modal)
+
+})
+
+})
+
+</script>
 
 {% endblock %}
