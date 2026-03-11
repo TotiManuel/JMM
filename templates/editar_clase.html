@@ -1,31 +1,143 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+#editor{
+margin-top:30px;
+}
 
-<h1>Editar Clase</h1>
+.bloque{
+padding:15px;
+margin-bottom:15px;
+background:white;
+border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
 
-<form method="POST">
+.bloque img{
+max-width:500px;
+margin-top:10px;
+}
 
-<label>Título</label>
-<br>
-<input type="text" name="titulo" value="{{ clase.titulo }}" required>
+.bloques-botones button{
+margin-right:10px;
+padding:8px 14px;
+border:none;
+border-radius:6px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+}
+
+textarea{
+width:100%;
+padding:10px;
+border-radius:6px;
+border:1px solid #ddd;
+}
+</style>
+<h1>{{ clase.titulo }}</h1>
+
+<p>{{ clase.descripcion }}</p>
+
+<hr>
+
+<div id="editor">
+
+{% for b in clase.bloques %}
+
+<div class="bloque">
+
+{% if b.tipo == "titulo" %}
+<h2>{{ b.contenido }}</h2>
+{% endif %}
+
+{% if b.tipo == "subtitulo" %}
+<h3>{{ b.contenido }}</h3>
+{% endif %}
+
+{% if b.tipo == "texto" %}
+<p>{{ b.contenido }}</p>
+{% endif %}
+
+{% if b.tipo == "imagen" %}
+<img src="{{ b.contenido }}">
+{% endif %}
+
+{% if b.tipo == "video" %}
+<iframe src="{{ b.contenido }}"></iframe>
+{% endif %}
+
+{% if b.tipo == "url" %}
+<a href="{{ b.contenido }}" target="_blank">{{ b.contenido }}</a>
+{% endif %}
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<hr>
+
+<h2>Agregar bloque</h2>
+
+<div class="bloques-botones">
+
+<button onclick="nuevoBloque('texto')">Texto</button>
+<button onclick="nuevoBloque('subtitulo')">Subtítulo</button>
+<button onclick="nuevoBloque('imagen')">Imagen</button>
+<button onclick="nuevoBloque('video')">Video</button>
+<button onclick="nuevoBloque('url')">Link</button>
+
+</div>
+
+<div id="nuevoBloque" style="display:none">
+
+<textarea id="contenido"></textarea>
+
 <br><br>
 
-<label>Descripción</label>
-<br>
-<textarea name="descripcion" rows="4">{{ clase.descripcion }}</textarea>
-<br><br>
+<button onclick="guardarBloque()">Guardar bloque</button>
 
-<button type="submit">Guardar cambios</button>
+</div>
 
-<a href="{{ url_for('ver_clase', id=clase.id) }}">
-<button type="button">Ver clase</button>
-</a>
+<script>
 
-<a href="{{ url_for('eliminar_clase', id=clase.id) }}">
-<button type="button">Eliminar</button>
-</a>
+let tipoBloque = ""
 
-</form>
+function nuevoBloque(tipo){
+
+tipoBloque = tipo
+
+document.getElementById("nuevoBloque").style.display = "block"
+
+}
+
+function guardarBloque(){
+
+let contenido = document.getElementById("contenido").value
+
+fetch("/api/agregar_bloque/{{clase.id}}", {
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/x-www-form-urlencoded"
+},
+
+body:`tipo=${tipoBloque}&contenido=${contenido}`
+
+})
+.then(r=>r.json())
+.then(data=>{
+
+location.reload()
+
+})
+
+}
+
+</script>
 
 {% endblock %}

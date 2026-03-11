@@ -82,23 +82,30 @@ def nueva_clase():
         return redirect(url_for('editar_clase', id=clase.id))
 
     return render_template('nueva_clase.html')
-@app.route('/clases/<int:id>/editar', methods=['GET','POST'])
+@app.route("/clases/<int:id>/bloque", methods=["POST"])
 @login_required
-def editar_clase(id):
+def agregar_bloque(id):
 
-    clase = Clase.query.get_or_404(id)
+    tipo = request.form["tipo"]
+    contenido = request.form["contenido"]
 
-    if request.method == 'POST':
+    ultimo = BloqueClase.query.filter_by(clase_id=id).order_by(BloqueClase.orden.desc()).first()
 
-        clase.titulo = request.form['titulo']
-        clase.descripcion = request.form['descripcion']
+    orden = 1
+    if ultimo:
+        orden = ultimo.orden + 1
 
-        db.session.commit()
-
-    return render_template(
-        'editar_clase.html',
-        clase=clase
+    bloque = BloqueClase(
+        clase_id=id,
+        tipo=tipo,
+        contenido=contenido,
+        orden=orden
     )
+
+    db.session.add(bloque)
+    db.session.commit()
+
+    return redirect(url_for("editar_clase", id=id))
 @app.route('/clases/<int:id>')
 @login_required
 def ver_clase(id):
@@ -124,6 +131,32 @@ def eliminar_clase(id):
     db.session.commit()
 
     return redirect(url_for('clases'))
+@app.route("/api/agregar_bloque/<int:clase_id>", methods=["POST"])
+@login_required
+def api_agregar_bloque(clase_id):
+
+    tipo = request.form["tipo"]
+    contenido = request.form["contenido"]
+
+    ultimo = BloqueClase.query.filter_by(
+        clase_id=clase_id
+    ).order_by(BloqueClase.orden.desc()).first()
+
+    orden = 1
+    if ultimo:
+        orden = ultimo.orden + 1
+
+    bloque = BloqueClase(
+        clase_id=clase_id,
+        tipo=tipo,
+        contenido=contenido,
+        orden=orden
+    )
+
+    db.session.add(bloque)
+    db.session.commit()
+
+    return {"status": "ok"}
 #endregion
 
 @app.route('/organizacion')
