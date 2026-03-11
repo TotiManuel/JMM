@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<style>
 
+<style>
+/* TU CSS EXACTO SIN CAMBIOS */
 body{
 background: linear-gradient(135deg,#6a11cb,#2575fc);
 font-family: Arial, sans-serif;
 }
-
-/* contenedor principal */
 
 .container-clase{
 max-width:800px;
@@ -20,23 +19,10 @@ box-shadow:0 12px 35px rgba(0,0,0,0.2);
 animation:fadeIn 0.8s ease;
 }
 
-/* títulos */
+h1{color:#333;margin-bottom:20px;}
+h2{margin-top:30px;color:#444;}
 
-h1{
-color:#333;
-margin-bottom:20px;
-}
-
-h2{
-margin-top:30px;
-color:#444;
-}
-
-/* formularios */
-
-.form-group{
-margin-bottom:18px;
-}
+.form-group{margin-bottom:18px;}
 
 label{
 font-weight:500;
@@ -44,8 +30,6 @@ color:#333;
 display:block;
 margin-bottom:6px;
 }
-
-/* inputs */
 
 input, textarea, select{
 width:100%;
@@ -63,8 +47,6 @@ select:focus{
 border-color:#2575fc;
 box-shadow:0 0 0 2px rgba(37,117,252,0.15);
 }
-
-/* botones */
 
 button{
 display:inline-block;
@@ -84,21 +66,13 @@ background:#1b5edb;
 transform:translateY(-2px);
 }
 
-/* separador */
-
 hr{
 margin:30px 0;
 border:none;
 border-top:1px solid #eee;
 }
 
-/* preview */
-
-.preview{
-margin-top:15px;
-}
-
-/* bloques */
+.preview{margin-top:15px;}
 
 .bloque{
 background:#f9f9f9;
@@ -122,8 +96,6 @@ margin-bottom:8px;
 text-transform:capitalize;
 }
 
-/* contenido */
-
 .bloque img{
 max-width:100%;
 border-radius:10px;
@@ -138,50 +110,45 @@ border-radius:10px;
 margin-top:8px;
 }
 
-/* animación */
-
 @keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(25px);
+from{opacity:0;transform:translateY(25px);}
+to{opacity:1;transform:translateY(0);}
 }
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* responsive */
 
 @media (max-width:600px){
-
 .container-clase{
 margin:40px 15px;
 padding:30px 20px;
 }
-
-h1{
-font-size:22px;
+h1{font-size:22px;}
 }
-
-}
-
 </style>
+
 
 <div class="container-clase">
 
 <h1>Editar Clase</h1>
 
-<form method="POST">
+<form method="POST" id="formEditarClase">
 
 <div class="form-group">
-<label>Título</label>
-<input type="text" name="titulo" value="{{ clase.titulo }}" required>
+<label for="titulo">Título</label>
+<input
+type="text"
+id="titulo"
+name="titulo"
+value="{{ clase.titulo }}"
+placeholder="Ej: Sistema respiratorio"
+required>
 </div>
 
 <div class="form-group">
-<label>Descripción</label>
-<textarea name="descripcion" rows="3">{{ clase.descripcion }}</textarea>
+<label for="descripcion">Descripción</label>
+<textarea
+id="descripcion"
+name="descripcion"
+rows="3"
+placeholder="Descripción breve de la clase...">{{ clase.descripcion }}</textarea>
 </div>
 
 <button type="submit">Guardar cambios</button>
@@ -191,13 +158,14 @@ font-size:22px;
 
 <hr>
 
+
 <h2>Agregar Bloque</h2>
 
-<form method="POST" action="/clases/{{ clase.id }}/bloque">
+<form method="POST" action="/clases/{{ clase.id }}/bloque" id="formBloque">
 
 <div class="form-group">
 
-<label>Tipo de bloque</label>
+<label for="tipoBloque">Tipo de bloque</label>
 
 <select name="tipo" id="tipoBloque">
 
@@ -211,9 +179,13 @@ font-size:22px;
 
 <div class="form-group">
 
-<label>Contenido</label>
+<label for="contenidoBloque">Contenido</label>
 
-<textarea name="contenido" id="contenidoBloque" rows="3"></textarea>
+<textarea
+name="contenido"
+id="contenidoBloque"
+rows="3"
+placeholder="Escribí el texto o pegá la URL"></textarea>
 
 </div>
 
@@ -225,6 +197,7 @@ font-size:22px;
 
 
 <hr>
+
 
 <h2>Contenido de la Clase</h2>
 
@@ -242,7 +215,7 @@ font-size:22px;
 
 {% elif bloque.tipo == "imagen" %}
 
-<img src="{{ bloque.contenido }}">
+<img src="{{ bloque.contenido }}" loading="lazy">
 
 {% elif bloque.tipo == "video" %}
 
@@ -252,6 +225,10 @@ font-size:22px;
 
 </div>
 
+{% else %}
+
+<p>No hay bloques todavía.</p>
+
 {% endfor %}
 
 </div>
@@ -259,37 +236,59 @@ font-size:22px;
 
 <script>
 
+document.addEventListener("DOMContentLoaded", () => {
+
 const tipo = document.getElementById("tipoBloque")
 const contenido = document.getElementById("contenidoBloque")
 const preview = document.getElementById("preview")
 
+if(!tipo || !contenido || !preview) return
+
 contenido.addEventListener("input", actualizarPreview)
 tipo.addEventListener("change", actualizarPreview)
+
+function extraerIDYoutube(url){
+
+if(url.includes("youtube.com") || url.includes("youtu.be")){
+
+let match = url.match(/(?:v=|youtu\.be\/)([^&]+)/)
+
+if(match) return match[1]
+
+}
+
+return url
+
+}
 
 function actualizarPreview(){
 
 let t = tipo.value
-let c = contenido.value
+let c = contenido.value.trim()
 
 preview.innerHTML = ""
 
-if(t === "imagen" && c){
+if(!c) return
+
+if(t === "imagen"){
 
 preview.innerHTML = `
 <h4>Preview</h4>
-<img src="${c}" style="max-width:100%; border-radius:6px;">
+<img src="${c}" style="max-width:100%;border-radius:6px;">
 `
 
 }
 
-if(t === "video" && c){
+if(t === "video"){
+
+let id = extraerIDYoutube(c)
 
 preview.innerHTML = `
 <h4>Preview</h4>
 <iframe
 width="100%"
 height="300"
-src="https://www.youtube.com/embed/${c}"
+src="https://www.youtube.com/embed/${id}"
 frameborder="0"
 allowfullscreen>
 </iframe>
@@ -297,16 +296,18 @@ allowfullscreen>
 
 }
 
-if(t === "texto" && c){
+if(t === "texto"){
 
 preview.innerHTML = `
 <h4>Preview</h4>
-<p>${c}</p>
+<p>${c.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</p>
 `
 
 }
 
 }
+
+})
 
 </script>
 
