@@ -220,6 +220,23 @@ onsubmit="return confirm('¿Eliminar este bloque?')">
 
 </div>
 
+
+{% if bloque.tipo == "texto" %}
+
+<p>{{ bloque.contenido }}</p>
+
+{% elif bloque.tipo == "imagen" %}
+
+<img src="{{ bloque.contenido }}" loading="lazy">
+
+{% elif bloque.tipo == "video" %}
+
+<iframe src="https://www.youtube.com/embed/{{ bloque.contenido }}"></iframe>
+
+{% endif %}
+
+</div>
+
 {% else %}
 
 <p>No hay bloques todavía.</p>
