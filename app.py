@@ -179,6 +179,17 @@ def editar_clase(id):
         clase=clase,
         bloques=bloques
     )
+@app.route("/bloque/<int:id>/eliminar", methods=["POST"])
+def eliminar_bloque(id):
+
+    bloque = BloqueClase.query.get_or_404(id)
+
+    clase_id = bloque.clase_id
+
+    db.session.delete(bloque)
+    db.session.commit()
+
+    return redirect(url_for("editar_clase", id=clase_id))
 #endregion
 
 @app.route('/organizacion')
