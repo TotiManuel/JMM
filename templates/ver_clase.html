@@ -211,6 +211,17 @@ font-size:22px;
 ⬅ Volver
 </a>
 
+<form method="POST"
+      action="{{ url_for('eliminar_clase', id=clase.id) }}"
+      style="display:inline;"
+      onsubmit="return confirm('¿Eliminar esta clase? Esta acción no se puede deshacer.')">
+
+<button class="btn" style="background:#ef4444;color:white;">
+🗑 Eliminar
+</button>
+
+</form>
+
 <a href="{{ url_for('editar_clase', id=clase.id) }}" class="btn btn-editar">
 ✏ Editar Clase
 </a>

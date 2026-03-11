@@ -121,8 +121,7 @@ def ver_clase(id):
         clase=clase,
         bloques=bloques
     )
-@app.route('/clases/<int:id>/eliminar')
-@login_required
+@app.route("/clase/<int:id>/eliminar", methods=["POST"])
 def eliminar_clase(id):
 
     clase = Clase.query.get_or_404(id)
@@ -130,7 +129,7 @@ def eliminar_clase(id):
     db.session.delete(clase)
     db.session.commit()
 
-    return redirect(url_for('clases'))
+    return redirect(url_for("clases"))
 @app.route("/api/agregar_bloque/<int:clase_id>", methods=["POST"])
 @login_required
 def api_agregar_bloque(clase_id):
