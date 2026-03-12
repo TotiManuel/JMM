@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from flask_login import login_required
+from utils.auth import login_required
 from models.models import Modulo
 from models.models import Nota
 from models.models import Archivo
