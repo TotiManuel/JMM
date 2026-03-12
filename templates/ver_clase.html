@@ -207,12 +207,12 @@ font-size:22px;
 
 <div>
 
-<a href="{{ url_for('clases') }}" class="btn btn-volver">
+<a href="{{ url_for('clases.lista_clases') }}" class="btn btn-volver">
 ⬅ Volver
 </a>
 
 <form method="POST"
-      action="{{ url_for('eliminar_clase', id=clase.id) }}"
+      action="{{ url_for('clases.eliminar_clase', id=clase.id) }}"
       style="display:inline;"
       onsubmit="return confirm('¿Eliminar esta clase? Esta acción no se puede deshacer.')">
 
@@ -222,7 +222,7 @@ font-size:22px;
 
 </form>
 
-<a href="{{ url_for('editar_clase', id=clase.id) }}" class="btn btn-editar">
+<a href="{{ url_for('clases.editar_clase', id=clase.id) }}" class="btn btn-editar">
 ✏ Editar Clase
 </a>
 
