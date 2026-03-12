@@ -10,11 +10,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'clave_secreta'
-UPLOAD_FOLDER = "/tmp"
-
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 ALLOWED_EXTENSIONS = {"png","jpg","jpeg","gif","webp"}
 
