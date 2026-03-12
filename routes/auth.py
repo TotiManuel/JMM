@@ -11,7 +11,7 @@ def login():
         if request.form.get('username') == 'Julian' and request.form.get('password') == 'admin':
             session['user'] = 'Julian'
 
-            return redirect(url_for('auth.dashboard'))
+            return redirect(url_for('main.home'))
 
     return render_template('login.html', title="Login")
 
