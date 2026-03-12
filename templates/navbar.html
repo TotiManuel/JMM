@@ -62,7 +62,7 @@ nav a:hover::after {
     <div class="nav-links">
         <a href="{{ url_for('main.home') }}">Home</a>
         {% if session.get('user') %}
-            <a href="{{ url_for('clases.clases') }}">Enfermería</a>
+            <a href="{{ url_for('clases.lista_clases') }}">Enfermería</a>
             <a href="{{ url_for('main.organizacion') }}">Organización</a>
             <a href="{{ url_for('main.recordatorios') }}">Recordatorios</a>
             <a href="{{ url_for('auth.dashboard') }}">Dashboard</a>
