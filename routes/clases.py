@@ -8,16 +8,19 @@ from werkzeug.utils import secure_filename
 
 clases = Blueprint("clases", __name__)
 #region Enfermeria
-@clases.route('/clases')
+# routes/clases.py
+@clases.route('/')
 @login_required
 def lista_clases():
-
     clases = Clase.query.order_by(Clase.fecha.desc()).all()
+    return render_template('clases.html', clases=clases)
 
-    return render_template(
-        'clases.html',
-        clases=clases
-    )
+@clases.route('/<int:id>')
+@login_required
+def ver_clase(id):
+    clase = Clase.query.get_or_404(id)
+    bloques = BloqueClase.query.filter_by(clase_id=id).order_by(BloqueClase.orden).all()
+    return render_template('ver_clase.html', clase=clase, bloques=bloques)
 @clases.route('/clases/nueva', methods=['GET','POST'])
 @login_required
 def nueva_clase():
@@ -77,21 +80,6 @@ def agregar_bloque(id):
     db.session.commit()
 
     return redirect(url_for("clases.editar_clase", id=id))
-@clases.route('/clases/<int:id>')
-@login_required
-def ver_clase(id):
-
-    clase = Clase.query.get_or_404(id)
-
-    bloques = BloqueClase.query.filter_by(
-        clase_id=id
-    ).order_by(BloqueClase.orden).all()
-
-    return render_template(
-        'ver_clase.html',
-        clase=clase,
-        bloques=bloques
-    )
 @clases.route("/clase/<int:id>/eliminar", methods=["POST"])
 @login_required
 def eliminar_clase(id):
