@@ -89,7 +89,7 @@ def eliminar_clase(id):
     db.session.delete(clase)
     db.session.commit()
 
-    return redirect(url_for("clases.clases"))
+    return redirect(url_for("clases.lista_clases"))
 @clases.route("/api/agregar_bloque/<int:clase_id>", methods=["POST"])
 @login_required
 def api_agregar_bloque(clase_id):
