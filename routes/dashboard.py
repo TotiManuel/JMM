@@ -6,7 +6,7 @@ from models.models import Modulo
 dashboard = Blueprint("dashboard", __name__)
 
 
-@dashboard.route("/dashboard")
+@dashboard.route("/")
 @login_required
 def dashboard_view():
 
@@ -18,7 +18,7 @@ def dashboard_view():
     )
 
 
-@dashboard.route("/dashboard/crear_modulo", methods=["POST"])
+@dashboard.route("/crear_modulo", methods=["POST"])
 @login_required
 def crear_modulo():
 

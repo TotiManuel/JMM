@@ -114,7 +114,7 @@ button:hover{
 <div class="container-dashboard">
 <h2>Crear módulo</h2>
 
-<form method="POST" action="/dashboard/crear_modulo">
+<form method="POST" action="{{ url_for('dashboard.crear_modulo') }}">
 
     <input type="text" name="nombre" placeholder="Nombre del módulo" required>
 

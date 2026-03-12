@@ -5,6 +5,7 @@ from extensions import db
 from routes.auth import auth
 from routes.clases import clases
 from routes.main import main
+from routes.dashboard import dashboard
 from models.models import Modulo
 
 app = Flask(__name__)
@@ -23,6 +24,7 @@ db.init_app(app)
 app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(clases, url_prefix="/clases")
 app.register_blueprint(main)
+app.register_blueprint(dashboard, url_prefix="/dashboard")
 
 @app.context_processor
 def inject_modulos():
