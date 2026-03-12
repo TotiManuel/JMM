@@ -60,13 +60,26 @@ nav a:hover::after {
 
 <nav>
     <div class="nav-links">
+
         <a href="{{ url_for('main.home') }}">Home</a>
+
         {% if session.get('user') %}
-            <a href="{{ url_for('clases.lista_clases') }}">Enfermería</a>
+
             <a href="{{ url_for('auth.dashboard') }}">Dashboard</a>
+
+            {% for modulo in modulos_navbar %}
+                <a href="{{ url_for('modulos.ver_modulo', codigo=modulo.codigo) }}">
+                    {{ modulo.nombre }}
+                </a>
+            {% endfor %}
+
             <a href="{{ url_for('auth.logout') }}">Logout</a>
+
         {% else %}
+
             <a href="{{ url_for('auth.login') }}">Login</a>
+
         {% endif %}
+
     </div>
 </nav>

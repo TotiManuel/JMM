@@ -1,0 +1,31 @@
+<h1>{{ modulo.nombre }}</h1>
+
+<h2>Notas</h2>
+
+{% for nota in notas %}
+<p>{{ nota.titulo }}</p>
+{% endfor %}
+
+<h2>Archivos</h2>
+
+{% for archivo in archivos %}
+<p>{{ archivo.nombre }}</p>
+{% endfor %}
+
+<h2>Videos</h2>
+
+{% for video in videos %}
+<p>{{ video.titulo }}</p>
+{% endfor %}
+
+<h2>Enlaces</h2>
+
+{% for enlace in enlaces %}
+<p>{{ enlace.titulo }}</p>
+{% endfor %}
+
+<h2>Tareas</h2>
+
+{% for tarea in tareas %}
+<p>{{ tarea.titulo }}</p>
+{% endfor %}

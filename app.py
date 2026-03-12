@@ -5,6 +5,7 @@ from extensions import db
 from routes.auth import auth
 from routes.clases import clases
 from routes.main import main
+from models.models import Modulo
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -23,6 +24,12 @@ app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(clases, url_prefix="/clases")
 app.register_blueprint(main)
 
+@app.context_processor
+def inject_modulos():
+
+    modulos = Modulo.query.all()
+
+    return dict(modulos_navbar=modulos)
 
 # ---------------- Crear tablas ----------------
 with app.app_context():
