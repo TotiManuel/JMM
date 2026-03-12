@@ -65,7 +65,7 @@ nav a:hover::after {
 
         {% if session.get('user') %}
 
-            <a href="{{ url_for('auth.dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('dashboard.dashboard_view') }}">Dashboard</a>
 
             {% for modulo in modulos_navbar %}
                 <a href="{{ url_for('modulos.ver_modulo', codigo=modulo.codigo) }}">

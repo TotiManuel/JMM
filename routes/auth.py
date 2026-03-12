@@ -22,10 +22,3 @@ def logout():
     session.pop('user', None)
 
     return redirect(url_for('main.home'))
-
-
-@auth.route('/dashboard')
-@login_required
-def dashboard():
-
-    return render_template("dashboard.html")

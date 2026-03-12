@@ -36,3 +36,14 @@ def crear_modulo():
     db.session.commit()
 
     return redirect(url_for("dashboard.dashboard_view"))
+
+@dashboard.route("/eliminar_modulo/<int:id>")
+@login_required
+def eliminar_modulo(id):
+
+    modulo = Modulo.query.get_or_404(id)
+
+    db.session.delete(modulo)
+    db.session.commit()
+
+    return redirect(url_for("dashboard.dashboard_view"))
