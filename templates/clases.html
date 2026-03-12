@@ -209,7 +209,7 @@ onclick="abrirClase({{ clase.id }})">
 <script>
 
 function abrirClase(id){
-    onclick="window.open('{{ url_for('clases.ver_clase', id=clase.id) }}')"
+    window.open("/clases/" + id, "_blank")
 }
 
 const buscador = document.getElementById("buscarClase")
