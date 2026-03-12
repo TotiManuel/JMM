@@ -60,15 +60,15 @@ nav a:hover::after {
 
 <nav>
     <div class="nav-links">
-        <a href="/">Home</a>
-    {% if session.get('user') %}
-    <a href="/lista_clases">Enfermeria</a>
-    <a href="/organizacion">Organización</a>
-    <a href="/recordatorios">Recordatorios</a>
-    <a href="/dashboard">Dashboard</a>
-    <a href="/logout">Logout</a>
-    {% else %}
-    <a href="/login">Login</a>
-    {% endif %}
-</div>
+        <a href="{{ url_for('main.home') }}">Home</a>
+        {% if session.get('user') %}
+            <a href="{{ url_for('clases.clases') }}">Enfermería</a>
+            <a href="{{ url_for('main.organizacion') }}">Organización</a>
+            <a href="{{ url_for('main.recordatorios') }}">Recordatorios</a>
+            <a href="{{ url_for('auth.dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('auth.login') }}">Login</a>
+        {% endif %}
+    </div>
 </nav>
