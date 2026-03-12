@@ -113,7 +113,7 @@ margin-top:8px;
 @keyframes fadeIn{
 from{opacity:0;transform:translateY(25px);}
 to{opacity:1;transform:translateY(0);}
-}
+} 
 
 @media (max-width:600px){
 .container-clase{
@@ -129,7 +129,7 @@ h1{font-size:22px;}
 
 <h1>Editar Clase</h1>
 
-<form method="POST" id="formEditarClase">
+<form method="POST" action="{{ url_for('clases.editar_clase', id=clase.id) }}" id="formEditarClase">
 
 <div class="form-group">
 <label for="titulo">Título</label>
@@ -159,7 +159,7 @@ placeholder="Descripción breve de la clase...">{{ clase.descripcion }}</textare
 
 <h2>Agregar Bloque</h2>
 
-<form method="POST" action="/clases/{{ clase.id }}/bloque" enctype="multipart/form-data" id="formBloque">
+<form method="POST" action="{{ url_for('clases.agregar_bloque', id=clase.id) }}" enctype="multipart/form-data" id="formBloque">
 
 <div class="form-group">
 
@@ -216,7 +216,7 @@ placeholder="Escribí el texto o pegá la URL"></textarea>
 {{ bloque.tipo }}
 </div>
 
-<form method="POST" action="/bloque/{{ bloque.id }}/eliminar"
+<form method="POST" action="{{ url_for('clases.eliminar_bloque', id=bloque.id) }}"
 onsubmit="return confirm('¿Eliminar este bloque?')">
 
 <button style="background:#ef4444; padding:6px 12px; font-size:12px;">

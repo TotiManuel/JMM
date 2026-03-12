@@ -205,11 +205,11 @@ onclick="abrirClase({{ clase.id }})">
 
 </div>
 
-
+ 
 <script>
 
 function abrirClase(id){
-    window.open("/clases/" + id, "_blank")
+    onclick="window.open('{{ url_for('clases.ver_clase', id=clase.id) }}')"
 }
 
 const buscador = document.getElementById("buscarClase")
