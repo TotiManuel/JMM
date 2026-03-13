@@ -2,6 +2,7 @@ from config import Config
 from flask import Flask, session, redirect, url_for
 from functools import wraps
 from extensions import db
+from routes import clases
 from routes.auth import auth
 from routes.main import main
 from routes.dashboard import dashboard
@@ -24,6 +25,7 @@ db.init_app(app)
 app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(main)
 app.register_blueprint(dashboard, url_prefix="/dashboard")
+app.register_blueprint(clases, url_prefix="/clases")
 app.register_blueprint(modulos)
 
 @app.context_processor

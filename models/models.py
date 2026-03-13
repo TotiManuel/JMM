@@ -20,6 +20,25 @@ class Clase(db.Model):
 
     modulo = db.relationship("Modulo", backref="clases")
 
+class BloqueClase(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    tipo = db.Column(db.String(50))  
+    # titulo, subtitulo, texto, imagen
+
+    contenido = db.Column(db.Text)
+
+    orden = db.Column(db.Integer)
+
+    clase_id = db.Column(
+        db.Integer,
+        db.ForeignKey("clase.id"),
+        nullable=False
+    )
+
+    clase = db.relationship("Clase", backref="bloques")
+
 class Modulo(db.Model):
 
     __tablename__ = "modulos"

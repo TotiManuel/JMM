@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+.contenido-clase{
+margin-top:30px;
+line-height:1.7;
+}
+
+.contenido-clase h2{
+color:#2575fc;
+margin-top:25px;
+}
+
+.contenido-clase h3{
+margin-top:20px;
+color:#333;
+}
+
+.contenido-clase p{
+margin-top:10px;
+color:#444;
+}
+
+.img-clase{
+width:100%;
+border-radius:10px;
+margin:20px 0;
+}
+</style>
+<div class="seccion-container">
+
+<h1>{{ clase.titulo }}</h1>
+
+<div class="contenido-clase">
+
+{% for bloque in bloques %}
+
+{% if bloque.tipo == "titulo" %}
+<h2>{{ bloque.contenido }}</h2>
+
+{% elif bloque.tipo == "subtitulo" %}
+<h3>{{ bloque.contenido }}</h3>
+
+{% elif bloque.tipo == "texto" %}
+<p>{{ bloque.contenido }}</p>
+
+{% elif bloque.tipo == "imagen" %}
+<img src="{{ bloque.contenido }}" class="img-clase">
+
+{% endif %}
+
+{% endfor %}
+
+</div>
+
+</div>
+
+{% endblock %}
