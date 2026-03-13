@@ -3,7 +3,6 @@ from flask import Flask, session, redirect, url_for
 from functools import wraps
 from extensions import db
 from routes.auth import auth
-from routes.clases import clases
 from routes.main import main
 from routes.dashboard import dashboard
 from routes.modulos import modulos
@@ -23,7 +22,6 @@ db.init_app(app)
 
 # ---------------- Blueprints ----------------
 app.register_blueprint(auth, url_prefix="/auth")
-app.register_blueprint(clases, url_prefix="/clases")
 app.register_blueprint(main)
 app.register_blueprint(dashboard, url_prefix="/dashboard")
 app.register_blueprint(modulos)
