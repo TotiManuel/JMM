@@ -16,7 +16,7 @@ class Clase(db.Model):
         nullable=False
     )
 
-    modulo = db.relationship("Modulo", backref="clases")
+    modulo = db.relationship("Modulo", back_populates="clases")
 
     bloques = db.relationship(
         "BloqueClase",
@@ -55,7 +55,7 @@ class Modulo(db.Model):
 
     clases = db.relationship(
         "Clase",
-        backref="modulo",
+        back_populates="modulo",
         cascade="all, delete"
     )
     
