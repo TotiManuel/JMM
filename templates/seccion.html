@@ -208,7 +208,11 @@ color:#333;
 
 <div class="card-item">
 
-<h3>{{ clase.titulo }}</h3>
+<h3>
+<a href="/clases/{{ clase.id }}">
+{{ clase.titulo }}
+</a>
+</h3>
 
 <p>{{ clase.contenido[:150] }}</p>
 
