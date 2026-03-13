@@ -4,42 +4,175 @@
 
 <style>
 
-.container{
-max-width:900px;
-margin:80px auto;
-background:white;
-padding:40px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
+body{
+background: linear-gradient(135deg,#6a11cb,#2575fc);
+font-family: Arial, sans-serif;
 }
 
-h1{
-margin-bottom:10px;
+/* contenedor */
+
+.seccion-container{
+max-width:1000px;
+margin:80px auto;
+background:white;
+padding:40px 35px;
+border-radius:18px;
+box-shadow:0 12px 35px rgba(0,0,0,0.2);
+animation:fadeIn 0.8s ease;
+}
+
+/* header */
+
+.header-seccion{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:25px;
+}
+
+.header-seccion h1{
+color:#333;
+margin-bottom:5px;
+}
+
+.header-seccion h2{
+color:#2575fc;
+font-size:22px;
+}
+
+/* contenido */
+
+.seccion-content{
+margin-top:20px;
+}
+
+/* cards de contenido */
+
+.card-item{
+background:#f9f9f9;
+padding:20px;
+border-radius:14px;
+border:1px solid #eee;
+margin-bottom:15px;
+transition:0.25s;
+}
+
+.card-item:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-item h3{
+color:#2575fc;
+margin-bottom:5px;
+}
+
+.card-item p{
+font-size:14px;
+color:#555;
+}
+
+/* vacío */
+
+.vacio{
+text-align:center;
+margin-top:30px;
+color:#777;
+}
+
+/* animación */
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* responsive */
+
+@media(max-width:600px){
+
+.seccion-container{
+margin:40px 15px;
+padding:30px 20px;
+}
+
+.header-seccion{
+flex-direction:column;
+align-items:flex-start;
+}
+
 }
 
 </style>
 
-<div class="container">
 
+<div class="seccion-container">
+
+<div class="header-seccion">
+
+<div>
 <h1>{{ modulo.nombre }}</h1>
-
 <h2>{{ seccion.capitalize() }}</h2>
+</div>
 
-<p>Sección del módulo.</p>
+</div>
+
+
+<div class="seccion-content">
 
 {% if seccion == "clases" %}
-mostrar clases
+
+<div class="card-item">
+<h3>Clases</h3>
+<p>Aquí se mostrarán las clases del módulo.</p>
+</div>
+
 {% elif seccion == "notas" %}
-mostrar notas
+
+<div class="card-item">
+<h3>Notas</h3>
+<p>Aquí se mostrarán las notas del módulo.</p>
+</div>
+
 {% elif seccion == "archivos" %}
-mostrar archivos
+
+<div class="card-item">
+<h3>Archivos</h3>
+<p>Aquí se mostrarán los archivos del módulo.</p>
+</div>
+
 {% elif seccion == "videos" %}
-mostrar videos
+
+<div class="card-item">
+<h3>Videos</h3>
+<p>Aquí se mostrarán los videos del módulo.</p>
+</div>
+
 {% elif seccion == "enlaces" %}
-mostrar enlaces
+
+<div class="card-item">
+<h3>Enlaces</h3>
+<p>Aquí se mostrarán los enlaces del módulo.</p>
+</div>
+
 {% elif seccion == "tareas" %}
-mostrar tareas
+
+<div class="card-item">
+<h3>Tareas</h3>
+<p>Aquí se mostrarán las tareas del módulo.</p>
+</div>
+
 {% endif %}
+
+</div>
 
 </div>
 
