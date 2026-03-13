@@ -1,6 +1,5 @@
 from config import Config
-from flask import Flask, session, redirect, url_for
-from functools import wraps
+from flask import Flask
 from extensions import db
 from routes.clases import clases
 from routes.auth import auth

@@ -58,7 +58,6 @@ class Modulo(db.Model):
         back_populates="modulo",
         cascade="all, delete"
     )
-    
 class Nota(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
@@ -71,7 +70,6 @@ class Nota(db.Model):
         db.Integer,
         db.ForeignKey("modulos.id")
     )
-    
 class Archivo(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
@@ -84,7 +82,6 @@ class Archivo(db.Model):
         db.Integer,
         db.ForeignKey("modulos.id")
     )
-    
 class Video(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
@@ -97,7 +94,6 @@ class Video(db.Model):
         db.Integer,
         db.ForeignKey("modulos.id")
     )
-    
 class Enlace(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
@@ -110,7 +106,6 @@ class Enlace(db.Model):
         db.Integer,
         db.ForeignKey("modulos.id")
     )
-    
 class Tarea(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
