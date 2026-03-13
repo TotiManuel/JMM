@@ -160,7 +160,18 @@ cursor:pointer;
 text-decoration:none;
 color:#333;
 }
+.btn-abrir{
+background:#2575fc;
+color:white;
+padding:6px 12px;
+border-radius:6px;
+text-decoration:none;
+font-size:13px;
+}
 
+.btn-abrir:hover{
+opacity:0.9;
+}
 </style>
 
 
@@ -208,15 +219,13 @@ color:#333;
 
 <div class="card-item">
 
-<h3>
-<a href="/clases/{{ clase.id }}">
-{{ clase.titulo }}
-</a>
-</h3>
+<h3>{{ clase.titulo }}</h3>
 
 <p>{{ clase.contenido[:150] }}</p>
 
 <div class="acciones">
+
+<a href="/clases/{{ clase.id }}" class="btn-abrir">Abrir clase</a>
 
 <button onclick="toggleEditar({{ clase.id }})">Editar</button>
 

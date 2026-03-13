@@ -24,6 +24,8 @@ def ver_clase(id):
 @clases.route("/bloque/<int:clase_id>", methods=["POST"])
 def crear_bloque(clase_id):
 
+    clase = Clase.query.get_or_404(clase_id)
+
     tipo = request.form.get("tipo")
     contenido = request.form.get("contenido")
 
