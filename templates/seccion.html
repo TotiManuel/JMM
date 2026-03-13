@@ -27,10 +27,18 @@ margin-bottom:10px;
 
 <p>Sección del módulo.</p>
 
-{% if seccion == "notas" %}
+{% if seccion == "clases" %}
+mostrar clases
+{% elif seccion == "notas" %}
 mostrar notas
+{% elif seccion == "archivos" %}
+mostrar archivos
 {% elif seccion == "videos" %}
 mostrar videos
+{% elif seccion == "enlaces" %}
+mostrar enlaces
+{% elif seccion == "tareas" %}
+mostrar tareas
 {% endif %}
 
 </div>
