@@ -7,7 +7,7 @@ from routes.auth import auth
 from routes.main import main
 from routes.dashboard import dashboard
 from routes.modulos import modulos
-from models.models import Modulo
+from models.models import *
 
 app = Flask(__name__)
 app.config.from_object(Config)
