@@ -1,11 +1,10 @@
-from flask import Blueprint, render_template, request, redirect, url_for, session
-from models.models import BloqueClase, Clase
-from utils.auth import login_required
+from flask import Blueprint, render_template
+from models.models import Clase
+from models.models import BloqueClase
 
 clases = Blueprint("clases", __name__)
 
-@clases.route("/clase/<int:id>")
-@login_required
+@clases.route("/<int:id>")
 def ver_clase(id):
 
     clase = Clase.query.get_or_404(id)
