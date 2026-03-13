@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template
 from models.models import Clase
 from models.models import BloqueClase
+from flask import request, redirect
+from extensions import db
 
 clases = Blueprint("clases", __name__)
 
@@ -18,3 +20,25 @@ def ver_clase(id):
         clase=clase,
         bloques=bloques
     )
+
+@clases.route("/bloque/<int:clase_id>", methods=["POST"])
+def crear_bloque(clase_id):
+
+    tipo = request.form.get("tipo")
+    contenido = request.form.get("contenido")
+
+    orden = BloqueClase.query.filter_by(
+        clase_id=clase_id
+    ).count()
+
+    bloque = BloqueClase(
+        tipo=tipo,
+        contenido=contenido,
+        orden=orden,
+        clase_id=clase_id
+    )
+
+    db.session.add(bloque)
+    db.session.commit()
+
+    return redirect(f"/clases/{clase_id}")

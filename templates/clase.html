@@ -27,7 +27,53 @@ width:100%;
 border-radius:10px;
 margin:20px 0;
 }
+.bloques-tools{
+background:#f5f5f5;
+padding:20px;
+border-radius:10px;
+margin-bottom:25px;
+}
+
+.bloques-tools select,
+.bloques-tools textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:6px;
+border:1px solid #ddd;
+}
+
+.bloques-tools button{
+margin-top:10px;
+background:#2575fc;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:6px;
+cursor:pointer;
+}
 </style>
+
+<div class="bloques-tools">
+
+<form method="POST" action="/clases/bloque/{{ clase.id }}">
+<select name="tipo">
+
+<option value="titulo">Título</option>
+<option value="subtitulo">Subtítulo</option>
+<option value="texto">Texto</option>
+<option value="imagen">Imagen</option>
+
+</select>
+
+<textarea name="contenido" placeholder="Contenido"></textarea>
+
+<button type="submit">Agregar bloque</button>
+
+</form>
+
+</div>
+
 <div class="seccion-container">
 
 <h1>{{ clase.titulo }}</h1>
