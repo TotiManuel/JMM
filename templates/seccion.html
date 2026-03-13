@@ -316,13 +316,15 @@ function toggleEditar(id){
 
 <div id="formNota" class="form-nota" style="display:none;">
 
-<form method="POST" action="/nota/crear/{{ modulo.codigo }}">
+<form method="POST" action="{{ url_for('notas.crear_nota', codigo=modulo.codigo) }}">
 
-<input type="text" name="titulo" placeholder="Título de la nota" required>
+    <input type="text" name="titulo" placeholder="Título">
 
-<textarea name="contenido" placeholder="Contenido de la nota"></textarea>
+    <textarea name="contenido"></textarea>
 
-<button type="submit">Guardar</button>
+    <button type="submit">
+        Crear nota
+    </button>
 
 </form>
 
