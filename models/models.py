@@ -16,21 +16,21 @@ class Clase(db.Model):
         nullable=False
     )
 
+    modulo = db.relationship("Modulo", backref="clases")
+
     bloques = db.relationship(
         "BloqueClase",
-        backref="clase",
+        back_populates="clase",
         cascade="all, delete"
     )
 
 class BloqueClase(db.Model):
 
+    __tablename__ = "bloque_clase"
+
     id = db.Column(db.Integer, primary_key=True)
-
-    tipo = db.Column(db.String(50))  
-    # titulo, subtitulo, texto, imagen
-
+    tipo = db.Column(db.String(50))
     contenido = db.Column(db.Text)
-
     orden = db.Column(db.Integer)
 
     clase_id = db.Column(
@@ -39,7 +39,10 @@ class BloqueClase(db.Model):
         nullable=False
     )
 
-    clase = db.relationship("Clase", backref="bloques")
+    clase = db.relationship(
+        "Clase",
+        back_populates="bloques"
+    )
 
 class Modulo(db.Model):
 
