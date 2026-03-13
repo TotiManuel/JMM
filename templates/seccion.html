@@ -111,6 +111,56 @@ align-items:flex-start;
 
 }
 
+.clases-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.clases-header button{
+background:#2575fc;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.form-clase,
+.form-editar{
+margin-bottom:20px;
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+textarea{
+min-height:100px;
+}
+
+.acciones{
+margin-top:10px;
+display:flex;
+gap:10px;
+}
+
+.acciones button,
+.acciones a{
+background:#eee;
+border:none;
+padding:6px 10px;
+border-radius:6px;
+cursor:pointer;
+text-decoration:none;
+color:#333;
+}
+
 </style>
 
 
@@ -130,10 +180,94 @@ align-items:flex-start;
 
 {% if seccion == "clases" %}
 
-<div class="card-item">
-<h3>Clases</h3>
-<p>Aquí se mostrarán las clases del módulo.</p>
+<div class="clases-header">
+
+<h3>Clases del módulo</h3>
+
+<button onclick="mostrarFormulario()">+ Nueva clase</button>
+
 </div>
+
+
+<div id="formClase" class="form-clase" style="display:none;">
+
+<form method="POST" action="/clase/crear/{{ modulo.codigo }}">
+
+<input type="text" name="titulo" placeholder="Título de la clase" required>
+
+<textarea name="contenido" placeholder="Contenido de la clase"></textarea>
+
+<button type="submit">Guardar</button>
+
+</form>
+
+</div>
+
+
+{% for clase in clases %}
+
+<div class="card-item">
+
+<h3>{{ clase.titulo }}</h3>
+
+<p>{{ clase.contenido[:150] }}</p>
+
+<div class="acciones">
+
+<button onclick="toggleEditar({{ clase.id }})">Editar</button>
+
+<a href="/clase/eliminar/{{ clase.id }}">Eliminar</a>
+
+</div>
+
+
+<div id="editar{{ clase.id }}" class="form-editar" style="display:none;">
+
+<form method="POST" action="/clase/editar/{{ clase.id }}">
+
+<input type="text" name="titulo" value="{{ clase.titulo }}">
+
+<textarea name="contenido">{{ clase.contenido }}</textarea>
+
+<button type="submit">Guardar cambios</button>
+
+</form>
+
+</div>
+
+</div>
+
+{% else %}
+
+<div class="vacio">
+
+<p>No hay clases todavía.</p>
+
+</div>
+
+{% endfor %}
+
+<script>
+function mostrarFormulario(){
+    let form = document.getElementById("formClase")
+
+    if(form.style.display === "none"){
+        form.style.display = "block"
+    }else{
+        form.style.display = "none"
+    }
+}
+
+function toggleEditar(id){
+    let form = document.getElementById("editar"+id)
+
+    if(form.style.display === "none"){
+        form.style.display = "block"
+    }else{
+        form.style.display = "none"
+    }
+}
+</script>
 
 {% elif seccion == "notas" %}
 
