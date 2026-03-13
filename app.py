@@ -38,7 +38,7 @@ def inject_modulos():
 
 # ---------------- Crear tablas ----------------
 with app.app_context():
-    # db.drop_all() Reiniciar db
+    db.drop_all() #Reiniciar db
     db.create_all()
 
 
