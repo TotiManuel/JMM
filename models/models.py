@@ -62,7 +62,7 @@ class Nota(db.Model):
     titulo = db.Column(db.String(200), nullable=False)
     contenido = db.Column(db.Text)
 
-    modulo_codigo = db.Column(db.String(50), db.ForeignKey("modulo.codigo"))
+    modulo_codigo = db.Column(db.String(50), db.ForeignKey("modulos.codigo"))
 
     def __repr__(self):
         return f"<Nota {self.titulo}>"
