@@ -2,6 +2,8 @@ from extensions import db
 from datetime import datetime
 
 class Clase(db.Model):
+    
+    __tablename__ = "clases"
 
     id = db.Column(db.Integer, primary_key=True)
 
