@@ -19,7 +19,7 @@ def crear_nota(codigo):
     db.session.add(nota)
     db.session.commit()
 
-    return redirect(url_for("modulos.ver_modulo", codigo=codigo))
+    return redirect(f"/modulo/{codigo}/notas")
 
 
 @notas.route("/nota/editar/<int:id>", methods=["POST"])
@@ -32,10 +32,7 @@ def editar_nota(id):
 
     db.session.commit()
 
-    return redirect(url_for(
-        "modulos.ver_modulo",
-        codigo=nota.modulo_codigo
-    ))
+    return redirect(f"/modulo/{nota.modulo_codigo}/notas")
 
 
 @notas.route("/nota/eliminar/<int:id>")
@@ -48,7 +45,4 @@ def eliminar_nota(id):
     db.session.delete(nota)
     db.session.commit()
 
-    return redirect(url_for(
-        "modulos.ver_modulo",
-        codigo=codigo
-    ))
+    return redirect(f"/modulo/{codigo}/notas")
