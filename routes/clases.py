@@ -41,6 +41,5 @@ def crear_bloque(clase_id):
 
     db.session.add(bloque)
     db.session.commit()
-    print("CLASE ID:", clase_id)
 
     return redirect(url_for("clases.ver_clase", clase_id=clase.id))
