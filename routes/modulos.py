@@ -12,7 +12,7 @@ def ver_modulo(codigo):
 
     modulo = Modulo.query.filter_by(codigo=codigo).first_or_404()
 
-    notas = Nota.query.filter_by(modulo_id=modulo.id).all()
+    notas = Nota.query.filter_by(modulo_codigo=modulo.codigo).all()
     archivos = Archivo.query.filter_by(modulo_id=modulo.id).all()
     videos = Video.query.filter_by(modulo_id=modulo.id).all()
     enlaces = Enlace.query.filter_by(modulo_id=modulo.id).all()

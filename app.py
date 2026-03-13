@@ -2,6 +2,7 @@ from config import Config
 from flask import Flask
 from extensions import db
 from routes.clases import clases
+from routes.notas import notas
 from routes.auth import auth
 from routes.main import main
 from routes.dashboard import dashboard
@@ -25,6 +26,7 @@ app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(main)
 app.register_blueprint(dashboard, url_prefix="/dashboard")
 app.register_blueprint(clases, url_prefix="/clases")
+app.register_blueprint(notas, url_prefix="/notas")
 app.register_blueprint(modulos)
 
 @app.context_processor
@@ -36,7 +38,7 @@ def inject_modulos():
 
 # ---------------- Crear tablas ----------------
 with app.app_context():
-    db.drop_all()
+    # db.drop_all() Reiniciar db
     db.create_all()
 
 

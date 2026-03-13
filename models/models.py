@@ -23,7 +23,6 @@ class Clase(db.Model):
         back_populates="clase",
         cascade="all, delete"
     )
-
 class BloqueClase(db.Model):
 
     __tablename__ = "bloque_clase"
@@ -43,7 +42,6 @@ class BloqueClase(db.Model):
         "Clase",
         back_populates="bloques"
     )
-
 class Modulo(db.Model):
 
     __tablename__ = "modulos"
@@ -59,17 +57,15 @@ class Modulo(db.Model):
         cascade="all, delete"
     )
 class Nota(db.Model):
-
     id = db.Column(db.Integer, primary_key=True)
 
-    titulo = db.Column(db.String(200))
-
+    titulo = db.Column(db.String(200), nullable=False)
     contenido = db.Column(db.Text)
 
-    modulo_id = db.Column(
-        db.Integer,
-        db.ForeignKey("modulos.id")
-    )
+    modulo_codigo = db.Column(db.String(50), db.ForeignKey("modulo.codigo"))
+
+    def __repr__(self):
+        return f"<Nota {self.titulo}>"
 class Archivo(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
