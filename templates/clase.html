@@ -54,26 +54,6 @@ cursor:pointer;
 }
 </style>
 
-<div class="bloques-tools">
-
-<form method="POST" action="{{ url_for('clases.crear_bloque', clase_id=clase.id) }}">
-<select name="tipo">
-
-<option value="titulo">Título</option>
-<option value="subtitulo">Subtítulo</option>
-<option value="texto">Texto</option>
-<option value="imagen">Imagen</option>
-
-</select>
-
-<textarea name="contenido" placeholder="Contenido"></textarea>
-
-<button type="submit">Agregar bloque</button>
-
-</form>
-
-</div>
-
 <div class="seccion-container">
 
 <h1>{{ clase.titulo }}</h1>
@@ -99,6 +79,26 @@ cursor:pointer;
 {% endfor %}
 
 </div>
+
+</div>
+
+<div class="bloques-tools">
+
+<form method="POST" action="{{ url_for('clases.crear_bloque', clase_id=clase.id) }}">
+<select name="tipo">
+
+<option value="titulo">Título</option>
+<option value="subtitulo">Subtítulo</option>
+<option value="texto">Texto</option>
+<option value="imagen">Imagen</option>
+
+</select>
+
+<textarea name="contenido" placeholder="Contenido"></textarea>
+
+<button type="submit">Agregar bloque</button>
+
+</form>
 
 </div>
 
