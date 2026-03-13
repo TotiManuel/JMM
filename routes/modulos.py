@@ -17,6 +17,7 @@ def ver_modulo(codigo):
     videos = Video.query.filter_by(modulo_id=modulo.id).all()
     enlaces = Enlace.query.filter_by(modulo_id=modulo.id).all()
     tareas = Tarea.query.filter_by(modulo_id=modulo.id).all()
+    clases = Clase.query.filter_by(modulo_id=modulo.id).all()
 
     return render_template(
         "modulo.html",
@@ -25,6 +26,7 @@ def ver_modulo(codigo):
         archivos=archivos,
         videos=videos,
         enlaces=enlaces,
+        clases=clases,
         tareas=tareas
     )
 
