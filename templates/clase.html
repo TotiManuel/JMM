@@ -2,6 +2,52 @@
 
 {% block content %}
 <style>
+/* fondo general de la página */
+body{
+    background:#f7f7f7;
+}
+
+/* contenedor principal */
+.seccion-container{
+    max-width:1000px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+/* tarjeta de la clase */
+.contenido-clase{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:35px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* formulario de bloques */
+.bloques-tools{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:25px;
+    margin:30px auto;
+    max-width:900px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* inputs */
+.bloques-tools select,
+.bloques-tools textarea{
+    border:1px solid #d1d5db;
+    border-radius:8px;
+}
+
+/* efecto al enfocar */
+.bloques-tools select:focus,
+.bloques-tools textarea:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 0 2px rgba(37,99,235,0.15);
+}
 /* contenedor general */
 .contenido-clase{
     max-width:900px;
