@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+body{
+background: linear-gradient(135deg,#6a11cb,#2575fc);
+font-family: Arial, sans-serif;
+}
+
+.seccion-container{
+max-width:1000px;
+margin:80px auto;
+background:white;
+padding:40px 35px;
+border-radius:18px;
+box-shadow:0 12px 35px rgba(0,0,0,0.2);
+animation:fadeIn 0.8s ease;
+}
+
+.header-seccion{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.notas-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.notas-header button{
+background:#2575fc;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.card-item{
+background:#f9f9f9;
+padding:20px;
+border-radius:14px;
+border:1px solid #eee;
+margin-bottom:15px;
+transition:0.25s;
+}
+
+.card-item:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-item h3{
+color:#2575fc;
+margin-bottom:5px;
+}
+
+.card-item p{
+font-size:14px;
+color:#555;
+}
+
+.form-nota,
+.form-editar{
+margin-bottom:20px;
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+textarea{
+min-height:100px;
+}
+
+.acciones{
+margin-top:10px;
+display:flex;
+gap:10px;
+}
+
+.acciones button,
+.acciones a{
+background:#eee;
+border:none;
+padding:6px 10px;
+border-radius:6px;
+cursor:pointer;
+text-decoration:none;
+color:#333;
+}
+
+.vacio{
+text-align:center;
+margin-top:30px;
+color:#777;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
+
+<div class="seccion-container">
+
+<div class="header-seccion">
+<h1>{{ modulo.nombre }}</h1>
+</div>
+
+<div class="notas-header">
+
+<h3>Notas del módulo</h3>
+
+<button onclick="mostrarFormularioNota()">+ Nueva nota</button>
+
+</div>
+
+
+<div id="formNota" class="form-nota" style="display:none;">
+
+<form method="POST" action="/nota/crear/{{ modulo.codigo }}">
+
+<input type="text" name="titulo" placeholder="Título de la nota" required>
+
+<textarea name="contenido" placeholder="Contenido de la nota"></textarea>
+
+<button type="submit">Guardar</button>
+
+</form>
+
+</div>
+
+
+{% for nota in notas %}
+
+<div class="card-item">
+
+<h3>{{ nota.titulo }}</h3>
+
+<p>{{ nota.contenido[:150] }}</p>
+
+<div class="acciones">
+
+<button onclick="toggleEditarNota({{ nota.id }})">Editar</button>
+
+<a href="/nota/eliminar/{{ nota.id }}">Eliminar</a>
+
+</div>
+
+
+<div id="editarNota{{ nota.id }}" class="form-editar" style="display:none;">
+
+<form method="POST" action="/nota/editar/{{ nota.id }}">
+
+<input type="text" name="titulo" value="{{ nota.titulo }}">
+
+<textarea name="contenido">{{ nota.contenido }}</textarea>
+
+<button type="submit">Guardar cambios</button>
+
+</form>
+
+</div>
+
+</div>
+
+{% else %}
+
+<div class="vacio">
+<p>No hay notas todavía.</p>
+</div>
+
+{% endfor %}
+
+</div>
+
+
+<script>
+
+function mostrarFormularioNota(){
+    let form = document.getElementById("formNota")
+
+    if(form.style.display === "none"){
+        form.style.display = "block"
+    }else{
+        form.style.display = "none"
+    }
+}
+
+function toggleEditarNota(id){
+    let form = document.getElementById("editarNota"+id)
+
+    if(form.style.display === "none"){
+        form.style.display = "block"
+    }else{
+        form.style.display = "none"
+    }
+}
+
+</script>
+
+{% endblock %}
