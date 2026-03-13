@@ -33,7 +33,7 @@ class BloqueClase(db.Model):
 
     clase_id = db.Column(
         db.Integer,
-        db.ForeignKey("clase.id"),
+        db.ForeignKey("clases.id"),
         nullable=False
     )
 
