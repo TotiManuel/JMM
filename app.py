@@ -2,7 +2,7 @@ from config import Config
 from flask import Flask, session, redirect, url_for
 from functools import wraps
 from extensions import db
-from routes import clases
+from routes.clases import clases
 from routes.auth import auth
 from routes.main import main
 from routes.dashboard import dashboard
