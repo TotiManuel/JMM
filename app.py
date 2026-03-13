@@ -26,7 +26,7 @@ app.register_blueprint(auth, url_prefix="/auth")
 app.register_blueprint(clases, url_prefix="/clases")
 app.register_blueprint(main)
 app.register_blueprint(dashboard, url_prefix="/dashboard")
-app.register_blueprint(modulos, url_prefix="/modulos")
+app.register_blueprint(modulos)
 
 @app.context_processor
 def inject_modulos():

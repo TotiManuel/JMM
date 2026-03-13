@@ -11,18 +11,12 @@ modulos = Blueprint("modulos", __name__)
 @login_required
 def ver_modulo(codigo):
 
-    modulo = Modulo.query.filter_by(
-        codigo=codigo
-    ).first_or_404()
+    modulo = Modulo.query.filter_by(codigo=codigo).first_or_404()
 
     notas = Nota.query.filter_by(modulo_id=modulo.id).all()
-
     archivos = Archivo.query.filter_by(modulo_id=modulo.id).all()
-
     videos = Video.query.filter_by(modulo_id=modulo.id).all()
-
     enlaces = Enlace.query.filter_by(modulo_id=modulo.id).all()
-
     tareas = Tarea.query.filter_by(modulo_id=modulo.id).all()
 
     return render_template(
@@ -35,13 +29,12 @@ def ver_modulo(codigo):
         tareas=tareas
     )
 
+
 @modulos.route("/modulo/<codigo>/<seccion>")
 @login_required
 def ver_seccion(codigo, seccion):
 
-    modulo = Modulo.query.filter_by(
-        codigo=codigo
-    ).first_or_404()
+    modulo = Modulo.query.filter_by(codigo=codigo).first_or_404()
 
     template = f"secciones/{seccion}.html"
 
@@ -64,16 +57,17 @@ def ver_seccion(codigo, seccion):
 
 {{% block content %}}
 
+<div style="max-width:900px;margin:auto;padding:40px">
+
 <h1>{{{{ modulo.nombre }}}}</h1>
 
 <h2>{seccion.capitalize()}</h2>
 
 <p>Página creada automáticamente.</p>
 
+</div>
+
 {{% endblock %}}
 """)
 
-        return render_template(
-            template,
-            modulo=modulo
-        )
+        return render_template(template, modulo=modulo)
