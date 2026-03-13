@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+
+.container{
+max-width:900px;
+margin:80px auto;
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+h1{
+margin-bottom:10px;
+}
+
+</style>
+
+<div class="container">
+
+<h1>{{ modulo.nombre }}</h1>
+
+<h2>{{ seccion.capitalize() }}</h2>
+
+<p>Sección del módulo.</p>
+
+{% if seccion == "notas" %}
+mostrar notas
+{% elif seccion == "videos" %}
+mostrar videos
+{% endif %}
+
+</div>
+
+{% endblock %}
