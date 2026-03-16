@@ -9,5 +9,6 @@ class Config:
         "pool_pre_ping": True,
         "pool_recycle": 280
     }
+
     SUPABASE_URL = "https://gucthjhfrlmbgkaiidad.supabase.co"
-    SUPABASE_KEY = "sb_publishable_A86yFlKrNVkLucX-sgFnOA_PPHu4N8f"
+    SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1Y3RoamhmcmxtYmdrYWlpZGFkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzY0MTYxMSwiZXhwIjoyMDg5MjE3NjExfQ.dlL6pRZH56vjyofybWo7j01luu1px7S_eNrV0iiNCV4"  # ⚠️ Usar service_role key

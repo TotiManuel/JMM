@@ -36,7 +36,7 @@ def crear_archivo(codigo):
     )
 
     # obtener url pública
-    url = supabase.storage.from_("archivos").get_public_url(filename)
+    url = supabase.storage.from_("archivos").get_public_url(filename).public_url
 
     archivo = Archivo(
         nombre=nombre,
