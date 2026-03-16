@@ -4,11 +4,12 @@ from flask import Blueprint, request, redirect
 from supabase import create_client
 from models.models import Archivo, Modulo
 from extensions import db
+from config import Config
 
 archivos = Blueprint("archivos", __name__)
 
-SUPABASE_URL = os.environ.get("SUPABASE_URL")
-SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
+SUPABASE_URL = Config.SUPABASE_URL
+SUPABASE_KEY = Config.SUPABASE_KEY
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
