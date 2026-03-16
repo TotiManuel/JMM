@@ -79,18 +79,6 @@ class Archivo(db.Model):
         db.ForeignKey("modulos.id")
     )
     modulo = db.relationship("Modulo", backref=db.backref("archivos", lazy=True))
-class Video(db.Model):
-
-    id = db.Column(db.Integer, primary_key=True)
-
-    titulo = db.Column(db.String(200))
-
-    url = db.Column(db.String(300))
-
-    modulo_id = db.Column(
-        db.Integer,
-        db.ForeignKey("modulos.id")
-    )
 class Enlace(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
