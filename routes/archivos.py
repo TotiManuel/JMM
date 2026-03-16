@@ -10,32 +10,32 @@ archivos = Blueprint("archivos", __name__)
 @archivos.route("/archivo/crear/<int:modulo_id>", methods=["POST"])
 def crear_archivo(modulo_id):
 
-    nombre = request.form["nombre"]
-    file = request.files["archivo"]
+    nombre = request.form.get("nombre")
+    file = request.files.get("archivo")
 
-    if file:
+    if not file or file.filename == "":
+        return redirect(request.referrer)
 
-        filename = secure_filename(file.filename)
+    filename = secure_filename(file.filename)
 
-        # ruta real del proyecto
-        upload_folder = os.path.join(current_app.root_path, "static", "uploads")
+    # ruta real del proyecto
+    upload_folder = os.path.join(current_app.root_path, "static", "uploads")
 
-        # crear carpeta si no existe
-        os.makedirs(upload_folder, exist_ok=True)
+    # crear carpeta si no existe
+    os.makedirs(upload_folder, exist_ok=True)
 
-        # ruta completa del archivo
-        ruta_completa = os.path.join(upload_folder, filename)
+    ruta_completa = os.path.join(upload_folder, filename)
 
-        file.save(ruta_completa)
+    file.save(ruta_completa)
 
-        archivo = Archivo(
-            nombre=nombre,
-            ruta=filename,
-            modulo_id=modulo_id
-        )
+    archivo = Archivo(
+        nombre=nombre,
+        ruta=filename,
+        modulo_id=modulo_id
+    )
 
-        db.session.add(archivo)
-        db.session.commit()
+    db.session.add(archivo)
+    db.session.commit()
 
     return redirect(request.referrer)
 
@@ -45,7 +45,12 @@ def eliminar_archivo(id):
 
     archivo = Archivo.query.get_or_404(id)
 
-    ruta = os.path.join(current_app.root_path, "static", "uploads", archivo.ruta)
+    ruta = os.path.join(
+        current_app.root_path,
+        "static",
+        "uploads",
+        archivo.ruta
+    )
 
     if os.path.exists(ruta):
         os.remove(ruta)

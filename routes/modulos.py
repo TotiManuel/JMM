@@ -37,25 +37,20 @@ def ver_seccion(codigo, seccion):
 
     modulo = Modulo.query.filter_by(codigo=codigo).first_or_404()
 
-    notas = []
-    clases = []
-
-    if seccion == "clases":
-        clases = Clase.query.filter_by(modulo_id=modulo.id).all()
-
-    elif seccion == "notas":
-        notas = Nota.query.filter_by(modulo_codigo=modulo.codigo).all()
-    
-    elif seccion == "archivos":
-        archivos = Archivo.query.filter_by(modulo_id=modulo.id).all()
+    data = {
+        "notas": Nota.query.filter_by(modulo_codigo=modulo.codigo).all(),
+        "archivos": Archivo.query.filter_by(modulo_id=modulo.id).all(),
+        "videos": Video.query.filter_by(modulo_id=modulo.id).all(),
+        "enlaces": Enlace.query.filter_by(modulo_id=modulo.id).all(),
+        "tareas": Tarea.query.filter_by(modulo_id=modulo.id).all(),
+        "clases": Clase.query.filter_by(modulo_id=modulo.id).all(),
+    }
 
     return render_template(
         "seccion.html",
         modulo=modulo,
         seccion=seccion,
-        clases=clases,
-        notas=notas,
-        archivos = archivos
+        **data
     )
     
 @modulos.route("/clase/crear/<codigo>", methods=["POST"])
