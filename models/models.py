@@ -68,16 +68,21 @@ class Nota(db.Model):
         return f"<Nota {self.titulo}>"
 class Archivo(db.Model):
 
+    __tablename__ = "archivos"
+
     id = db.Column(db.Integer, primary_key=True)
 
-    nombre = db.Column(db.String(200))
+    nombre = db.Column(db.String(200), nullable=False)
 
-    ruta = db.Column(db.String(300))
+    ruta = db.Column(db.String(300), nullable=False)
 
     modulo_id = db.Column(
         db.Integer,
-        db.ForeignKey("modulos.id")
+        db.ForeignKey("modulos.id"),
+        nullable=False
     )
+
+    modulo = db.relationship("Modulo", backref="archivos")
 class Video(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)

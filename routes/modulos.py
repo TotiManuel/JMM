@@ -45,13 +45,17 @@ def ver_seccion(codigo, seccion):
 
     elif seccion == "notas":
         notas = Nota.query.filter_by(modulo_codigo=modulo.codigo).all()
+    
+    elif seccion == "archivos":
+        archivos = Archivo.query.filter_by(modulo_id=modulo.id).all()
 
     return render_template(
         "seccion.html",
         modulo=modulo,
         seccion=seccion,
         clases=clases,
-        notas=notas
+        notas=notas,
+        archivos = archivos
     )
     
 @modulos.route("/clase/crear/<codigo>", methods=["POST"])

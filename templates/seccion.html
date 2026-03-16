@@ -225,6 +225,32 @@ opacity:0.9;
         grid-template-columns: 1fr;
     }
 }
+.grid-archivos{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+
+}
+
+.card-item-archivos{
+margin-bottom:0;
+}
+@media(max-width:900px){
+
+.grid-archivos{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:600px){
+
+.grid-archivos{
+grid-template-columns:1fr;
+}
+
+}
 </style>
 
 
@@ -430,10 +456,102 @@ function toggleEditarNota(id){
 
 {% elif seccion == "archivos" %}
 
-<div class="card-item">
-<h3>Archivos</h3>
-<p>Aquí se mostrarán los archivos del módulo.</p>
+<div class="notas-header">
+
+<h3>Archivos del módulo</h3>
+
+<button onclick="mostrarFormularioArchivo()">
++ Subir archivo
+</button>
+
 </div>
+
+
+<div id="formArchivo" class="form-nota" style="display:none;">
+
+<form method="POST"
+action="/archivo/crear/{{ modulo.id }}"
+enctype="multipart/form-data">
+
+<input type="text"
+name="nombre"
+placeholder="Nombre del archivo"
+required>
+
+<input type="file"
+name="archivo"
+required>
+
+<button type="submit">
+Subir archivo
+</button>
+
+</form>
+
+</div>
+
+
+<div class="grid-archivos">
+
+{% for archivo in archivos %}
+
+<div class="card-item-archivos">
+
+<h3>{{ archivo.nombre }}</h3>
+
+<p>{{ archivo.ruta }}</p>
+
+<div class="acciones">
+
+<a href="{{ url_for('static', filename='uploads/' + archivo.ruta) }}"
+target="_blank"
+class="btn-abrir">
+Ver
+</a>
+
+<a href="{{ url_for('static', filename='uploads/' + archivo.ruta) }}"
+download>
+Descargar
+</a>
+
+<a href="/archivo/eliminar/{{ archivo.id }}">
+Eliminar
+</a>
+
+</div>
+
+</div>
+
+{% else %}
+
+<div class="vacio">
+
+<p>No hay archivos todavía.</p>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+
+<script>
+
+function mostrarFormularioArchivo(){
+
+let form = document.getElementById("formArchivo")
+
+if(form.style.display === "none"){
+form.style.display = "block"
+}else{
+form.style.display = "none"
+}
+
+}
+
+</script>
+
+{% endif %}
 
 {% elif seccion == "videos" %}
 
