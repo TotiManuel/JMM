@@ -470,7 +470,7 @@ function toggleEditarNota(id){
 <div id="formArchivo" class="form-nota" style="display:none;">
 
 <form method="POST"
-action="{{ url_for('archivos.crear_archivo', modulo_id=modulo.id) }}"
+action="{{ url_for('archivos.crear_archivo', codigo=modulo.codigo) }}"
 enctype="multipart/form-data">
 
 <input type="text"
