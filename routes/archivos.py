@@ -6,6 +6,7 @@ from extensions import db
 
 archivos = Blueprint("archivos", __name__)
 
+
 @archivos.route("/archivo/crear/<int:modulo_id>", methods=["POST"])
 def crear_archivo(modulo_id):
 
@@ -16,10 +17,13 @@ def crear_archivo(modulo_id):
 
         filename = secure_filename(file.filename)
 
+        # ruta real del proyecto
         upload_folder = os.path.join(current_app.root_path, "static", "uploads")
 
+        # crear carpeta si no existe
         os.makedirs(upload_folder, exist_ok=True)
 
+        # ruta completa del archivo
         ruta_completa = os.path.join(upload_folder, filename)
 
         file.save(ruta_completa)
