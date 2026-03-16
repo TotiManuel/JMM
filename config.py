@@ -9,3 +9,5 @@ class Config:
         "pool_pre_ping": True,
         "pool_recycle": 280
     }
+    SUPABASE_URL = "https://gucthjhfrlmbgkaiidad.supabase.co"
+    SUPABASE_KEY = "sb_publishable_A86yFlKrNVkLucX-sgFnOA_PPHu4N8f"

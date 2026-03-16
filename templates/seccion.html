@@ -503,14 +503,11 @@ Subir archivo
 
 <div class="acciones">
 
-<a href="{{ url_for('static', filename='uploads/' + archivo.ruta) }}"
-target="_blank"
-class="btn-abrir">
+<a href="{{ archivo.url }}" target="_blank" class="btn-abrir">
 Ver
 </a>
 
-<a href="{{ url_for('static', filename='uploads/' + archivo.ruta) }}"
-download>
+<a href="{{ archivo.url }}" download>
 Descargar
 </a>
 
