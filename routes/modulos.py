@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template
 from utils.auth import login_required
 from extensions import db
-from models.models import Clase, Modulo, Nota, Archivo, Video, Enlace, Tarea
+from models.models import Clase, Modulo, Nota, Archivo, Enlace, Tarea
 
 modulos = Blueprint("modulos", __name__)
 
@@ -14,7 +14,6 @@ def ver_modulo(codigo):
 
     notas = Nota.query.filter_by(modulo_codigo=modulo.codigo).all()
     archivos = Archivo.query.filter_by(modulo_id=modulo.id).all()
-    videos = Video.query.filter_by(modulo_id=modulo.id).all()
     enlaces = Enlace.query.filter_by(modulo_id=modulo.id).all()
     tareas = Tarea.query.filter_by(modulo_id=modulo.id).all()
     clases = Clase.query.filter_by(modulo_id=modulo.id).all()
@@ -24,7 +23,6 @@ def ver_modulo(codigo):
         modulo=modulo,
         notas=notas,
         archivos=archivos,
-        videos=videos,
         enlaces=enlaces,
         clases=clases,
         tareas=tareas
@@ -40,7 +38,6 @@ def ver_seccion(codigo, seccion):
     data = {
         "notas": Nota.query.filter_by(modulo_codigo=modulo.codigo).all(),
         "archivos": Archivo.query.filter_by(modulo_id=modulo.id).all(),
-        "videos": Video.query.filter_by(modulo_id=modulo.id).all(),
         "enlaces": Enlace.query.filter_by(modulo_id=modulo.id).all(),
         "tareas": Tarea.query.filter_by(modulo_id=modulo.id).all(),
         "clases": Clase.query.filter_by(modulo_id=modulo.id).all(),
