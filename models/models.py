@@ -78,6 +78,7 @@ class Archivo(db.Model):
         db.Integer,
         db.ForeignKey("modulos.id")
     )
+    modulo = db.relationship("Modulo", backref=db.backref("archivos", lazy=True))
 class Video(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
