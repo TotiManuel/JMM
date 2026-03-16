@@ -3,11 +3,11 @@ from flask import Blueprint, request, redirect
 from supabase import create_client
 from models.models import Archivo, Modulo
 from extensions import db
-from config import SUPABASE_URL, SUPABASE_KEY
+from config import Config
 
 archivos = Blueprint("archivos", __name__)
 
-supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+supabase = create_client(Config.SUPABASE_URL, Config.SUPABASE_KEY)
 
 
 @archivos.route("/archivo/crear/<int:modulo_id>", methods=["POST"])
