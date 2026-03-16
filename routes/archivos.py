@@ -6,8 +6,7 @@ from extensions import db
 
 archivos = Blueprint("archivos", __name__)
 
-UPLOAD_FOLDER = "static/uploads"
-
+UPLOAD_FOLDER = "/static/uploads"
 
 @archivos.route("/archivo/crear/<int:modulo_id>", methods=["POST"])
 def crear_archivo(modulo_id):
