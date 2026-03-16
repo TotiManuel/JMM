@@ -1,12 +1,10 @@
 import os
-from flask import Blueprint, request, redirect, url_for
+from flask import Blueprint, request, redirect, current_app
 from werkzeug.utils import secure_filename
 from models.models import Archivo
 from extensions import db
 
 archivos = Blueprint("archivos", __name__)
-
-UPLOAD_FOLDER = "uploads"
 
 @archivos.route("/archivo/crear/<int:modulo_id>", methods=["POST"])
 def crear_archivo(modulo_id):
@@ -18,9 +16,13 @@ def crear_archivo(modulo_id):
 
         filename = secure_filename(file.filename)
 
-        ruta = os.path.join(UPLOAD_FOLDER, filename)
+        upload_folder = os.path.join(current_app.root_path, "static", "uploads")
 
-        file.save(ruta)
+        os.makedirs(upload_folder, exist_ok=True)
+
+        ruta_completa = os.path.join(upload_folder, filename)
+
+        file.save(ruta_completa)
 
         archivo = Archivo(
             nombre=nombre,
@@ -39,7 +41,7 @@ def eliminar_archivo(id):
 
     archivo = Archivo.query.get_or_404(id)
 
-    ruta = os.path.join("static/uploads", archivo.ruta)
+    ruta = os.path.join(current_app.root_path, "static", "uploads", archivo.ruta)
 
     if os.path.exists(ruta):
         os.remove(ruta)
