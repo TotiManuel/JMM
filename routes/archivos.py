@@ -1,7 +1,7 @@
 import os
 from flask import Blueprint, request, redirect, current_app
 from werkzeug.utils import secure_filename
-from models.models import Archivo
+from models.models import Archivo, Modulo
 from extensions import db
 
 archivos = Blueprint("archivos", __name__)
@@ -10,18 +10,19 @@ archivos = Blueprint("archivos", __name__)
 @archivos.route("/archivo/crear/<int:modulo_id>", methods=["POST"])
 def crear_archivo(modulo_id):
 
+    modulo = Modulo.query.get_or_404(modulo_id)
+
     nombre = request.form.get("nombre")
     file = request.files.get("archivo")
 
     if not file or file.filename == "":
-        return redirect(request.referrer)
+        return redirect(f"/modulo/{modulo.codigo}/archivos")
 
     filename = secure_filename(file.filename)
 
-    # ruta real del proyecto
     upload_folder = os.path.join(current_app.root_path, "static", "uploads")
 
-    # crear carpeta si no existe
+    # crea carpeta si no existe
     os.makedirs(upload_folder, exist_ok=True)
 
     ruta_completa = os.path.join(upload_folder, filename)
@@ -37,13 +38,14 @@ def crear_archivo(modulo_id):
     db.session.add(archivo)
     db.session.commit()
 
-    return redirect(request.referrer)
+    return redirect(f"/modulo/{modulo.codigo}/archivos")
 
 
 @archivos.route("/archivo/eliminar/<int:id>")
 def eliminar_archivo(id):
 
     archivo = Archivo.query.get_or_404(id)
+    modulo = Modulo.query.get(archivo.modulo_id)
 
     ruta = os.path.join(
         current_app.root_path,
@@ -58,4 +60,4 @@ def eliminar_archivo(id):
     db.session.delete(archivo)
     db.session.commit()
 
-    return redirect(request.referrer)
+    return redirect(f"/modulo/{modulo.codigo}/archivos")
