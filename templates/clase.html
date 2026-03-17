@@ -200,7 +200,23 @@ h1{
         max-width:100%;
     }
 }
+ul, ol{
+    margin-left:20px;
+    margin-bottom:15px;
+}
 
+li{
+    margin-bottom:8px;
+    color:#bbbbbb;
+}
+
+.definiciones p{
+    margin-bottom:10px;
+}
+
+.definiciones strong{
+    color:#ffffff;
+}
 </style>
 
 <div class="seccion-container">
@@ -223,6 +239,34 @@ h1{
 {% elif bloque.tipo == "imagen" %}
 <img src="{{ bloque.contenido }}" class="img-clase">
 
+{% elif bloque.tipo == "lista" %}
+<ul>
+    {% for item in bloque.contenido.split('\n') %}
+        {% if item.strip() %}
+            <li>{{ item }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% elif bloque.tipo == "definicion" %}
+<div class="definiciones">
+    {% for linea in bloque.contenido.split('\n') %}
+        {% if ':' in linea %}
+            {% set partes = linea.split(':', 1) %}
+            <p><strong>{{ partes[0] }}:</strong> {{ partes[1] }}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% elif bloque.tipo == "opciones" %}
+<ol>
+    {% for item in bloque.contenido.split('\n') %}
+        {% if item.strip() %}
+            <li>{{ item }}</li>
+        {% endif %}
+    {% endfor %}
+</ol>
+
+
 {% endif %}
 
 {% endfor %}
@@ -240,6 +284,11 @@ h1{
 <option value="subtitulo">Subtítulo</option>
 <option value="texto">Texto</option>
 <option value="imagen">Imagen</option>
+
+<!-- NUEVOS -->
+<option value="lista">Listado</option>
+<option value="definicion">Definición</option>
+<option value="opciones">Opciones</option>
 
 </select>
 
