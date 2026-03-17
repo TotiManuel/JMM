@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Auth</title>
+
+<style>
+
+/* ====== BASE ====== */
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+    font-family:'Segoe UI', sans-serif;
+}
+
+/* ====== CONTENEDOR ====== */
+.auth-container{
+    width:900px;
+    height:500px;
+    background:white;
+    border-radius:20px;
+    display:flex;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,0.2);
+}
+
+/* ====== COLUMNAS ====== */
+.auth-box{
+    flex:1;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.login-box{
+    background:#f9f9f9;
+}
+
+.register-box{
+    background:linear-gradient(135deg,#2575fc,#6a11cb);
+    color:white;
+}
+
+/* ====== TITULOS ====== */
+.auth-box h2{
+    margin-bottom:20px;
+}
+
+/* ====== INPUTS ====== */
+input{
+    width:100%;
+    padding:10px;
+    margin-bottom:12px;
+    border-radius:8px;
+    border:1px solid #ddd;
+}
+
+/* ====== BOTONES ====== */
+button{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.login-box button{
+    background:#2575fc;
+    color:white;
+}
+
+.register-box button{
+    background:white;
+    color:#2575fc;
+}
+
+/* ====== FLASH ====== */
+.flash{
+    margin-bottom:10px;
+    font-size:14px;
+    color:red;
+}
+
+/* ====== RESPONSIVE ====== */
+@media(max-width:900px){
+    .auth-container{
+        flex-direction:column;
+        height:auto;
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="auth-container">
+
+    <!-- LOGIN -->
+    <div class="auth-box login-box">
+        <h2>Iniciar sesión</h2>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <div class="flash">{{ msg }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('auth.login') }}">
+            <input type="text" name="username" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <!-- REGISTER -->
+    <div class="auth-box register-box">
+        <h2>Crear cuenta</h2>
+
+        <form method="POST" action="{{ url_for('auth.register') }}">
+            <input type="text" name="username" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
