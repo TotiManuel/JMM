@@ -87,7 +87,7 @@ body {
 {% if session.get('user') %}
     <a href="{{ url_for('dashboard.dashboard_view') }}" class="btn">Ir al Dashboard</a>
 {% else %}
-    <a href="{{ url_for('auth.login') }}" class="btn">Iniciar sesión</a>
+    <a href="{{ url_for('auth.auth_page') }}" class="btn">Iniciar sesión</a>
 {% endif %}
 
 </section>
