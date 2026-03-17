@@ -1,6 +1,7 @@
 from config import Config
 from flask import Flask
 from extensions import db
+from routes.tareas import tareas
 from routes.clases import clases
 from routes.notas import notas
 from routes.auth import auth
@@ -31,6 +32,7 @@ app.register_blueprint(clases, url_prefix="/clases")
 app.register_blueprint(notas, url_prefix="/notas")
 app.register_blueprint(archivos)
 app.register_blueprint(enlaces)
+app.register_blueprint(tareas)
 app.register_blueprint(modulos)
 
 @app.context_processor
