@@ -251,6 +251,114 @@ grid-template-columns:1fr;
 }
 
 }
+/* --- Contenedor de la sección --- */
+.lista-enlaces {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* --- Cada tarjeta de enlace --- */
+.lista-enlaces .card-item {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* --- Hover efecto --- */
+.lista-enlaces .card-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* --- Título del enlace --- */
+.lista-enlaces .card-item h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- Link URL con icono --- */
+.lista-enlaces .card-item a {
+    color: #2563eb;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.lista-enlaces .card-item a:hover {
+    text-decoration: underline;
+}
+
+/* --- Icono de enlace --- */
+.lista-enlaces .card-item a::before {
+    content: '🔗';
+    display: inline-block;
+}
+
+/* --- Formulario de agregar enlace --- */
+.lista-enlaces form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.lista-enlaces form input[type="text"],
+.lista-enlaces form input[type="url"] {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    flex: 1 1 200px;
+}
+
+.lista-enlaces form button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.lista-enlaces form button:hover {
+    background-color: #1e4db7;
+}
+
+/* --- Acciones editar/eliminar --- */
+.lista-enlaces .acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.lista-enlaces .acciones form input {
+    flex: none;
+    width: auto;
+}
+
+.lista-enlaces .acciones a {
+    color: #ef4444;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.lista-enlaces .acciones a:hover {
+    text-decoration: underline;
+}
 </style>
 
 
