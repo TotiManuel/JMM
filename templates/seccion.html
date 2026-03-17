@@ -251,113 +251,65 @@ grid-template-columns:1fr;
 }
 
 }
-/* --- Contenedor de la sección --- */
-.lista-enlaces {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
+/* --- Estado normal (vista) --- */
+.card-item .vista {
+    display: block;
 }
 
-/* --- Cada tarjeta de enlace --- */
-.lista-enlaces .card-item {
-    background-color: #ffffff;
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: transform 0.2s, box-shadow 0.2s;
+/* --- Estado edición oculto --- */
+.card-item .edicion {
+    display: none;
 }
 
-/* --- Hover efecto --- */
-.lista-enlaces .card-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+/* --- Cuando está en modo edición --- */
+.card-item.editando .vista {
+    display: none;
 }
 
-/* --- Título del enlace --- */
-.lista-enlaces .card-item h3 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.card-item.editando .edicion {
+    display: block;
 }
 
-/* --- Link URL con icono --- */
-.lista-enlaces .card-item a {
-    color: #2563eb;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 14px;
-}
-
-.lista-enlaces .card-item a:hover {
-    text-decoration: underline;
-}
-
-/* --- Icono de enlace --- */
-.lista-enlaces .card-item a::before {
-    content: '🔗';
-    display: inline-block;
-}
-
-/* --- Formulario de agregar enlace --- */
-.lista-enlaces form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-}
-
-.lista-enlaces form input[type="text"],
-.lista-enlaces form input[type="url"] {
-    padding: 8px 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    flex: 1 1 200px;
-}
-
-.lista-enlaces form button {
-    padding: 8px 15px;
+/* --- Botón editar --- */
+.btn-editar {
+    background-color: #f59e0b;
+    color: white;
     border: none;
+    padding: 6px 10px;
     border-radius: 6px;
-    background-color: #2563eb;
-    color: #fff;
     cursor: pointer;
-    transition: background 0.2s;
 }
 
-.lista-enlaces form button:hover {
-    background-color: #1e4db7;
+.btn-editar:hover {
+    background-color: #d97706;
 }
 
-/* --- Acciones editar/eliminar --- */
-.lista-enlaces .acciones {
-    display: flex;
-    gap: 10px;
-    margin-top: 5px;
+/* --- Botón guardar --- */
+.btn-guardar {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-.lista-enlaces .acciones form input {
-    flex: none;
-    width: auto;
+.btn-guardar:hover {
+    background-color: #059669;
 }
 
-.lista-enlaces .acciones a {
-    color: #ef4444;
-    font-weight: 600;
-    text-decoration: none;
+/* --- Botón cancelar --- */
+.btn-cancelar {
+    background-color: #6b7280;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-.lista-enlaces .acciones a:hover {
-    text-decoration: underline;
+.btn-cancelar:hover {
+    background-color: #4b5563;
 }
 </style>
 
@@ -668,22 +620,44 @@ form.style.display = "none"
 <div class="lista-enlaces">
     {% for enlace in modulo.enlaces %}
     <div class="card-item">
-        <h3>{{ enlace.titulo }}</h3>
-        <a href="{{ enlace.url }}" target="_blank">{{ enlace.url }}</a>
-        <div class="acciones">
+
+        <!-- VISTA NORMAL -->
+        <div class="vista">
+            <h3>{{ enlace.titulo }}</h3>
+            <a href="{{ enlace.url }}" target="_blank">{{ enlace.url }}</a>
+
+            <div class="acciones">
+                <button class="btn-editar" onclick="toggleEditar(this)">Editar</button>
+                <a href="{{ url_for('enlaces.eliminar_enlace', id=enlace.id) }}">Eliminar</a>
+            </div>
+        </div>
+
+        <!-- MODO EDICIÓN -->
+        <div class="edicion">
             <form method="POST" action="{{ url_for('enlaces.editar_enlace', id=enlace.id) }}">
                 <input type="text" name="titulo" value="{{ enlace.titulo }}" required>
                 <input type="url" name="url" value="{{ enlace.url }}" required>
-                <button type="submit">Editar</button>
+
+                <div class="acciones">
+                    <button type="submit" class="btn-guardar">Guardar</button>
+                    <button type="button" class="btn-cancelar" onclick="toggleEditar(this)">Cancelar</button>
+                </div>
             </form>
-            <a href="{{ url_for('enlaces.eliminar_enlace', id=enlace.id) }}" onclick="return confirm('¿Eliminar este enlace?')">Eliminar</a>
         </div>
+
     </div>
     {% else %}
     <p>No hay enlaces agregados.</p>
     {% endfor %}
 </div>
-
+<script>
+<script>
+function toggleEditar(btn) {
+    const card = btn.closest('.card-item');
+    card.classList.toggle('editando');
+}
+</script>
+</script>
 {% elif seccion == "tareas" %}
 
 <div class="card-item">
