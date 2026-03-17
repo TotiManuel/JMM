@@ -278,6 +278,22 @@ button:hover{
     margin:10px 0;
     width:250px;
 }
+.clases-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+@media(max-width:900px){
+    .clases-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .clases-grid{
+        grid-template-columns:1fr;
+    }
+}
 </style>
 <div class="seccion-container">
 
@@ -324,6 +340,7 @@ button:hover{
 
 </div>
 
+<div class="clases-grid">
 {% for clase in clases %}
 
 <div class="card-item">
@@ -368,7 +385,7 @@ button:hover{
 </div>
 
 {% endfor %}
-
+</div>
 <script>
 function filtrarClases(){
 
