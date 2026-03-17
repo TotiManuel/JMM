@@ -370,14 +370,16 @@ function toggleEditar(id){
 
 <button onclick="toggleEditarNota({{ nota.id }})">Editar</button>
 
-<a href="/nota/eliminar/{{ nota.id }}">Eliminar</a>
+<a href="{{ url_for('notas.eliminar_nota', id=nota.id) }}">
+    Eliminar
+</a>
 
 </div>
 
 
 <div id="editarNota{{ nota.id }}" class="form-editar" style="display:none;">
 
-<form method="POST" action="/nota/editar/{{ nota.id }}">
+<form method="POST" action="{{ url_for('notas.editar_nota', id=nota.id) }}">
 
 <input type="text" name="titulo" value="{{ nota.titulo }}">
 
