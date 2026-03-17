@@ -6,91 +6,174 @@
 
 <style>
 
-/* ====== BASE ====== */
+/* ================= BASE ================= */
+
 body{
     margin:0;
     height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#6a11cb,#2575fc);
+    background: radial-gradient(circle at top, #1a1a1a, #000000 80%);
     font-family:'Segoe UI', sans-serif;
+    color:#f5f5f5;
 }
 
-/* ====== CONTENEDOR ====== */
+/* ================= CONTENEDOR ================= */
+
 .auth-container{
     width:900px;
-    height:500px;
-    background:white;
+    height:520px;
+    background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
     border-radius:20px;
     display:flex;
     overflow:hidden;
-    box-shadow:0 20px 50px rgba(0,0,0,0.2);
+    box-shadow: 
+        0 25px 60px rgba(0,0,0,0.9),
+        inset 0 0 15px rgba(255,255,255,0.05);
+    animation: fadeIn 0.7s ease;
+    position:relative;
 }
 
-/* ====== COLUMNAS ====== */
+/* brillo animado */
+.auth-container::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    top:-50%;
+    left:-50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
+    animation: glowMove 10s linear infinite;
+}
+
+/* ================= COLUMNAS ================= */
+
 .auth-box{
     flex:1;
-    padding:40px;
+    padding:45px;
     display:flex;
     flex-direction:column;
     justify-content:center;
+    z-index:2;
 }
 
+/* LOGIN */
 .login-box{
-    background:#f9f9f9;
+    background: rgba(255,255,255,0.02);
 }
 
+/* REGISTER */
 .register-box{
-    background:linear-gradient(135deg,#2575fc,#6a11cb);
-    color:white;
+    background: linear-gradient(145deg, #111, #1c1c1c);
+    border-left: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ====== TITULOS ====== */
+/* ================= TITULOS ================= */
+
 .auth-box h2{
     margin-bottom:20px;
+    color:#ffffff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);
 }
 
-/* ====== INPUTS ====== */
+/* ================= INPUTS ================= */
+
 input{
     width:100%;
-    padding:10px;
+    padding:12px;
     margin-bottom:12px;
-    border-radius:8px;
-    border:1px solid #ddd;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1);
+    background:#0d0d0d;
+    color:#fff;
+    transition: all 0.3s ease;
 }
 
-/* ====== BOTONES ====== */
+input::placeholder{
+    color:#777;
+}
+
+input:focus{
+    outline:none;
+    border-color:#ffffff;
+    box-shadow:0 0 10px rgba(255,255,255,0.2);
+}
+
+/* ================= BOTONES ================= */
+
 button{
-    padding:10px;
+    padding:12px;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
     cursor:pointer;
-    font-weight:bold;
+    font-weight:600;
+    transition: all 0.3s ease;
 }
 
+/* login */
 .login-box button{
-    background:#2575fc;
-    color:white;
+    background: linear-gradient(90deg,#ffffff,#cccccc);
+    color:#000;
 }
 
+.login-box button:hover{
+    transform: translateY(-3px);
+    box-shadow:0 10px 25px rgba(255,255,255,0.25);
+}
+
+/* register */
 .register-box button{
-    background:white;
-    color:#2575fc;
+    background: linear-gradient(90deg,#ffffff,#cccccc);
+    color:#000;
 }
 
-/* ====== FLASH ====== */
+.register-box button:hover{
+    transform: translateY(-3px);
+    box-shadow:0 10px 25px rgba(255,255,255,0.25);
+}
+
+/* ================= FLASH ================= */
+
 .flash{
     margin-bottom:10px;
     font-size:14px;
-    color:red;
+    color:#ff4d4d;
 }
 
-/* ====== RESPONSIVE ====== */
+/* ================= ANIMACIONES ================= */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes glowMove{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
 @media(max-width:900px){
     .auth-container{
         flex-direction:column;
         height:auto;
+        width:95%;
+    }
+
+    .auth-box{
+        padding:30px;
     }
 }
 

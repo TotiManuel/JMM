@@ -3,11 +3,12 @@
 {% block content %}
 <style>
 
-/* ================= BASE ================= */
+/* ================= BACKGROUND ================= */
 
 body{
-    background: linear-gradient(135deg,#6a11cb,#2575fc);
-    font-family: 'Segoe UI', Arial, sans-serif;
+    background: radial-gradient(circle at top, #1a1a1a, #000000 80%);
+    font-family: 'Segoe UI', sans-serif;
+    color:#f5f5f5;
 }
 
 /* ================= CONTENEDOR ================= */
@@ -15,11 +16,27 @@ body{
 .seccion-container{
     max-width:1100px;
     margin:70px auto;
-    background:white;
+    background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
     padding:35px;
     border-radius:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.9),
+        inset 0 0 12px rgba(255,255,255,0.05);
     animation:fadeIn 0.6s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+/* brillo */
+.seccion-container::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    top:-50%;
+    left:-50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
+    animation: glowMove 10s linear infinite;
 }
 
 /* ================= HEADER ================= */
@@ -33,12 +50,12 @@ body{
 
 .header-seccion h1{
     font-size:26px;
-    color:#333;
+    color:#ffffff;
 }
 
 .header-seccion h2{
-    color:#2575fc;
-    font-size:18px;
+    color:#bbbbbb;
+    font-size:16px;
 }
 
 /* ================= GRID ================= */
@@ -54,73 +71,97 @@ body{
 
 .card-item,
 .card-item-archivos{
-    background:#ffffff;
+    background: linear-gradient(145deg, #111, #1c1c1c);
     border-radius:16px;
     padding:18px;
-    border:1px solid #eee;
-    transition:0.25s;
+    border:1px solid rgba(255,255,255,0.05);
+    transition:0.3s;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.8),
+        inset 0 0 10px rgba(255,255,255,0.03);
 }
 
 .card-item:hover{
     transform:translateY(-5px);
-    box-shadow:0 12px 25px rgba(0,0,0,0.12);
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.9),
+        inset 0 0 12px rgba(255,255,255,0.06);
 }
 
 .card-item h3{
-    color:#2575fc;
+    color:#ffffff;
     font-size:16px;
 }
 
 .card-item p{
     font-size:14px;
-    color:#555;
+    color:#bbbbbb;
 }
 
 /* ================= FORMULARIOS ================= */
 
 input, textarea{
     width:100%;
-    padding:10px;
-    border-radius:8px;
-    border:1px solid #ddd;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1);
     margin-bottom:10px;
+    background:#0d0d0d;
+    color:#fff;
+    transition:0.3s;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#777;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:#ffffff;
+    box-shadow:0 0 10px rgba(255,255,255,0.2);
 }
 
 textarea{
     min-height:90px;
 }
 
+/* ================= BOTONES ================= */
+
 button{
-    background:#2575fc;
-    color:white;
+    background: linear-gradient(90deg,#ffffff,#cccccc);
+    color:#000;
     border:none;
     padding:8px 14px;
     border-radius:8px;
     cursor:pointer;
-    transition:0.2s;
+    transition:0.3s;
+    font-weight:600;
 }
 
 button:hover{
-    opacity:0.9;
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(255,255,255,0.25);
 }
 
-/* ================= BOTONES ================= */
+/* ================= BOTONES SECUNDARIOS ================= */
 
 .btn-abrir{
-    background:#2575fc;
-    color:white;
+    background: linear-gradient(90deg,#ffffff,#cccccc);
+    color:#000;
     padding:6px 12px;
     border-radius:6px;
     text-decoration:none;
     font-size:13px;
 }
 
-.btn-editar{ background:#f59e0b; color:white; }
-.btn-guardar{ background:#10b981; color:white; }
-.btn-cancelar{ background:#6b7280; color:white; }
+.btn-editar{ background:linear-gradient(90deg,#f59e0b,#d97706); color:white; }
+.btn-guardar{ background:linear-gradient(90deg,#10b981,#059669); color:white; }
+.btn-cancelar{ background:linear-gradient(90deg,#6b7280,#4b5563); color:white; }
 
 .acciones{
     display:flex;
@@ -132,7 +173,7 @@ button:hover{
 
 .lista-enlaces .card-item a{
     font-size:13px;
-    color:#555;
+    color:#bbbbbb;
     word-break:break-all;
 }
 
@@ -153,7 +194,7 @@ button:hover{
 }
 
 .card-item.completada{
-    opacity:0.6;
+    opacity:0.5;
     text-decoration:line-through;
 }
 
@@ -166,7 +207,7 @@ button:hover{
 .encargado{
     margin-left:auto;
     font-size:12px;
-    color:#666;
+    color:#888;
 }
 
 .subtareas{
@@ -179,6 +220,7 @@ button:hover{
     align-items:center;
     gap:8px;
     font-size:13px;
+    color:#ccc;
 }
 
 /* ================= VACÍO ================= */
@@ -189,11 +231,16 @@ button:hover{
     color:#777;
 }
 
-/* ================= ANIMACIÓN ================= */
+/* ================= ANIMACIONES ================= */
 
 @keyframes fadeIn{
     from{opacity:0; transform:translateY(20px);}
     to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes glowMove{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
 }
 
 /* ================= RESPONSIVE ================= */

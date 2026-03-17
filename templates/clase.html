@@ -2,138 +2,203 @@
  
 {% block content %}
 <style>
-/* fondo general de la página */
+
+/* ================= BACKGROUND ================= */
+
 body{
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: radial-gradient(circle at top, #1a1a1a, #000000 80%);
+    color:#f5f5f5;
+    font-family:'Segoe UI', sans-serif;
 }
 
-/* contenedor principal */
+/* ================= CONTENEDOR GENERAL ================= */
+
 .seccion-container{
     max-width:1000px;
-    margin:40px auto;
+    margin:50px auto;
     padding:0 20px;
 }
 
-/* tarjeta de la clase */
-.contenido-clase{
-    background:white;
-    border:1px solid #e5e7eb;
-    border-radius:12px;
-    padding:35px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.05);
-}
+/* ================= CONTENIDO CLASE ================= */
 
-/* formulario de bloques */
-.bloques-tools{
-    background:white;
-    border:1px solid #e5e7eb;
-    border-radius:12px;
-    padding:25px;
-    margin:30px auto;
-    max-width:900px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* inputs */
-.bloques-tools select,
-.bloques-tools textarea{
-    border:1px solid #d1d5db;
-    border-radius:8px;
-}
-
-/* efecto al enfocar */
-.bloques-tools select:focus,
-.bloques-tools textarea:focus{
-    outline:none;
-    border-color:#2563eb;
-    box-shadow:0 0 0 2px rgba(37,99,235,0.15);
-}
-/* contenedor general */
 .contenido-clase{
     max-width:900px;
     margin:40px auto;
-    padding:30px;
-    background:white;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    padding:35px;
+    background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+    border-radius:16px;
+    box-shadow: 
+        0 15px 40px rgba(0,0,0,0.9),
+        inset 0 0 12px rgba(255,255,255,0.05);
+    position:relative;
+    overflow:hidden;
+    animation: fadeIn 0.6s ease;
 }
 
-/* títulos */
+/* brillo animado */
+.contenido-clase::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    top:-50%;
+    left:-50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
+    animation: glowMove 10s linear infinite;
+}
+
+/* ================= TITULOS ================= */
+
+h1{
+    text-align:center;
+    color:#ffffff;
+    margin-bottom:20px;
+    text-shadow:0 0 10px rgba(255,255,255,0.2);
+}
+
 .contenido-clase h2{
     margin-top:30px;
     margin-bottom:10px;
     font-size:28px;
-    color:#222;
+    color:#ffffff;
 }
 
 .contenido-clase h3{
     margin-top:25px;
     margin-bottom:8px;
     font-size:22px;
-    color:#444;
+    color:#cccccc;
 }
 
-/* texto */
+/* ================= TEXTO ================= */
+
 .contenido-clase p{
     line-height:1.7;
-    color:#555;
+    color:#bbbbbb;
     margin-bottom:15px;
     word-wrap:break-word;
-    overflow-wrap:break-word;
 }
 
-/* imagen */
+/* ================= IMAGEN ================= */
+
 .img-clase{
     display:block;
-    max-width:50%;
+    max-width:55%;
     height:auto;
     margin:25px auto;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.8);
 }
 
-/* herramientas de bloques */
+/* ================= BLOQUES TOOLS ================= */
+
 .bloques-tools{
     max-width:900px;
     margin:30px auto;
-    background:white;
+    background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
     padding:25px;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    border-radius:16px;
+    box-shadow: 
+        0 15px 40px rgba(0,0,0,0.9),
+        inset 0 0 10px rgba(255,255,255,0.04);
+    position:relative;
+    overflow:hidden;
 }
 
-/* inputs */
+/* brillo */
+.bloques-tools::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    top:-50%;
+    left:-50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.04), transparent 60%);
+    animation: glowMove 12s linear infinite;
+}
+
+/* ================= INPUTS ================= */
+
 .bloques-tools select,
 .bloques-tools textarea{
     width:100%;
-    padding:10px;
+    padding:12px;
     margin-top:10px;
-    border-radius:8px;
-    border:1px solid #ddd;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1);
+    background:#0d0d0d;
+    color:#fff;
     font-size:14px;
+    transition: all 0.3s ease;
 }
 
-/* textarea */
 .bloques-tools textarea{
-    min-height:90px;
+    min-height:100px;
     resize:vertical;
 }
 
-/* botón */
+.bloques-tools select:focus,
+.bloques-tools textarea:focus{
+    outline:none;
+    border-color:#ffffff;
+    box-shadow:0 0 10px rgba(255,255,255,0.2);
+}
+
+/* ================= BOTÓN ================= */
+
 .bloques-tools button{
     margin-top:15px;
-    background:#2563eb;
-    color:white;
+    background: linear-gradient(90deg,#ffffff,#cccccc);
+    color:#000;
     border:none;
-    padding:10px 18px;
-    border-radius:8px;
+    padding:10px 20px;
+    border-radius:10px;
     cursor:pointer;
-    font-weight:500;
+    font-weight:600;
+    transition:0.3s;
 }
 
 .bloques-tools button:hover{
-    background:#1e4ed8;
+    transform: translateY(-3px);
+    box-shadow:0 10px 25px rgba(255,255,255,0.25);
 }
+
+/* ================= ANIMACIONES ================= */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes glowMove{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:600px){
+    .contenido-clase,
+    .bloques-tools{
+        margin:20px 15px;
+        padding:20px;
+    }
+
+    .img-clase{
+        max-width:100%;
+    }
+}
+
 </style>
 
 <div class="seccion-container">
