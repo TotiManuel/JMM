@@ -271,7 +271,13 @@ button:hover{
         gap:10px;
     }
 }
-
+#buscadorClases{
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    margin:10px 0;
+    width:250px;
+}
 </style>
 <div class="seccion-container">
 
@@ -292,6 +298,13 @@ button:hover{
 
 <h3>Clases del módulo</h3>
 
+<input 
+    type="text" 
+    id="buscadorClases" 
+    placeholder="🔍 Buscar clase..." 
+    onkeyup="filtrarClases()"
+>
+
 <button onclick="mostrarFormulario()">+ Nueva clase</button>
 
 </div>
@@ -310,7 +323,6 @@ button:hover{
 </form>
 
 </div>
-
 
 {% for clase in clases %}
 
@@ -358,6 +370,25 @@ button:hover{
 {% endfor %}
 
 <script>
+function filtrarClases(){
+
+    let input = document.getElementById("buscadorClases")
+    let filtro = input.value.toLowerCase()
+
+    let clases = document.querySelectorAll(".card-item")
+
+    clases.forEach(clase => {
+
+        let titulo = clase.querySelector("h3").innerText.toLowerCase()
+
+        if(titulo.includes(filtro)){
+            clase.style.display = "flex"
+        }else{
+            clase.style.display = "none"
+        }
+
+    })
+}
 function mostrarFormulario(){
     let form = document.getElementById("formClase")
 
