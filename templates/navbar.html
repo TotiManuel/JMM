@@ -115,10 +115,11 @@ nav a:hover::after {
 
         {% if session.get('user') %}
 
-            <span class="user-badge">
+            <a href="{{ url_for('main.home') }}">
+                <span class="user-badge">
                 👤 {{ session.get('user') }}
             </span>
-            <a href="{{ url_for('main.home') }}">Home</a>
+            </a>
 
             <a href="{{ url_for('dashboard.dashboard_view') }}">Dashboard</a>
 
