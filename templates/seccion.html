@@ -549,10 +549,31 @@ form.style.display = "none"
 </script>
 
 {% elif seccion == "enlaces" %}
+<h2>Enlaces del módulo</h2>
 
-<div class="card-item">
-<h3>Enlaces</h3>
-<p>Aquí se mostrarán los enlaces del módulo.</p>
+<form method="POST" action="{{ url_for('enlaces.crear_enlace', codigo=modulo.codigo) }}">
+    <input type="text" name="titulo" placeholder="Título del enlace" required>
+    <input type="url" name="url" placeholder="URL del enlace" required>
+    <button type="submit">Agregar enlace</button>
+</form>
+
+<div class="lista-enlaces">
+    {% for enlace in modulo.enlaces %}
+    <div class="card-item">
+        <h3>{{ enlace.titulo }}</h3>
+        <a href="{{ enlace.url }}" target="_blank">{{ enlace.url }}</a>
+        <div class="acciones">
+            <form method="POST" action="{{ url_for('enlaces.editar_enlace', id=enlace.id) }}">
+                <input type="text" name="titulo" value="{{ enlace.titulo }}" required>
+                <input type="url" name="url" value="{{ enlace.url }}" required>
+                <button type="submit">Editar</button>
+            </form>
+            <a href="{{ url_for('enlaces.eliminar_enlace', id=enlace.id) }}" onclick="return confirm('¿Eliminar este enlace?')">Eliminar</a>
+        </div>
+    </div>
+    {% else %}
+    <p>No hay enlaces agregados.</p>
+    {% endfor %}
 </div>
 
 {% elif seccion == "tareas" %}

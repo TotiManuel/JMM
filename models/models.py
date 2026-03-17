@@ -80,17 +80,17 @@ class Archivo(db.Model):
     )
     modulo = db.relationship("Modulo", backref=db.backref("archivos", lazy=True))
 class Enlace(db.Model):
+    __tablename__ = "enlaces"
 
     id = db.Column(db.Integer, primary_key=True)
-
     titulo = db.Column(db.String(200))
-
     url = db.Column(db.String(300))
-
     modulo_id = db.Column(
         db.Integer,
         db.ForeignKey("modulos.id")
     )
+
+    modulo = db.relationship("Modulo", backref=db.backref("enlaces", lazy=True))
 class Tarea(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)

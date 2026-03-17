@@ -8,6 +8,7 @@ from routes.main import main
 from routes.dashboard import dashboard
 from routes.modulos import modulos
 from routes.archivos import archivos
+from routes.enlaces import enlaces
 from models.models import *
 
 app = Flask(__name__)
@@ -29,6 +30,7 @@ app.register_blueprint(dashboard, url_prefix="/dashboard")
 app.register_blueprint(clases, url_prefix="/clases")
 app.register_blueprint(notas, url_prefix="/notas")
 app.register_blueprint(archivos)
+app.register_blueprint(enlaces)
 app.register_blueprint(modulos)
 
 @app.context_processor
