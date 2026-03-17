@@ -92,14 +92,31 @@ class Enlace(db.Model):
 
     modulo = db.relationship("Modulo", backref=db.backref("enlaces", lazy=True))
 class Tarea(db.Model):
+    __tablename__ = "tareas"
 
     id = db.Column(db.Integer, primary_key=True)
-
     titulo = db.Column(db.String(200))
-
-    completado = db.Column(db.Boolean, default=False)
+    descripcion = db.Column(db.Text)
+    encargado = db.Column(db.String(100))
+    completada = db.Column(db.Boolean, default=False)
 
     modulo_id = db.Column(
         db.Integer,
         db.ForeignKey("modulos.id")
     )
+
+    modulo = db.relationship("Modulo", backref=db.backref("tareas", lazy=True))
+    
+class Subtarea(db.Model):
+    __tablename__ = "subtareas"
+
+    id = db.Column(db.Integer, primary_key=True)
+    titulo = db.Column(db.String(200))
+    completada = db.Column(db.Boolean, default=False)
+
+    tarea_id = db.Column(
+        db.Integer,
+        db.ForeignKey("tareas.id")
+    )
+
+    tarea = db.relationship("Tarea", backref=db.backref("subtareas", lazy=True))

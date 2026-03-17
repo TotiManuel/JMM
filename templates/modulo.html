@@ -174,10 +174,10 @@ align-items:flex-start;
     <div class="card-footer">Links importantes</div>
 </div>
 
-<div class="card-seccion" data-titulo="tareas" onclick="abrirSeccion('tareas')">
-<h3>✅ Tareas</h3>
-<p>{{ tareas|length }} tareas</p>
-<div class="card-footer">Pendientes del módulo</div>
+<div class="card-seccion" onclick="abrirSeccion('tareas')">
+    <h3>✅ Tareas</h3>
+    <p>{{ modulo.tareas|length }} tareas</p>
+    <div class="card-footer">Checklist del módulo</div>
 </div>
 
 </div>

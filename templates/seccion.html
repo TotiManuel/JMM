@@ -311,6 +311,41 @@ grid-template-columns:1fr;
 .btn-cancelar:hover {
     background-color: #4b5563;
 }
+.lista-tareas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card-item.completada {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.tarea-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.encargado {
+    margin-left: auto;
+    font-size: 13px;
+    color: #666;
+}
+
+.subtareas {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.sub-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
 </style>
 
 
@@ -658,9 +693,52 @@ function toggleEditar(btn) {
 </script>
 {% elif seccion == "tareas" %}
 
-<div class="card-item">
-<h3>Tareas</h3>
-<p>Aquí se mostrarán las tareas del módulo.</p>
+<h2>Tareas del módulo</h2>
+
+<form method="POST" action="{{ url_for('tareas.crear_tarea', codigo=modulo.codigo) }}">
+    <input type="text" name="titulo" placeholder="Título" required>
+    <input type="text" name="encargado" placeholder="Encargado">
+    <textarea name="descripcion" placeholder="Descripción"></textarea>
+    <button type="submit">Agregar tarea</button>
+</form>
+
+<div class="lista-tareas">
+    {% for tarea in modulo.tareas %}
+    <div class="card-item {{ 'completada' if tarea.completada }}">
+
+        <!-- Header -->
+        <div class="tarea-header">
+            <a href="{{ url_for('tareas.toggle_tarea', id=tarea.id) }}">
+                <input type="checkbox" {% if tarea.completada %}checked{% endif %}>
+            </a>
+
+            <h3>{{ tarea.titulo }}</h3>
+            <span class="encargado">👤 {{ tarea.encargado }}</span>
+        </div>
+
+        <p>{{ tarea.descripcion }}</p>
+
+        <!-- SUBTAREAS -->
+        <div class="subtareas">
+            {% for sub in tarea.subtareas %}
+            <div class="sub-item">
+                <a href="{{ url_for('tareas.toggle_subtarea', id=sub.id) }}">
+                    <input type="checkbox" {% if sub.completada %}checked{% endif %}>
+                </a>
+                <span>{{ sub.titulo }}</span>
+                <a href="{{ url_for('tareas.eliminar_subtarea', id=sub.id) }}">❌</a>
+            </div>
+            {% endfor %}
+
+            <form method="POST" action="{{ url_for('tareas.crear_subtarea', tarea_id=tarea.id) }}">
+                <input type="text" name="titulo" placeholder="Nueva subtarea">
+            </form>
+        </div>
+
+        <a href="{{ url_for('tareas.eliminar_tarea', id=tarea.id) }}">Eliminar</a>
+
+    </div>
+    {% endfor %}
 </div>
 
 {% endif %}
