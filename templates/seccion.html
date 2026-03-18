@@ -84,7 +84,9 @@ body{
         0 8px 20px rgba(0,0,0,0.8),
         inset 0 0 10px rgba(255,255,255,0.03);
 }
-
+.card-item{
+    cursor:pointer;
+}
 .card-item:hover{
     transform:translateY(-5px);
     box-shadow:
@@ -168,8 +170,35 @@ button:hover{
     display:flex;
     gap:10px;
     margin-top:10px;
+
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition: all 0.3s ease;
+}
+.card-item.activa .acciones{
+    max-height:200px;
+    opacity:1;
+}
+.card-item.activa{
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.9),
+        inset 0 0 15px rgba(255,255,255,0.08);
+}
+.flecha{
+    position:absolute;
+    top:15px;
+    right:15px;
+    font-size:12px;
+    color:#aaa;
+    transition:0.3s;
 }
 
+.card-item.activa .flecha{
+    transform:rotate(180deg);
+    color:#fff;
+}
 /* ================= ENLACES ================= */
 
 .lista-enlaces .card-item a{
@@ -344,7 +373,7 @@ button:hover{
 {% for clase in clases %}
 
 <div class="card-item">
-
+<span class="flecha">▼</span>
 <h3>{{ clase.titulo }}</h3>
 
 <p>{{ clase.contenido[:150] }}</p>
@@ -387,44 +416,55 @@ button:hover{
 {% endfor %}
 </div>
 <script>
-function filtrarClases(){
+document.addEventListener("DOMContentLoaded", function(){
 
-    let input = document.getElementById("buscadorClases")
-    let filtro = input.value.toLowerCase()
+    function filtrarClases(){
+        let input = document.getElementById("buscadorClases")
+        let filtro = input.value.toLowerCase()
 
-    let clases = document.querySelectorAll(".card-item")
+        let clases = document.querySelectorAll(".card-item")
 
-    clases.forEach(clase => {
+        clases.forEach(clase => {
+            let titulo = clase.querySelector("h3").innerText.toLowerCase()
 
-        let titulo = clase.querySelector("h3").innerText.toLowerCase()
-
-        if(titulo.includes(filtro)){
-            clase.style.display = "flex"
-        }else{
-            clase.style.display = "none"
-        }
-
-    })
-}
-function mostrarFormulario(){
-    let form = document.getElementById("formClase")
-
-    if(form.style.display === "none"){
-        form.style.display = "block"
-    }else{
-        form.style.display = "none"
+            clase.style.display = titulo.includes(filtro) ? "flex" : "none"
+        })
     }
-}
 
-function toggleEditar(id){
-    let form = document.getElementById("editar"+id)
-
-    if(form.style.display === "none"){
-        form.style.display = "block"
-    }else{
-        form.style.display = "none"
+    function mostrarFormulario(){
+        let form = document.getElementById("formClase")
+        form.style.display = (form.style.display === "none") ? "block" : "none"
     }
-}
+
+    function toggleEditar(id){
+        let form = document.getElementById("editar"+id)
+        form.style.display = (form.style.display === "none") ? "block" : "none"
+    }
+
+    // 🔥 CLICK EN TARJETAS
+    document.querySelectorAll(".card-item").forEach(card => {
+        card.addEventListener("click", function(e){
+
+            // 👇 evita conflictos con botones/formularios
+            if(e.target.closest("a, button, form, input, textarea")){
+                return;
+            }
+
+            // 👇 solo una abierta a la vez
+            document.querySelectorAll(".card-item").forEach(c => {
+                if(c !== this) c.classList.remove("activa");
+            });
+
+            this.classList.toggle("activa");
+        });
+    });
+
+    // 👇 hacer funciones accesibles desde HTML
+    window.filtrarClases = filtrarClases;
+    window.mostrarFormulario = mostrarFormulario;
+    window.toggleEditar = toggleEditar;
+
+});
 </script>
 
 {% elif seccion == "notas" %}
