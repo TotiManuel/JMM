@@ -165,20 +165,73 @@ button:hover{
 .btn-editar{ background:linear-gradient(90deg,#f59e0b,#d97706); color:white; }
 .btn-guardar{ background:linear-gradient(90deg,#10b981,#059669); color:white; }
 .btn-cancelar{ background:linear-gradient(90deg,#6b7280,#4b5563); color:white; }
+/* ABRIR */
+.btn-abrir{
+    border-color: rgba(59,130,246,0.3);
+}
+.btn-abrir:hover{
+    background: rgba(59,130,246,0.2);
+}
 
+/* EDITAR */
+.btn-editar{
+    border-color: rgba(245,158,11,0.3);
+}
+.btn-editar:hover{
+    background: rgba(245,158,11,0.2);
+}
+
+/* ELIMINAR */
+.btn-eliminar{
+    border-color: rgba(239,68,68,0.3);
+}
+.btn-eliminar:hover{
+    background: rgba(239,68,68,0.2);
+}
 .acciones{
     display:flex;
-    gap:10px;
-    margin-top:10px;
+    gap:8px;
+    margin-top:12px;
+    flex-wrap:wrap;
 
     max-height:0;
     overflow:hidden;
     opacity:0;
+    transform: translateY(-10px);
     transition: all 0.3s ease;
 }
+
 .card-item.activa .acciones{
     max-height:200px;
     opacity:1;
+    transform: translateY(0);
+}
+.acciones a,
+.acciones button{
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    padding:6px 12px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:500;
+
+    border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.03);
+    color:#ddd;
+
+    backdrop-filter: blur(6px);
+    transition:0.25s;
+    cursor:pointer;
+    text-decoration:none;
+}
+.acciones a:hover,
+.acciones button:hover{
+    background:rgba(255,255,255,0.1);
+    color:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.6);
 }
 .card-item.activa{
     border:1px solid rgba(255,255,255,0.15);
@@ -380,11 +433,11 @@ button:hover{
 
 <div class="acciones">
 
-<a href="/clases/{{ clase.id }}" class="btn-abrir">Abrir clase</a>
+<a href="/clases/{{ clase.id }}" class="btn-abrir">Abrir</a>
 
-<button onclick="toggleEditar({{ clase.id }})">Editar</button>
+<button class="btn-editar" onclick="toggleEditar({{ clase.id }})">Editar</button>
 
-<a href="/clase/eliminar/{{ clase.id }}">Eliminar</a>
+<a href="/clase/eliminar/{{ clase.id }}" class="btn-eliminar">Eliminar</a>
 
 </div>
 
