@@ -228,7 +228,9 @@ button:hover {
 
 <a href="/modulo/{{ modulo.codigo }}">Abrir</a>
 
-<a href="/dashboard/eliminar_modulo/{{ modulo.id }}">Eliminar</a>
+<form action="/dashboard/eliminar_modulo/{{ modulo.id }}" method="POST">
+    <button type="submit">Eliminar</button>
+</form>
 
 </div>
 
