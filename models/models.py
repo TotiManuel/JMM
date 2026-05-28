@@ -10,6 +10,7 @@ class Clase(db.Model):
     titulo = db.Column(db.String(200))
     contenido = db.Column(db.Text)
     fecha = db.Column(db.DateTime, default=datetime.utcnow)
+    terminada = db.Column(db.Boolean,default=False)
 
     modulo_id = db.Column(
         db.Integer,

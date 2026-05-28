@@ -275,6 +275,7 @@ li{
 
 </div>
 
+{% if not clase.terminada %}
 <div class="bloques-tools">
 
 <form method="POST" action="{{ url_for('clases.crear_bloque', clase_id=clase.id) }}">
@@ -297,7 +298,14 @@ li{
 <button type="submit">Agregar bloque</button>
 
 </form>
+<form method="POST"
+action="{{ url_for('clases.finalizar_clase', id=clase.id) }}">
 
+    <button type="submit">
+        Marcar como terminada
+    </button>
+
+</form>
 </div>
-
+{% endif %}
 {% endblock %}

@@ -43,3 +43,17 @@ def crear_bloque(clase_id):
     db.session.commit()
 
     return redirect(url_for("clases.ver_clase", id=clase.id))
+
+@clases.route("/finalizar_clase/<int:id>", methods=["POST"])
+def finalizar_clase(id):
+
+    clase = Clase.query.get_or_404(id)
+
+    clase.terminada = True
+
+    db.session.commit()
+
+    return redirect(url_for(
+        "clases.ver_clase",
+        id=id
+    ))
