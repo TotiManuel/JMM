@@ -42,11 +42,16 @@ def eliminar_modulo(id):
 
     modulo = Modulo.query.get_or_404(id)
 
-    for clase in modulo.clases:
-        db.session.delete(clase)
+    try:
+        for clase in modulo.clases:
+            db.session.delete(clase)
 
-    db.session.delete(modulo)
+        db.session.delete(modulo)
 
-    db.session.commit()
+        db.session.commit()
+
+    except Exception as e:
+        db.session.rollback()
+        print(e)
 
     return redirect("/dashboard")
