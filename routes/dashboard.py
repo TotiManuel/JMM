@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from utils.auth import login_required
 from extensions import db
 from models.models import Modulo
+from models.models import Nota
 
 dashboard = Blueprint("dashboard", __name__)
 
@@ -37,21 +38,21 @@ def crear_modulo():
 
     return redirect(url_for("dashboard.dashboard_view"))
 
-@dashboard.route("/eliminar_modulo/<int:id>")
+@dashboard.route("/eliminar_modulo/<int:id>", methods=["POST"])
 def eliminar_modulo(id):
 
     modulo = Modulo.query.get_or_404(id)
 
-    try:
-        for clase in modulo.clases:
-            db.session.delete(clase)
+    notas = Nota.query.filter_by(modulo_codigo=modulo.codigo).all()
 
-        db.session.delete(modulo)
+    for nota in notas:
+        db.session.delete(nota)
 
-        db.session.commit()
+    for clase in modulo.clases:
+        db.session.delete(clase)
 
-    except Exception as e:
-        db.session.rollback()
-        print(e)
+    db.session.delete(modulo)
+
+    db.session.commit()
 
     return redirect("/dashboard")
